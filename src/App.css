@@ -1,10 +1,17 @@
-.App {
+.header{
+  
+  background-color: cadetblue;
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.login{
+  text-align: center;
+}
+.infobox{
+  width: 250px;
+  height: 250px;
+  background-color: cadetblue;
+  margin-left: 40%;
 }
 
 @media (prefers-reduced-motion: no-preference) {
