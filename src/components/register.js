@@ -1,34 +1,16 @@
 import React from "react";
-import "../App.css";
+import Login from '../components/login';
+import Option from '../components/option';
+import '../App.css';
 
-const Login = () => (
+
+const Register = () => (
   <div className="login">
-    <h2>Cadastro</h2>
-    <form>
-      <label htmlFor="name">Nome:</label>
-      <br></br>
-      <input type="text" name="name" />
-      <br></br>
-      <br></br>
-      <label htmlFor="email">E-mail:</label>
-      <br></br>
-      <input type="text" name="email" />
-      <br></br>
-      <br></br>
-      <label htmlFor="password">Senha:</label>
-      <br></br>
-      <input type="text" name="password" />
-      <br></br>
-      <input type="submit" value="Submit" />
-      <br></br>
-      <input type="radio" name="hall" value="hall" />
-      <label htmlFor="hall">Salão</label>
-      <br></br>
-      <input type="radio" name="kitchen" value="kitchen" />
-      <label htmlFor="kitchen">Cozinha</label>
-      <br></br>
-    </form>
+    <h2 className="sub-title">Cadastro</h2>
+    
+      <Option/>
+    
   </div>
 );
 
-export default Login;
+export default Register;

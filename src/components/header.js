@@ -1,11 +1,12 @@
+  
 import '../App.css';
 import React from "react";
 
 
 const Header = () => (
-  <header className='header'>
-      <h1>Burguer Queen</h1>
-  </header>
+  
+      <h1 className="main-title">Burguer Queen</h1>
+  
 );
 
 export default Header;
