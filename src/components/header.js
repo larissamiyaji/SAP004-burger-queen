@@ -5,7 +5,7 @@ import React from "react";
 
 const Header = () => (
   
-      <h1 className="main-title">Burguer Queen</h1>
+      <h1 className="main-title">Burger Queen</h1>
   
 );
 
