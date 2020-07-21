@@ -52,6 +52,7 @@ h1{
   border-color: #D56877;
   border-width: 1px;
   background-color: #728da100;
+  text-align: center;
 }
 
 .login{
@@ -113,3 +114,57 @@ h1{
   justify-content: center;
   align-items: center
 }
+.occupation{
+  border-bottom-style: solid;
+  border-color: #D56877;
+  border-width: 1px;
+  padding: 10px;
+}
+
+
+
+
+/*
+@media (min-width: 900px){
+  .main-title{
+    margin: 0;
+    font-size: 3em;
+  }
+  .navbar{
+    font-size: 2em;
+  }
+  .sub-title{
+    font-size: 3em;
+  }
+  .label{
+    font-size: 2.2em;
+  }
+  .input{
+    width: 700px;
+    height: 40px;
+    border-width: 2px;
+    font-size: 2.5em;
+  }
+  .form-button{
+    width: 12vh;
+    height: 5vh;
+    border-radius: 40px 10px 40px 10px;
+    font-size: 2em;
+  }
+  .infobox{
+    margin-bottom: 10vh;
+  }
+  .description{
+    width: 50vh;
+    height: 21vh;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 2em;
+  }
+  .occupation{
+    border-width: 2px;
+    padding: 10px;
+    font-size: 2em;
+  }
+}
+*/

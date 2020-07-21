@@ -39,8 +39,8 @@ class Option extends React.Component {
               <input className="input" type="password" name="password"></input>
               <br></br>
               <br></br>
-              <label className="label">Escolha sua área de trabalho:</label>
-              <select value={this.state.value} onChange={this.handleChange} className="select">
+              <label className="label">Escolha sua área de trabalho:</label><br></br>
+              <select value={this.state.value} onChange={this.handleChange} className="select occupation">
                 <option value="cozinha">Cozinha</option>
                 <option value="salao">Salão</option>
               </select>
