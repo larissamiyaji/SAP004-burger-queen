@@ -1,29 +1,166 @@
-.input{
-  width: 400px;
-  height: 30px;
+/* SOFT RESET */
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+body{
+  background-color: #728da175;
+}
+/*  HEADER E TÍTULOS */
+h1{
+  text-align: center;
 }
 
-h1{
+/* .header {
+  background-color: #282c34;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  color: white;
+} POSSIVELMENTE NÃO USAREMOS ISSO */
+
+.main-title{
+  margin: 0;
+  padding-bottom: 15px  ;
+  background-color: #D56877;
+}
+
+.sub-title{
+  font-size: 2.5em;
+  margin-bottom: 10px;
+}
+.label{
+  font-size: 1.2em;
+  color: #000000;
+}
+/*  INPUTS TEXTO  */
+.input{
+  max-width: 300px;
+  height: 30px;
+  border-bottom-style: solid;
+  border-color: #D56877;
+  border-width: 1px;
+  background-color: #728da100;
   text-align: center;
 }
 
 .login{
   text-align: center;
 }
+
 .infobox{
-  width: 250px;
-  height: 250px;
-  background-color: cadetblue;
-  margin-left: 40%;
-  margin-bottom: 24%;
-}
-
-
-.header {
-  background-color: #282c34;
-  text-align: center;
   align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
   justify-content: center;
-  color: white;
+  margin-bottom: 10px;
+}
+.description{
+  width: 500px;
+  height: 200px;
+  border-radius: 40px;
+  background-color: #D56877;
+  text-align: center;
+  margin-top: 10px;
+  padding: 10px;
 }
 
+/*  INPUTS BOTÕES */
+.form-button{
+  width: 100px;
+  height: 30px;
+  border-radius: 40px 10px 40px 10px;
+  font-size: 1.1em;
+  margin: 10px;
+  background-color: #D56877;
+}
+.form-button:hover{
+  background-color: #aa5460;
+  cursor: pointer;
+}
+.select{
+  font-size: 1.1em;
+  margin-left: 5px;
+  background-color: #728da100;
+}
+.select:hover{
+  cursor: pointer;
+}
+.link-style{
+  text-decoration: none;
+  color: #000000;
+  display: flex;
+  padding: 10px;
+}
+.link-style:hover{
+  background-color: #D56877;
+  font-weight: bold;
+}
+/* ORDENAR DEPOIS */
+.flex-direction{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center
+}
+.occupation{
+  border-bottom-style: solid;
+  border-color: #D56877;
+  border-width: 1px;
+  padding: 10px;
+}
+.p-bottom{
+  margin: 10px;
+  font-size: 1.1em;
+}
+
+
+
+
+/*
+@media (min-width: 900px){
+  .main-title{
+    margin: 0;
+    font-size: 3em;
+  }
+  .navbar{
+    font-size: 2em;
+  }
+  .sub-title{
+    font-size: 3em;
+  }
+  .label{
+    font-size: 2.2em;
+  }
+  .input{
+    width: 700px;
+    height: 40px;
+    border-width: 2px;
+    font-size: 2.5em;
+  }
+  .form-button{
+    width: 12vh;
+    height: 5vh;
+    border-radius: 40px 10px 40px 10px;
+    font-size: 2em;
+  }
+  .infobox{
+    margin-bottom: 10vh;
+  }
+  .description{
+    width: 50vh;
+    height: 21vh;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 2em;
+  }
+  .occupation{
+    border-width: 2px;
+    padding: 10px;
+    font-size: 2em;
+  }
+}
+*/

@@ -1,17 +1,16 @@
 import React from "react";
 
-import Header from './components/header';
-import Login from './components/login';
-import Register from './components/register';
-import InfoBox from './components/infoBox';
-import './App.css';
-import firebase from './firebase.js';
-
+import Header from "./components/header";
+import Login from "./components/login";
+import Register from "./components/register";
+import InfoBox from "./components/infoBox";
+import "./App.css";
+import firebase from "./firebase.js";
 
 const Main = () => (
-    <main>
+  <main>
     <p>teste</p>
   </main>
-  );  
-  
-  export default Main;
+);
+
+export default Main;
