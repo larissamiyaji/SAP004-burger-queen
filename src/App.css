@@ -13,22 +13,13 @@ h1{
   text-align: center;
 }
 
-.header {
+/* .header {
   background-color: #282c34;
   text-align: center;
   align-items: center;
   justify-content: center;
   color: white;
-}
-
-.navbar{
-  background-color: #D3ADAB;
-  text-align: center;
-}
-.navbar-options{
-  list-style: none;
-  display: inline-flex;
-}
+} POSSIVELMENTE NÃO USAREMOS ISSO */
 
 .main-title{
   margin: 0;
@@ -58,6 +49,7 @@ h1{
 .login{
   text-align: center;
 }
+
 .infobox{
   align-items: center;
   display: flex;
@@ -119,6 +111,9 @@ h1{
   border-color: #D56877;
   border-width: 1px;
   padding: 10px;
+}
+.p-bottom{
+  margin: 10px;
 }
 
 
