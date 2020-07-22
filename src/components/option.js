@@ -47,7 +47,6 @@ class Option extends React.Component {
             </label>
             <br></br>
             <br></br>
-            <input type="submit" value="Voltar" className="form-button" />
             <input type="submit" value="Cadastrar" className="form-button" />
           </form>
         );
