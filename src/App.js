@@ -14,16 +14,16 @@ export default function App() {
       <Header />
       <Router>
         <div>
-          <nav className="navbar">
+          {/*<nav className="navbar">
             <ul className="navbar-options">
-              {/*<li>
+              <li>
                 <Link to="/" className="link-style">Login</Link>
               </li>
               <li>
                 <Link to="/Register" className="link-style">Cadastro</Link>
-              </li>*/}
+              </li>
             </ul>
-          </nav>
+          </nav>*/}
 
           {/* A <Switch> looks through its children <Route>s and
             renders the first one that matches the current URL. */}
