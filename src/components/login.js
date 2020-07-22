@@ -1,5 +1,5 @@
 import React from "react";
-import "../App.css";
+import "../App.css"; 
 
 const Login = () => (
   <div className="login">
@@ -16,7 +16,8 @@ const Login = () => (
       <br></br>
       <input type="submit" className="form-button" value="Entrar"></input>
     </form>
+    <p>Ainda não possui conta? <a href="/Register">Cadastre-se</a></p>
   </div>
-);
+); 
 
 export default Login;
