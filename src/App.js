@@ -16,12 +16,12 @@ export default function App() {
         <div>
           <nav className="navbar">
             <ul className="navbar-options">
-              <li>
+              {/*<li>
                 <Link to="/" className="link-style">Login</Link>
               </li>
               <li>
                 <Link to="/Register" className="link-style">Cadastro</Link>
-              </li>
+              </li>*/}
             </ul>
           </nav>
 
