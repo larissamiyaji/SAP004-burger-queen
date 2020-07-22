@@ -4,7 +4,7 @@ import Header from './components/header';
 import Kitchen from './components/kitchen';
 import InfoBox from './components/infoBox';
 import './App.css';
-import firebase from './firebase.js';
+
 import {
   BrowserRouter as Router,
   Switch,
@@ -13,6 +13,7 @@ import {
 } from "react-router-dom";
 import Register from './components/register';
 import Login from './components/login';
+
 
 
 export default function App() {

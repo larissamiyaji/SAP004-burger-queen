@@ -3,8 +3,15 @@
   height: 30px;
 }
 
+.option{
+  display: flex;
+}
+
 h1{
   text-align: center;
+}
+label{
+  width: 250px;
 }
 
 .login{
