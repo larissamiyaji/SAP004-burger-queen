@@ -26,17 +26,17 @@ class Option extends React.Component {
             <label>
               <label htmlFor="name" className="label">Nome:</label>
               <br></br>
-              <input className="input" type="text" name="name"></input>
+              <input className="input" type="text" name="name" required></input>
               <br></br>
               <br></br>
               <label htmlFor="email" className="label">E-mail:</label>
               <br></br>
-              <input className="input" type="email" name="email"></input>
+              <input className="input" type="email" name="email" required></input>
               <br></br>
               <br></br> 
               <label htmlFor="password" className="label">Senha:</label>
               <br></br>
-              <input className="input" type="password" name="password"></input>
+              <input className="input" type="password" name="password" required></input>
               <br></br>
               <br></br>
               <label className="label">Escolha sua área de trabalho:</label><br></br>
@@ -47,6 +47,7 @@ class Option extends React.Component {
             </label>
             <br></br>
             <br></br>
+            <input type="submit" value="Voltar" className="form-button" />
             <input type="submit" value="Cadastrar" className="form-button" />
           </form>
         );
