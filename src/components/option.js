@@ -24,6 +24,10 @@ class Option extends React.Component {
       event.preventDefault();
       window.location.href = "/";
     };
+    /* const goToHome = (event) => {
+      event.preventDefault();
+      window.location.href = COLOCAR DIRECIONAMENTO PARA SALÃO OU COZINHA;
+    }; */
     return (
       <form onSubmit={this.handleSubmit}>
         <label>
@@ -68,7 +72,7 @@ class Option extends React.Component {
         <br></br>
         <input type="button" value="Voltar" className="form-button" onClick={returnPage}
         ></input>
-        <input type="submit" value="Cadastrar" className="form-button" />
+        <input type="submit" value="Cadastrar" className="form-button" /* onClick={goToHome} *//>
       </form>
     );
   }
