@@ -17,13 +17,11 @@ const cancelOrder = (event) => {
     console.log("Turbinando Hambúguer");
 }; */
 
-{
-  /* const showPopup = (event) => {
+/* const showPopup = (event) => {
   event.preventDefault();
   Modal.visibility = hidden;
   Modal.style = none;
 };  */
-}
 
 const Hall = () => (
   <div className="hall-template">
@@ -116,7 +114,6 @@ const Hall = () => (
             type="radio"
             name="meat-type"
             value="Bovino"
-            checked={true}
           ></input>
           Bovino
         </label>
