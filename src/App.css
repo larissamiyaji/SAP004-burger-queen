@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 body{
-  background-color: #728da175;
+  background-color: #728da10e;
 }
 /*  HEADER E TÍTULOS */
 h1{
@@ -81,6 +81,19 @@ h1{
   background-color: #aa5460;
   cursor: pointer;
 }
+
+.cancel-button{
+  background-color: #dd3030;
+}
+
+.send-order-button{
+background-color: #3CF038;
+}
+
+.send-order-button:hover{
+  background-color: #36b934;
+}
+
 .select{
   font-size: 1.1em;
   margin-left: 5px;
@@ -117,9 +130,70 @@ h1{
   font-size: 1.1em;
 }
 
+.visibility-none{
+  visibility: none;
+}
 
+.text-align{
+  text-align: center;
+  margin-top: 30px;
+}
 
+.menu-all{
+  border-style: solid;
+  border-radius: 40px;
+  background-color: #8cb1db9c;
+  width: auto;
+  margin-right: 10px;
+  padding: 20px;
+}
 
+.menu-title{
+  margin-top: 10px;
+}
+
+.menu-list{
+  font-weight: 600;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+
+.hall-template{
+  display: flex;
+  justify-content: center;
+}
+
+.order-card{
+  border-style: solid;
+  border-radius: 40px;
+  background-color: #9C96B8;
+  width: auto;
+  height: 350px;
+  margin-top: 30px;
+  padding: 10px;
+}
+
+.order-details{
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.order-details-input{
+  width: 150px;
+  border-radius: 40px;
+  background-color: #ffffff00;
+  height: 20px;
+  border-style: none;
+}
+
+.order-bottom-info{
+  text-align: center;
+}
+
+.value-total{
+  font-size: 1.5em;
+}
 /*
 @media (min-width: 900px){
   .main-title{
