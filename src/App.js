@@ -1,6 +1,7 @@
 import React from "react";
 import Header from "./components/header";
 import Kitchen from "./components/kitchen";
+import Hall from "./components/hall";
 import InfoBox from "./components/infoBox";
 import "./App.css";
 //  import firebase from "./firebase.js";
@@ -33,6 +34,9 @@ export default function App() {
             </Route>
             <Route path="/Kitchen">
               <Kitchen />
+            </Route>
+            <Route path="/Hall">
+              <Hall />
             </Route>
             <Route path="/">
               <Login />
