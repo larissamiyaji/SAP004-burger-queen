@@ -3,9 +3,14 @@ import Header from "./components/header";
 import Kitchen from "./components/kitchen";
 import Hall from "./components/hall";
 import InfoBox from "./components/infoBox";
+import OrderDetails from "./components/orderCard.js";
 import "./App.css";
 //  import firebase from "./firebase.js";
-import { BrowserRouter as Router, Switch, Route, /*Link*/ } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route /*Link*/,
+} from "react-router-dom";
 import Register from "./components/register";
 import Login from "./components/login";
 
@@ -31,20 +36,24 @@ export default function App() {
           <Switch>
             <Route path="/Register">
               <Register />
+              <div>
+                <InfoBox />
+              </div>
             </Route>
             <Route path="/Kitchen">
               <Kitchen />
             </Route>
             <Route path="/Hall">
               <Hall />
+              <OrderDetails />
             </Route>
             <Route path="/">
               <Login />
+              <div>
+                <InfoBox />
+              </div>
             </Route>
           </Switch>
-        </div>
-        <div>
-          <InfoBox />
         </div>
       </Router>
     </div>

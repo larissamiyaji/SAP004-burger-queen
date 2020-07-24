@@ -160,6 +160,7 @@ background-color: #3CF038;
 }
 /*  MODAL */
 .modal{
+  visibility: hidden;
   position: absolute;
   background-color: #b9a8ba;
   width: 400px;

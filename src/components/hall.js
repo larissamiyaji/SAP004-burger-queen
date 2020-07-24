@@ -53,7 +53,7 @@ const Hall = () => (
       </div>
     </section>
 
-    {/*    CARD DE DETALHES DO PEDIDO */}
+    {/*    CARD DE DETALHES DO PEDIDO 
     <section className="order-card">
       <h2 className="menu-title text-align">Detalhes do Pedido</h2>
       <div className="order-details">
@@ -102,7 +102,7 @@ const Hall = () => (
           Finalizar
         </button>
       </div>
-    </section>
+    </section> */}
 
     {/* CARD DE TURBINAR O HAMBÚRGUER  */}
     <section className="modal">
