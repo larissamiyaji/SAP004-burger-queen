@@ -7,7 +7,8 @@ import "../App.css";
     console.log("Turbinando Hambúguer");
 }; */
 
-const Hall = () => (
+const Hall = () => {
+  return (
   <div>
     {/* CARDÁPIO */}
     <section className="text-align menu-all">
@@ -36,14 +37,14 @@ const Hall = () => (
         <p>Refrigerante 750ml ______________ R$10,00</p>
       </div>
       <button
-      type="submit"
-      className="form-button send-order-button"
-      // onClick={}
-    >
-      Turbinar
-    </button>
+        type="submit"
+        className="form-button send-order-button"
+        onClick={() => console.log("Turbinando")}
+      >
+        Turbinar
+      </button>
     </section>
   </div>
-);
+);}
 
 export default Hall;

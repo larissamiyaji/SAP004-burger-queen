@@ -2,7 +2,8 @@ import React from "react";
 import '../App.css';
 
 
-const InfoBox = () => (
+const InfoBox = () => {
+  return (
   <div className='infobox'>
     <section className="description">
       <h3>Sobre Burger Queen</h3>
@@ -12,5 +13,5 @@ const InfoBox = () => (
     </section>
   </div>
 );
-
+}
 export default InfoBox;

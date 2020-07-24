@@ -1,7 +1,8 @@
 import React from "react";
 import "../App.css"; 
 
-const Login = () => (
+const Login = () => {
+  return (
   <div className="login">
     <h2 className="sub-title">Login</h2>
     <form>
@@ -18,6 +19,6 @@ const Login = () => (
     </form>
     <p className="p-bottom">Ainda não possui conta? <a href="/Register">Cadastre-se</a></p>
   </div>
-); 
+);} 
 
 export default Login;
