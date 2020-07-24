@@ -11,6 +11,11 @@ const OrderDetails = () => {
     event.preventDefault();
     console.log("Cancelando pedido");
   };
+  const handleChange = (event) => {
+    event.preventDefault();
+    const { value } = event.target;
+    console.log(value);
+  }; // Captura o valor inserido pelo usuáario
   return (
     <section className="order-card">
       <h2 className="menu-title text-align">Detalhes do Pedido</h2>
@@ -23,6 +28,7 @@ const OrderDetails = () => {
             type="number"
             className="order-details-input input"
             placeholder="Insira o nº da mesa"
+            onChange={handleChange}
             required
           ></input>
         </p>
@@ -33,6 +39,7 @@ const OrderDetails = () => {
             type="text"
             className="order-details-input input"
             placeholder="Insira o nome do cliente"
+            onChange={handleChange}
             required
           ></input>
         </p>
