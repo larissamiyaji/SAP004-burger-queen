@@ -171,6 +171,10 @@ background-color: #3CF038;
   padding-top: 10px;
 }
 
+.hidden{
+  visibility: hidden;
+}
+
 .edit-burger{
   text-align: left;
   margin-left: 10px;

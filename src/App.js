@@ -52,7 +52,7 @@ export default function App() {
               <div className="hall-template text-align">
                 <Hall />
                 <OrderDetails />
-                <OrderModal />
+                <OrderModal className="hidden"/>
               </div>
             </Route>
 

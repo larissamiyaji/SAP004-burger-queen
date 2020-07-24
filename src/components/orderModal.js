@@ -9,6 +9,7 @@ const sendOrder = (event) => {
 const cancelOrder = (event) => {
   event.preventDefault();
   console.log("Cancelando pedido");
+  OrderModal.hidden = true;
 };
 
 const OrderModal = () => (
