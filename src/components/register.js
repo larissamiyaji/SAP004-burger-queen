@@ -1,6 +1,6 @@
 import React from "react";
-//  import Login from '../components/login';
-import Option from '../components/option';
+//  import Login from '../components/Login';
+import Option from './option';
 import '../App.css';
 
 

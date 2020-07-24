@@ -48,17 +48,11 @@ const OrderDetails = () => (
       <button
         type="submit"
         className="form-button cancel-button"
-        onClick={cancelOrder}
-      >
-        Cancelar
-      </button>
+        onClick={cancelOrder}>Cancelar</button>
       <button
         type="submit"
         className="form-button send-order-button"
-        onClick={sendOrder}
-      >
-        Finalizar
-      </button>
+        onClick={sendOrder}>Finalizar</button>
     </div>
   </section>
 );
