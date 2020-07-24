@@ -1,15 +1,15 @@
 import React from "react";
 import "../App.css";
 
-const sendOrder = (event) => {
-  event.preventDefault();
-  console.log("Finalizando pedido");
-};
+// const sendOrder = (event) => {
+//   event.preventDefault();
+//   console.log("Finalizando pedido");
+// };
 
-const cancelOrder = (event) => {
-  event.preventDefault();
-  console.log("Cancelando pedido");
-};
+// const cancelOrder = (event) => {
+//   event.preventDefault();
+//   console.log("Cancelando pedido");
+// };
 
 /* ABRE UM POP UP QUANDO CLICAR EM HAMBÚRGUER  
   const chooseBurger = (event) => {
@@ -24,7 +24,7 @@ const cancelOrder = (event) => {
 };  */
 
 const Hall = () => (
-  <div className="hall-template">
+  <div>
     {/* CARDÁPIO */}
     <section className="text-align menu-all">
       <h2 className="menu-title">Café da Manhã</h2>
@@ -53,58 +53,7 @@ const Hall = () => (
       </div>
     </section>
 
-    {/*    CARD DE DETALHES DO PEDIDO */}
-    {/* <section className="order-card">
-      <h2 className="menu-title text-align">Detalhes do Pedido</h2>
-      <div className="order-details">
-        <p>Nº do pedido: {}</p>
-        <p>
-          Nº da mesa:{" "}
-          <input
-            id="table-number"
-            type="number"
-            className="order-details-input input"
-            placeholder="Insira o nº da mesa"
-            required
-          ></input>
-        </p>
-        <p>
-          Cliente:{" "}
-          <input
-            id="client-name"
-            type="text"
-            className="order-details-input input"
-            placeholder="Insira o nome do cliente"
-            required
-          ></input>
-        </p>
-      </div>
-      <div className="menu-list text-align">
-        <p>Ítem 1</p>
-        <p>Ítem 2</p>
-        <p>Ítem 3</p>
-        <p>Ítem 4</p>
-      </div>
-      <div className="order-bottom-info">
-        <p className="value-total">Total: R${}</p>
-        <button
-          type="submit"
-          className="form-button cancel-button"
-          onClick={cancelOrder}
-        >
-          Cancelar
-        </button>
-        <button
-          type="submit"
-          className="form-button send-order-button"
-          onClick={sendOrder}
-        >
-          Finalizar
-        </button>
-      </div>
-    </section> */}
-
-    {/* CARD DE TURBINAR O HAMBÚRGUER  */}
+    {/* CARD DE TURBINAR O HAMBÚRGUER 
     <section className="modal">
       <h2>Turbine seu hambúrguer</h2>
       <h3 className="edit-burger">Tipo de carne</h3>
@@ -144,7 +93,7 @@ const Hall = () => (
       >
         Finalizar
       </button>
-    </section>
+    </section> */}
   </div>
 );
 
