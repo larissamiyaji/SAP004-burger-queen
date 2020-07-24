@@ -53,8 +53,8 @@ const Hall = () => (
       </div>
     </section>
 
-    {/*    CARD DE DETALHES DO PEDIDO 
-    <section className="order-card">
+    {/*    CARD DE DETALHES DO PEDIDO */}
+    {/* <section className="order-card">
       <h2 className="menu-title text-align">Detalhes do Pedido</h2>
       <div className="order-details">
         <p>Nº do pedido: {}</p>
