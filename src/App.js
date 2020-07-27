@@ -5,11 +5,21 @@ import Hall from "./components/hall";
 import InfoBox from "./components/infoBox";
 import OrderDetails from "./components/orderCard.js";
 import OrderModal from "./components/orderModal.js";
-import Button from "./components/Button.js";
+import Button, { ButtonLogout } from "./components/Button.js";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Register from "./components/register";
 import Login from "./components/login";
+
+// const logout = () => {
+//   firebase
+//     .auth()
+//     .signOut()
+//     .then(() => {
+//       window.location.href = "/";
+//       console.log("Logging out");
+//     });
+// };
 
 export default function App() {
   return (
@@ -27,15 +37,16 @@ export default function App() {
             </Route>
             {/* KITCHEN */}
             <Route path="/Kitchen">
+              <ButtonLogout name="Logout" />
               <Kitchen />
             </Route>
 
             {/* HALL */}
             <Route path="/Hall">
               <div className="hall-template text-align">
-                <Button name="Logout" />
+                <ButtonLogout name="Logout" />
                 <div className="menu">
-                <Hall />
+                  <Hall />
                   <OrderDetails />
                   <OrderModal className="hidden" />
                 </div>
