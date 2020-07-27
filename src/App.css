@@ -76,10 +76,17 @@ label{
 }
 
 /*  INPUTS BOTÕES */
-.style{
-  display: flex;
-  align-items: flex-start;
+.logout-position{
+  position: absolute;
+  top: 25px;
+  right: 10px;
+  width: 100px;
+  height: 30px;
+  border-radius: 40px 10px 40px 10px;
+  font-size: 1.1em;
+  background-color: #D3ADAB;
 }
+
 .form-button{
   width: 100px;
   height: 30px;
@@ -88,7 +95,8 @@ label{
   margin: 10px;
   background-color: #D56877;
 }
-.form-button:hover{
+.form-button:hover,
+.logout-position:hover{
   background-color: #aa5460;
   cursor: pointer;
 }
@@ -160,6 +168,7 @@ margin-top: 20px;
 
 .menu{
   display: flex;
+  justify-content: center;
 }
 
 .menu-all{
@@ -249,6 +258,10 @@ margin-top: 20px;
 
 .order-bottom-info{
   text-align: center;
+}
+
+.clients-info{
+  display: flex;
 }
 
 .value-total{

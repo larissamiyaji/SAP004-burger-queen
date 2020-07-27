@@ -1,18 +1,12 @@
 import React from "react";
 import "../App.css";
-import firebase from "../firebase"
 
-export const ButtonLogout = () => {
-  const logout = () => {
-    firebase
-      .auth()
-      .signOut()
-      .then(() => {
-        window.location.href = "/";
-        console.log("Logging out");
-      });
-  };
-  return <button className="form-button" onClick={logout}>Logout</button>;
+export const ButtonLogout = ({ children, onClick }) => {
+  return (
+    <button className="logout-position" onClick={onClick}>
+      {children}
+    </button>
+  );
 };
 
 const Button = (props) => {
