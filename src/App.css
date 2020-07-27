@@ -67,7 +67,7 @@ label{
 
 .description{
   width: 500px;
-  height: 200px;
+  height: fit-content;
   border-radius: 40px;
   background-color: #D56877;
   text-align: center;
