@@ -9,7 +9,7 @@ import "../App.css";
 
 const Hall = () => {
   return (
-  <div>
+  <div className="style">
     {/* CARDÁPIO */}
     <section className="text-align menu-all">
       <h2 className="menu-title">Café da Manhã</h2>
@@ -44,6 +44,7 @@ const Hall = () => {
         Turbinar
       </button>
     </section>
+      {/* <button className="form-button">Logout</button> */}
   </div>
 );}
 

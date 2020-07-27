@@ -1,11 +1,22 @@
-import React from "react";
-import "../App.css";
+import React, { Component } from "react";
+import '../App.css';
+import Button from './Button';
 
-const Kitchen = () => {
-  return (
-  <div>
-    <h1>Cozinha</h1>
-  </div>
-);}
+
+
+class Kitchen extends Component {
+    
+    render()
+    {
+        const returnPage = (event) => {
+            event.preventDefault();
+            window.location.href = "/";
+          };
+        return(
+          <div><h1>Logou</h1>
+          <Button onClick={returnPage} name="voltar" type="submit" />
+    </div> 
+        )
+}}
 
 export default Kitchen;

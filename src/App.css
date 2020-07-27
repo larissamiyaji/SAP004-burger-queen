@@ -12,30 +12,28 @@ body{
 h1{
   text-align: center;
 }
+label{
+  width: 250px;
+}
 
-/* .header {
-  background-color: #282c34;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  color: white;
-} POSSIVELMENTE NÃO USAREMOS ISSO */
-
+/*  NAVBAR - BURGER QUEEN  */
 .main-title{
   margin: 0;
   padding-bottom: 15px  ;
   background-color: #D56877;
+  font-size: 3em;
 }
 
+/*  SUBTITLE - LOGIN, REGISTRO */
 .sub-title{
   font-size: 2.5em;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 .label{
   font-size: 1.2em;
   color: #000000;
 }
-/*  INPUTS TEXTO  */
+/*  INPUTS TEXTO - FORM */
 .input{
   max-width: 300px;
   height: 30px;
@@ -44,10 +42,18 @@ h1{
   border-width: 1px;
   background-color: #728da100;
   text-align: center;
+  display: block;
+  margin-bottom: 30px;
 }
 
 .login{
   text-align: center;
+  display: block;
+}
+
+.form-box{
+  text-align: -webkit-center;
+  margin-bottom: 10px;
 }
 
 .infobox{
@@ -58,6 +64,7 @@ h1{
   justify-content: center;
   margin-bottom: 10px;
 }
+
 .description{
   width: 500px;
   height: 200px;
@@ -69,6 +76,10 @@ h1{
 }
 
 /*  INPUTS BOTÕES */
+.style{
+  display: flex;
+  align-items: flex-start;
+}
 .form-button{
   width: 100px;
   height: 30px;
@@ -88,20 +99,23 @@ h1{
 
 .send-order-button{
 background-color: #3CF038;
+margin-top: 20px;
 }
 
 .send-order-button:hover{
   background-color: #36b934;
 }
 
-.select{
+/* .select{
   font-size: 1.1em;
   margin-left: 5px;
   background-color: #728da100;
 }
+
 .select:hover{
   cursor: pointer;
-}
+} */
+
 .link-style{
   text-decoration: none;
   color: #000000;
@@ -119,12 +133,17 @@ background-color: #3CF038;
   justify-content: center;
   align-items: center
 }
-.occupation{
+/* .occupation{
   border-bottom-style: solid;
   border-color: #D56877;
   border-width: 1px;
   padding: 10px;
+} */
+
+.occupation{
+  display: block;
 }
+
 .p-bottom{
   margin: 10px;
   font-size: 1.1em;
@@ -139,11 +158,16 @@ background-color: #3CF038;
   margin-top: 30px;
 }
 
+.menu{
+  display: flex;
+}
+
 .menu-all{
   border-style: solid;
   border-radius: 40px;
   background-color: #8cb1db9c;
-  width: auto;
+  width: 380px;
+  height: fit-content;
   margin-right: 10px;
   padding: 20px;
 }
@@ -196,7 +220,7 @@ background-color: #3CF038;
 }
 
 .hall-template{
-  display: flex;
+  display: block;
   justify-content: center;
 }
 
@@ -204,10 +228,10 @@ background-color: #3CF038;
   border-style: solid;
   border-radius: 40px;
   background-color: #9C96B8;
-  width: auto;
-  height: 350px;
+  width: fit-content;
+  height: fit-content;
   margin-top: 30px;
-  padding: 10px;
+  padding: 20px;
 }
 
 .order-details{
