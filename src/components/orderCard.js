@@ -1,5 +1,6 @@
 import React from "react";
 import "../App.css";
+import Input from "./input";
 
 const OrderDetails = () => {
   const sendOrder = (event) => {
@@ -19,29 +20,29 @@ const OrderDetails = () => {
   return (
     <section className="order-card">
       <h2 className="menu-title text-align">Detalhes do Pedido</h2>
-      <div className="order-details">
-        <p>Nº do pedido: {}</p>
-        <p>
+      <div className="order-details form-box">
+        <p className="clients-info">Nº do pedido: {}</p>
+        <p className="clients-info">
           Nº da mesa:{" "}
-          <input
+          <Input
             id="table-number"
             type="number"
             className="order-details-input input"
             placeholder="Insira o nº da mesa"
             onChange={handleChange}
             required
-          ></input>
+          />
         </p>
-        <p>
+        <p className="clients-info">
           Cliente:{" "}
-          <input
+          <Input
             id="client-name"
             type="text"
             className="order-details-input input"
             placeholder="Insira o nome do cliente"
             onChange={handleChange}
             required
-          ></input>
+          />
         </p>
       </div>
       <div className="menu-list text-align">

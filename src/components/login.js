@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import "../App.css";
 import Input from "./input";
+import InfoBox from "./infoBox";
 import Button from "./Button";
 import firebase from "../firebase";
 import { database } from "firebase";
@@ -76,20 +77,18 @@ function Login() {
           onChange={(e) => setPassword(e.currentTarget.value)}
           required
         />
+
         <Button onClick={handleClick} name="Entrar" />
         <p className="p-bottom">
           Ainda não possui conta? <a href="/Register">Cadastre-se</a>
         </p>
       </form>
+      <InfoBox />
     </div>
   );
 }
 
 export default Login;
-
-
-
-
 
 // import React, { useState } from "react";
 // import "../App.css";

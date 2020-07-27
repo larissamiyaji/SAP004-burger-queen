@@ -1,9 +1,9 @@
 import React from "react";
 import "../App.css";
 
-const InfoBox = () => {
+const InfoBox = (props) => {
   return (
-    <div className="infobox">
+    <div value={props.value} className="infobox">
       <section className="description">
         <div className="burger-queen-description">
           <h3>Sobre Burger Queen</h3>
@@ -23,7 +23,7 @@ const InfoBox = () => {
             Para ser direcionado para a página do Salão, selecione salão nas
             opções acima.
           </p>
-        </div> */}
+        </div>*/} 
       </section>
     </div>
   );

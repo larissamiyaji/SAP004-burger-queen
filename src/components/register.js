@@ -3,6 +3,7 @@ import { useHistory } from "react-router-dom";
 import { firebaseAuth } from "../firebase";
 import { firebaseStore } from "../firebase";
 import Input from "./input";
+import InfoBox from "./infoBox"
 import Button from "./Button";
 import { urls } from "../Routes";
 import "../App.css";
@@ -105,6 +106,7 @@ const Register = () => {
         <Button onClick={returnPage} name="Voltar" type="submit" />
         <Button onClick={prevent} name="Cadastrar" type="submit" />
       </form>
+      <InfoBox />
     </div>
   );
 };
