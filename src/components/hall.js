@@ -41,7 +41,7 @@ const Hall = () => {
         className="form-button send-order-button"
         onClick={() => console.log("Turbinando")}
       >
-        Turbinar
+        <a href="#order-modal">Turbinar</a>
       </button>
     </section>
       {/* <button className="form-button">Logout</button> */}

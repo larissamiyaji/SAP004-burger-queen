@@ -5,7 +5,7 @@ class Kitchen extends Component {
   render() {
     return (
       <div>
-        <h1>Logou</h1>
+        <h1>Cozinha</h1>
       </div>
     );
   }

@@ -8,6 +8,11 @@
 body{
   background-color: #728da10e;
 }
+
+a{
+  text-decoration: none;
+  color: #000000;
+}
 /*  HEADER E TÍTULOS */
 h1{
   text-align: center;
@@ -193,15 +198,23 @@ margin-top: 20px;
 }
 /*  MODAL */
 .modal{
-  visibility: hidden;
-  position: absolute;
-  background-color: #b9a8ba;
   width: 400px;
   height: 320px;
+  position: absolute;
+  margin-left: auto;
+  display: none;
+  background-color: #b9a8ba;
   border-radius: 40px;
   text-align: center;
   box-shadow: black 5px 5px 100px 0px;
   padding-top: 10px;
+}
+
+.modal:target{
+  display: block;
+  top: 250px;
+  transition: all 0.3s;
+  transition-delay: 0.2s;
 }
 
 .hidden{
