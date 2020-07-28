@@ -59,7 +59,7 @@ function Login() {
   return (
     <div className="login">
       <h2 className="sub-title">Login</h2>
-      <form>
+      <form className="form-box">
         <Input
           type="text"
           id="input-email"
@@ -68,7 +68,6 @@ function Login() {
           onChange={(e) => setEmail(e.currentTarget.value)}
           required
         />
-        <br></br>
         <Input
           type="password"
           id="input-password"
@@ -77,7 +76,6 @@ function Login() {
           onChange={(e) => setPassword(e.currentTarget.value)}
           required
         />
-        <br></br>
         <Button onClick={handleClick} name="Entrar" />
         <p className="p-bottom">
           Ainda não possui conta? <a href="/Register">Cadastre-se</a>

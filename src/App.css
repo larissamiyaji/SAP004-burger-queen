@@ -6,7 +6,7 @@
   box-sizing: border-box;
 }
 body{
-  background-color: #728da175;
+  background-color: #728da10e;
 }
 /*  HEADER E TÍTULOS */
 h1{
@@ -16,29 +16,32 @@ label{
   width: 250px;
 }
 
-/* .header {
-  background-color: #282c34;
-  text-align: center;
-  align-items: center;
-  justify-content: center;
-  color: white;
-} POSSIVELMENTE NÃO USAREMOS ISSO */
-
+/*  NAVBAR - BURGER QUEEN  */
 .main-title{
   margin: 0;
   padding-bottom: 15px  ;
   background-color: #D56877;
+  font-size: 3em;
 }
 
+/*  SUBTITLE - LOGIN, REGISTRO */
 .sub-title{
   font-size: 2.5em;
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 .label{
   font-size: 1.2em;
   color: #000000;
 }
-/*  INPUTS TEXTO  */
+.ButtonItem{
+  width: 200px;
+  height: 45px;
+  border-radius: 10px 10px;
+  font-size: 1.1em;
+  margin: 10px;
+  background-color: #D56877;
+}
+/*  INPUTS TEXTO - FORM */
 .input{
   max-width: 300px;
   height: 30px;
@@ -47,10 +50,18 @@ label{
   border-width: 1px;
   background-color: #728da100;
   text-align: center;
+  display: block;
+  margin-bottom: 30px;
 }
 
 .login{
   text-align: center;
+  display: block;
+}
+
+.form-box{
+  text-align: -webkit-center;
+  margin-bottom: 10px;
 }
 
 .infobox{
@@ -61,6 +72,7 @@ label{
   justify-content: center;
   margin-bottom: 10px;
 }
+
 .description{
   width: 500px;
   height: 200px;
@@ -72,6 +84,10 @@ label{
 }
 
 /*  INPUTS BOTÕES */
+.style{
+  display: flex;
+  align-items: flex-start;
+}
 .form-button{
   width: 100px;
   height: 30px;
@@ -84,14 +100,30 @@ label{
   background-color: #aa5460;
   cursor: pointer;
 }
-.select{
+
+.cancel-button{
+  background-color: #dd3030;
+}
+
+.send-order-button{
+background-color: #3CF038;
+margin-top: 20px;
+}
+
+.send-order-button:hover{
+  background-color: #36b934;
+}
+
+/* .select{
   font-size: 1.1em;
   margin-left: 5px;
   background-color: #728da100;
 }
+
 .select:hover{
   cursor: pointer;
-}
+} */
+
 .link-style{
   text-decoration: none;
   color: #000000;
@@ -109,19 +141,127 @@ label{
   justify-content: center;
   align-items: center
 }
-.occupation{
+/* .occupation{
   border-bottom-style: solid;
   border-color: #D56877;
   border-width: 1px;
   padding: 10px;
+} */
+
+.occupation{
+  display: block;
 }
+
 .p-bottom{
   margin: 10px;
   font-size: 1.1em;
 }
 
+.visibility-none{
+  visibility: none;
+}
 
+.text-align{
+  text-align: center;
+  margin-top: 30px;
+}
 
+.menu{
+  display: flex;
+}
+
+.menu-all{
+  border-style: solid;
+  border-radius: 40px;
+  background-color: #8cb1db9c;
+  width: 380px;
+  height: fit-content;
+  margin-right: 10px;
+  padding: 20px;
+}
+
+.menu-title{
+  margin-top: 10px;
+}
+
+.menu-list{
+  font-weight: 600;
+  font-size: 1.1em;
+  margin-bottom: 10px;
+  margin-top: 10px;
+}
+/*  MODAL */
+.modal{
+  visibility: hidden;
+  position: absolute;
+  background-color: #b9a8ba;
+  width: 400px;
+  height: 320px;
+  border-radius: 40px;
+  text-align: center;
+  box-shadow: black 5px 5px 100px 0px;
+  padding-top: 10px;
+}
+
+.hidden{
+  visibility: hidden;
+}
+
+.edit-burger{
+  text-align: left;
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.radio-buttons{
+  font-size: 1.1em;
+  display: grid;
+  margin-top: 10px;
+  margin-left: 40px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.cheese-egg{
+  text-align: left;
+  margin-left: 40px;
+}
+
+.hall-template{
+  display: block;
+  justify-content: center;
+}
+
+.order-card{
+  border-style: solid;
+  border-radius: 40px;
+  background-color: #9C96B8;
+  width: fit-content;
+  height: fit-content;
+  margin-top: 30px;
+  padding: 20px;
+}
+
+.order-details{
+  margin-left: 10px;
+  margin-top: 10px;
+}
+
+.order-details-input{
+  width: 150px;
+  border-radius: 40px;
+  background-color: #ffffff00;
+  height: 20px;
+  border-style: none;
+}
+
+.order-bottom-info{
+  text-align: center;
+}
+
+.value-total{
+  font-size: 1.5em;
+}
 
 /*
 @media (min-width: 900px){
