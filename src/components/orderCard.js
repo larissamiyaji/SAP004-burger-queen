@@ -2,6 +2,7 @@ import React from "react";
 import "../App.css";
 import Input from "./input";
 
+
 const OrderDetails = () => {
   const sendOrder = (event) => {
     event.preventDefault();
@@ -46,10 +47,10 @@ const OrderDetails = () => {
         </p>
       </div>
       <div className="menu-list text-align">
-        <p>Ítem 1</p>
-        <p>Ítem 2</p>
-        <p>Ítem 3</p>
-        <p>Ítem 4</p>
+        <div><p>Ítem 1</p></div>
+        <div><p>Ítem 2</p></div>
+        <div><p>Ítem 3</p></div>
+        <div><p>Ítem 4</p></div>
       </div>
       <div className="order-bottom-info">
         <p className="value-total">Total: R${}</p>
