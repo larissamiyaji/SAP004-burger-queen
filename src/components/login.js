@@ -3,8 +3,8 @@ import "../App.css";
 import Input from "./input";
 import InfoBox from "./infoBox";
 import Button from "./Button";
-import firebase from "../firebase";
-import { database } from "firebase";
+//  import firebase from "../firebase";
+//  import { database } from "firebase";
 import { firebaseAuth } from "../firebase";
 import { urls } from "../Routes";
 import { firebaseStore } from "../firebase";
@@ -13,8 +13,8 @@ import { useHistory } from "react-router-dom";
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [userName, setUserName] = useState("");
-  const [userId, setUserId] = useState("");
+  //  const [userName, setUserName] = useState("");
+  //  const [userId, setUserId] = useState("");
 
   const history = useHistory();
 
@@ -25,8 +25,8 @@ function Login() {
       .doc(userId)
       .get()
       .then((doc) => {
-        console.log(doc.data().Ocupation);
-        if (doc.data().Ocupation === "Cozinha") {
+        console.log(doc.data().occupation);
+        if (doc.data().occupation === "Cozinha") {
           history.push(urls.kitchen.path);
         } else {
           history.push(urls.hall.path);

@@ -1,5 +1,6 @@
 import React from "react";
 import "../App.css";
+import OrderModal from "./orderModal.js";
 
 /* ABRE UM POP UP QUANDO CLICAR EM HAMBÚRGUER  
   const chooseBurger = (event) => {
@@ -7,9 +8,16 @@ import "../App.css";
     console.log("Turbinando Hambúguer");
 }; */
 
+const turbinar = (event) => {
+  event.preventDefault();
+  console.log("Abrindo modal");
+  OrderModal.hidden = false;
+  window.location.href = "/hall#order-modal"
+};
+
 const Hall = () => {
   return (
-  <div className="style">
+    <div className="style" id="hall">
     {/* CARDÁPIO */}
     <section className="text-align menu-all">
       <h2 className="menu-title">Café da Manhã</h2>
@@ -23,6 +31,11 @@ const Hall = () => {
       <div className="menu-list">
         <p>Hambúguer Simples _____________ R$10,00</p>
         <p>Hambúrguer Duplo _____________ R$15,00</p>
+      <button
+        type="submit"
+        className="form-button send-order-button"
+        onClick={turbinar}
+      >Turbinar</button>
       </div>
       <h2 className="menu-title">Acompanhamentos</h2>
       <div className="menu-list">
@@ -36,15 +49,7 @@ const Hall = () => {
         <p>Refrigerante 500ml _______________ R$7,00</p>
         <p>Refrigerante 750ml ______________ R$10,00</p>
       </div>
-      <button
-        type="submit"
-        className="form-button send-order-button"
-        onClick={() => console.log("Turbinando")}
-      >
-        <a href="#order-modal">Turbinar</a>
-      </button>
     </section>
-      {/* <button className="form-button">Logout</button> */}
   </div>
 );}
 

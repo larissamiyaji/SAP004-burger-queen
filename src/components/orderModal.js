@@ -11,7 +11,7 @@ const OrderModal = () => {
     event.preventDefault();
     console.log("Cancelando pedido");
     OrderModal.hidden = true;
-    window.location.href = "/Hall"
+    window.location.href = "/hall"
   };
   return (
     <section id="order-modal" className="modal">
@@ -32,8 +32,8 @@ const OrderModal = () => {
       </div>
       <h3 className="edit-burger">Adicionais</h3>
       <div className="menu-list cheese-egg">
-        <p>Queijo _____________ R$1,00</p>
-        <p>Ovo _____________ R$1,00</p>
+        <button><p>Queijo _____________ R$1,00</p></button>
+        <button><p>Ovo _____________ R$1,00</p></button>
       </div>
       <button type="submit" className="form-button cancel-button" onClick={cancelOrder}>Cancelar</button>
       <button type="submit" className="form-button send-order-button" onClick={sendOrder}>Finalizar</button>

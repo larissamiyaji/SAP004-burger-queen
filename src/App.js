@@ -1,16 +1,16 @@
 import React from "react";
+import firebase from "firebase";
 import Header from "./components/header";
-import Kitchen from "./components/kitchen";
 import Hall from "./components/hall";
 import InfoBox from "./components/infoBox";
-import firebase from "firebase";
+import Kitchen from "./components/kitchen";
+import Login from "./components/login";
 import OrderDetails from "./components/orderCard.js";
 import OrderModal from "./components/orderModal.js";
-import { ButtonLogout } from "./components/Button.js";
-import "./App.css";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Register from "./components/register";
-import Login from "./components/login";
+import { ButtonLogout } from "./components/Button.js";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import "./App.css";
 
 const logout = () => {
   firebase
