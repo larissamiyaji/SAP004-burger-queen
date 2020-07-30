@@ -5,9 +5,9 @@ import InfoBox from "./infoBox";
 import Button from "./Button";
 //  import firebase from "../firebase";
 //  import { database } from "firebase";
-import { firebaseAuth } from "../firebase";
+import { firebaseAuth, firebaseStore } from "../firebase";
 import { urls } from "../Routes";
-import { firebaseStore } from "../firebase";
+// import { firebaseStore } from "../firebase";
 import { useHistory } from "react-router-dom";
 
 function Login() {
