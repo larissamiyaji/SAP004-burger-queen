@@ -3,15 +3,15 @@ import "../App.css";
 import OrderModal from "./orderModal.js";
 import ButtonItem from "./buttonItem";
 
-const turbinar = (event) => {
-  event.preventDefault();
-  console.log("Abrindo modal");
-  OrderModal.hidden = false;
-  window.location.href = "/hall#order-modal";
-};
 
 
 const Hall = () => {
+  const turbinar = (event) => {
+    event.preventDefault();
+    console.log("Abrindo modal");
+    OrderModal.hidden = false;
+    window.location.href = "/hall#order-modal";
+  };
   return (
     <div className="style" id="hall">
       {/* CARDÁPIO */}

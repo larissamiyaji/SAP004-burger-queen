@@ -8,7 +8,7 @@ import Login from "./components/login";
 import OrderDetails from "./components/orderCard.js";
 import OrderModal from "./components/orderModal.js";
 import Register from "./components/register";
-import ButtonLogout from "./components/LogoutButton.js";
+import { ButtonLogout } from "./components/Button.js";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Menu from "./components/Menu"
