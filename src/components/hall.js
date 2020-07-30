@@ -1,6 +1,10 @@
 import React from "react";
+import init from "../firebase"
 import "../App.css";
 import ButtonItem from "./buttonItem";
+import orderDetails from "./orderCard";
+import firebase from "../firebase";
+
 
 /* ABRE UM POP UP QUANDO CLICAR EM HAMBÚRGUER  
   const chooseBurger = (event) => {
@@ -8,7 +12,19 @@ import ButtonItem from "./buttonItem";
     console.log("Turbinando Hambúguer");
 }; */
 
+
+
 const Hall = () => {
+ 
+  firebase.firestore().collection("menu").get().then((snapshot)=>{
+    snapshot.docs.forEach((doc)=>{
+      console.log(doc.data())
+    })
+   
+    
+  })
+
+
   return (
   <div className="style">
     {/* CARDÁPIO */}

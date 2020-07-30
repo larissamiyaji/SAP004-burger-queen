@@ -4,6 +4,7 @@ import "../App.css";
 
 
 
+
 const OrderDetails = () => {
   const sendOrder = (event) => {
     event.preventDefault();
@@ -20,7 +21,7 @@ const OrderDetails = () => {
     console.log(value);
   }; // Captura o valor inserido pelo usuáario
   return (
-    <section className="order-card">
+    <section id="order" className="order-card">
       <h2 className="menu-title text-align">Detalhes do Pedido</h2>
       <div className="order-details">
         <p>Nº do pedido: {}</p>
@@ -48,7 +49,7 @@ const OrderDetails = () => {
         </p>
       </div>
       <div className="menu-list text-align">
-        <div><p>Ítem 1</p></div>
+  <div><p>{}</p></div>
         <div><p>Ítem 2</p></div>
         <div><p>Ítem 3</p></div>
         <div><p>Ítem 4</p></div>

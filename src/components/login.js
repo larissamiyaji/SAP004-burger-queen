@@ -1,13 +1,14 @@
 import React, { useState } from "react";
-import "../App.css";
-import Input from "./input";
-import Button from "./Button";
 import firebase from "../firebase";
 import { database } from "firebase";
 import { firebaseAuth } from "../firebase";
 import { urls } from "../Routes";
 import { firebaseStore } from "../firebase";
-import { useHistory } from "react-router-dom";
+import { useHistory } from "react-router-dom"
+import "../App.css";
+import Input from "./input";
+import Button from "./Button";
+;
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -19,23 +20,28 @@ function Login() {
 
   function handleLogin() {
     const userId = firebaseAuth.currentUser.uid;
-    firebaseStore
+    firebase.auth().onAuthStateChanged(function(user) {
+      if (user) {
+       firebaseStore
       .collection("users")
       .doc(userId)
       .get()
       .then((doc) => {
-        console.log(doc.data().Ocupation);
-        if (doc.data().Ocupation === "Cozinha") {
+        console.log(doc.data().occupation);
+        if (doc.data().occupation === "Cozinha") {
           history.push(urls.kitchen.path);
-        } else {
-          history.push(urls.hall.path);
+      } else {
+        history.push(urls.hall.path);
+      }
+    });
+    
         }
       })
       .catch((error) => {
         console.log(error.message);
       });
   }
-
+  console.log(userId)
   function handleClick(e) {
     e.preventDefault();
     signIn(email, password);
@@ -54,6 +60,20 @@ function Login() {
         console.log(errorCode);
         console.log(errorMessage);
       });
+  }
+  
+   
+  let user = firebase.auth().currentUser;
+
+  if (user != null) {
+    user.providerData.forEach(function (profile) {
+      
+      console.log('  Provider-specific UID: ' + profile.userId);
+      console.log('  Name: ' + profile.displayName);
+      console.log('  Password: ' + profile.displayName);
+      console.log('  Email: ' + profile.email);
+      console.log('  Ocupação: ' + profile.occupation);
+    });
   }
 
   return (

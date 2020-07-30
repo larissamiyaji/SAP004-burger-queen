@@ -10,6 +10,8 @@ import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Register from "./components/register";
 import Login from "./components/login";
+import init from "./firebase"
+
 
 export default function App() {
   return (
