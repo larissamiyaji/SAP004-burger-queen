@@ -8,9 +8,10 @@ import Login from "./components/login";
 import OrderDetails from "./components/orderCard.js";
 import OrderModal from "./components/orderModal.js";
 import Register from "./components/register";
-import { ButtonLogout } from "./components/Button.js";
+import ButtonLogout from "./components/LogoutButton.js";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
+import Menu from "./components/Menu"
 
 const logout = () => {
   firebase
@@ -57,6 +58,7 @@ export default function App() {
 
             {/* HALL */}
             <Route path="/Hall">
+              <Menu />
               <div className="hall-template text-align">
                 <ButtonLogout onClick={logout}>Logout</ButtonLogout>
                 <div className="menu">
