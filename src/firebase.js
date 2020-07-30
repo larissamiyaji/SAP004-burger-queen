@@ -1,6 +1,6 @@
-import firebase from 'firebase/app';
-import 'firebase/auth';
-import 'firebase/firestore';
+import firebase from "firebase/app";
+import "firebase/auth";
+import "firebase/firestore";
 
 const firebaseConfig = {
   apiKey: "AIzaSyCWwRiN3doLWny1igDXSFz6sVyVFzfqYGE",
@@ -10,12 +10,11 @@ const firebaseConfig = {
   storageBucket: "burger-queen04.appspot.com",
   messagingSenderId: "285508123474",
   appId: "1:285508123474:web:b942369079f8d0dcc8188b",
-  measurementId: "G-97X0XWW1P4"
+  measurementId: "G-97X0XWW1P4",
 };
 
-firebase.initializeApp(firebaseConfig);
+export const init = firebase.initializeApp(firebaseConfig);
 
-export const firebaseStore = firebase.firestore();
 export const firebaseAuth = firebase.auth();
+export const firebaseStore = firebase.firestore();
 export default firebase;
-export const auth = firebase.auth();

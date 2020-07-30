@@ -1,7 +1,16 @@
 import React from "react";
+// import init from "../firebase";
 import "../App.css";
 import OrderModal from "./orderModal.js";
 import ButtonItem from "./buttonItem";
+// import orderDetails from "./orderCard";
+import firebase from "../firebase";
+
+/* ABRE UM POP UP QUANDO CLICAR EM HAMBÚRGUER  
+  const chooseBurger = (event) => {
+    event.preventDefault();
+    console.log("Turbinando Hambúguer");
+}; */
 
 const Hall = () => {
   const turbinar = (event) => {
@@ -10,6 +19,17 @@ const Hall = () => {
     OrderModal.hidden = false;
     window.location.href = "/hall#order-modal";
   };
+
+  firebase
+    .firestore()
+    .collection("menu")
+    .get()
+    .then((snapshot) => {
+      snapshot.docs.forEach((doc) => {
+        console.log(doc.data());
+      });
+    });
+
   return (
     <div className="style" id="hall">
       {/* CARDÁPIO */}

@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from "react";
+// import init from "../firebase"
 import { useHistory } from "react-router-dom";
 import { firebaseAuth } from "../firebase";
 import { firebaseStore } from "../firebase";
+import firebase from "../firebase";
 import Input from "./input";
 import InfoBox from "./infoBox"
 import Button from "./Button";
@@ -39,7 +41,7 @@ const Register = () => {
             occupation: occupation,
             email: email,
             password: password,
-            userId: firebaseAuth.currentUser.uid,
+            userUid: firebase.auth().currentUser.uid,
           });
       })
       .then(() => {
@@ -52,6 +54,23 @@ const Register = () => {
       .catch((error) => {
         alert(error.message);
       });
+
+      firebase.auth().onAuthStateChanged((user) => {
+        
+        if (user != null) {
+          user.providerData.forEach(function (Cadastrar) {
+            
+            console.log('  Provider-specific UID: ' + Cadastrar.userId);
+            console.log('  Name: ' + Cadastrar.name);
+            console.log('  Password: ' + Cadastrar.password);
+            console.log('  Email: ' + Cadastrar.email);
+            console.log('  Ocupação: ' + Cadastrar.occupation);
+          });
+        }
+      });
+     
+
+     
   };
 
   return (

@@ -12,6 +12,7 @@ import { ButtonLogout } from "./components/Button.js";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Menu from "./components/Menu"
+// import init from "./firebase"
 
 const logout = () => {
   firebase
@@ -22,6 +23,7 @@ const logout = () => {
       console.log("Logging out");
     });
 };
+
 
 export default function App() {
   return (
