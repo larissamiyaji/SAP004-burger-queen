@@ -1,19 +1,19 @@
 import React from "react";
 import firebase from "firebase";
 import "../App.css";
-
-const db = firebase.firestore();
-db.collection("menu").get().then((snapshot) => {
-  snapshot.docs.forEach((doc) => {
-    console.log(doc.data())
-  })
-})
+/* PEGA A COLLECTION MENU NO FIREBASE*/
 
 // const showMenu = () => {
-// }
-// console.log(showMenu)
-
-const Menu = () => {
+  // }
+  // console.log(showMenu)
+  
+  const Menu = () => {
+    const db = firebase.firestore();
+    db.collection("menu").get().then((snapshot) => {
+      snapshot.docs.forEach((doc) => {
+        console.log("Collection Menu", doc.data())
+      })
+    })
   return <section></section>;
 };
 

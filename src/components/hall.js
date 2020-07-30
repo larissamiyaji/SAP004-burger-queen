@@ -3,8 +3,6 @@ import "../App.css";
 import OrderModal from "./orderModal.js";
 import ButtonItem from "./buttonItem";
 
-
-
 const Hall = () => {
   const turbinar = (event) => {
     event.preventDefault();
