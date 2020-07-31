@@ -8,12 +8,12 @@ import "../App.css";
   // console.log(showMenu)
   
   const Menu = () => {
-    const db = firebase.firestore();
-    db.collection("menu").get().then((snapshot) => {
-      snapshot.docs.forEach((doc) => {
-        console.log("Collection Menu", doc.data())
-      })
-    })
+    // const db = firebase.firestore();
+    // db.collection("menu").get().then((snapshot) => {
+    //   snapshot.docs.forEach((doc) => {
+    //     console.log("Collection Menu", doc.data())
+    //   })
+    // })
   return <section></section>;
 };
 

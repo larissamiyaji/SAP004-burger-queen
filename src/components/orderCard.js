@@ -19,6 +19,7 @@ const OrderDetails = () => {
     const { value } = event.target;
     console.log(value);
   }; // Captura o valor inserido pelo usuáario
+  
   return (
     <section id="order" className="order-card">
       <h2 className="menu-title text-align">Detalhes do Pedido</h2>

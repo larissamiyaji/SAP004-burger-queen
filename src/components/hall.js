@@ -5,6 +5,7 @@ import OrderModal from "./orderModal.js";
 import ButtonItem from "./buttonItem";
 // import orderDetails from "./orderCard";
 import firebase from "../firebase";
+import InfoBox from "./infoBox.js"
 
 /* ABRE UM POP UP QUANDO CLICAR EM HAMBÚRGUER  
   const chooseBurger = (event) => {
@@ -20,15 +21,18 @@ const Hall = () => {
     window.location.href = "/hall#order-modal";
   };
 
-  firebase
+  const menu = () => {
+    firebase
     .firestore()
     .collection("menu")
     .get()
     .then((snapshot) => {
       snapshot.docs.forEach((doc) => {
-        console.log(doc.data());
+        console.log("Collection Menu", doc.data());
       });
     });
+  }
+  
 
   return (
     <div className="style" id="hall">
