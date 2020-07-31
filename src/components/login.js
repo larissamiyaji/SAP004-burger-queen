@@ -17,28 +17,31 @@ function Login() {
   //  const [userId, setUserId] = useState("");
 
   const history = useHistory();
+  const handleAuth = () => {
+    firebaseAuth.onAuthStateChanged((user) =>{
+      if(user !== null){
+        return true;
+      }else{
+        return false;
+      }
+    });
+  };
 
   function handleLogin() {
     const userId = firebaseAuth.currentUser.uid;
-    firebase.auth().onAuthStateChanged(function(user) {
-      if (user) {
-       firebaseStore
-      .collection("users")
+    firebaseStore
+      .collection('users')
       .doc(userId)
       .get()
       .then((doc) => {
-        console.log(doc.data().occupation);
-        if (doc.data().occupation === "Cozinha") {
+        if (doc.data().occupation === 'Salão') {
+          history.push(urls.hall.path);
+        } else {
           history.push(urls.kitchen.path);
-      } else {
-        history.push(urls.hall.path);
-      }
-    });
-    
         }
       })
       .catch((error) => {
-        console.log(error.message);
+        alert(error.message);
       });
       console.log(userId)
   }
@@ -52,6 +55,7 @@ function Login() {
       .signInWithEmailAndPassword(email, password)
       .then(() => {
         handleLogin();
+        console.log(firebase.auth().currentUser.uid);
         console.log("LOGOU");
       })
       .catch((error) => {
@@ -62,20 +66,6 @@ function Login() {
       });
   }
   
-   
-  let user = firebase.auth().currentUser;
-
-  if (user != null) {
-    user.providerData.forEach(function (profile) {
-      
-      console.log('  Provider-specific UID: ' + profile.userId);
-      console.log('  Name: ' + profile.displayName);
-      console.log('  Password: ' + profile.displayName);
-      console.log('  Email: ' + profile.email);
-      console.log('  Ocupação: ' + profile.occupation);
-    });
-  }
-
   return (
     <div className="login">
       <h2 className="sub-title">Login</h2>

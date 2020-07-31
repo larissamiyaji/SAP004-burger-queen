@@ -29,7 +29,7 @@ const Register = () => {
     cadastrar(email, password, name, occupation);
   };
 
-  const cadastrar = (email, password, name, occupation) => {
+  const cadastrar = (email, password, name, occupation,userId) => {
     firebaseAuth
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
@@ -37,12 +37,13 @@ const Register = () => {
           .collection("users")
           .doc(firebaseAuth.currentUser.uid)
           .set({
-            displayName: name,
-            occupation: occupation,
             email: email,
             password: password,
+            Name: name,
+            occupation: occupation,
             userUid: firebase.auth().currentUser.uid,
           });
+          console.log(firebase.auth().currentUser.uid)
       })
       .then(() => {
         if (occupation === "Cozinha") {
@@ -53,24 +54,7 @@ const Register = () => {
       })
       .catch((error) => {
         alert(error.message);
-      });
-
-      firebase.auth().onAuthStateChanged((user) => {
-        
-        if (user != null) {
-          user.providerData.forEach(function (Cadastrar) {
-            
-            console.log('  Provider-specific UID: ' + Cadastrar.userId);
-            console.log('  Name: ' + Cadastrar.name);
-            console.log('  Password: ' + Cadastrar.password);
-            console.log('  Email: ' + Cadastrar.email);
-            console.log('  Ocupação: ' + Cadastrar.occupation);
-          });
-        }
-      });
-     
-
-     
+      });  
   };
 
   return (
