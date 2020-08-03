@@ -5,13 +5,16 @@
   border: 0;
   box-sizing: border-box;
 }
+
 body{
   background-color: #728da10e;
 }
+
 /*  HEADER E TÍTULOS */
 h1{
   text-align: center;
 }
+
 label{
   width: 250px;
 }
@@ -29,6 +32,7 @@ label{
   font-size: 2.5em;
   margin-bottom: 30px;
 }
+
 .label{
   font-size: 1.2em;
   color: #000000;
@@ -74,29 +78,42 @@ label{
 }
 
 .description{
-  width: 500px;
-  height: 200px;
-  border-radius: 40px;
   background-color: #D56877;
-  text-align: center;
+  border-radius: 40px;
+  display: inline-block;
+  height: fit-content;
   margin-top: 10px;
   padding: 10px;
+  text-align: center;
+  width: 500px;
 }
 
 /*  INPUTS BOTÕES */
-.style{
-  display: flex;
-  align-items: flex-start;
-}
-.form-button{
-  width: 100px;
-  height: 30px;
+.logout-position{
+  background-color: #D3ADAB;
   border-radius: 40px 10px 40px 10px;
   font-size: 1.1em;
-  margin: 10px;
-  background-color: #D56877;
+  height: 30px;
+  position: absolute;
+  right: 10px;
+  top: 25px;
+  width: 100px;
 }
-.form-button:hover{
+
+.form-button{
+  background-color: #D56877;
+  border-radius: 40px 10px 40px 10px;
+  font-size: 1.1em;
+  height: 30px;
+  margin: 10px;
+  width: fit-content;
+  padding-left: 12px;
+  padding-right: 12px;
+}
+
+.ButtonItem:hover,
+.form-button:hover,
+.logout-position:hover{
   background-color: #aa5460;
   cursor: pointer;
 }
@@ -168,6 +185,8 @@ margin-top: 20px;
 
 .menu{
   display: flex;
+  justify-content: center;
+  margin-top: -50px;
 }
 
 .menu-all{
@@ -192,15 +211,23 @@ margin-top: 20px;
 }
 /*  MODAL */
 .modal{
-  visibility: hidden;
-  position: absolute;
-  background-color: #b9a8ba;
   width: 400px;
   height: 320px;
+  position: absolute;
+  margin-left: auto;
+  display: none;
+  background-color: #b9a8ba;
   border-radius: 40px;
   text-align: center;
   box-shadow: black 5px 5px 100px 0px;
   padding-top: 10px;
+}
+
+.modal:target{
+  display: block;
+  top: 250px;
+  transition: all 0.3s;
+  transition-delay: 0.2s;
 }
 
 .hidden{
@@ -220,6 +247,11 @@ margin-top: 20px;
   margin-left: 40px;
   text-align: left;
   font-weight: 600;
+}
+
+.occupation-options{
+  display: flex;
+  justify-content: center;
 }
 
 .cheese-egg{
@@ -257,6 +289,10 @@ margin-top: 20px;
 
 .order-bottom-info{
   text-align: center;
+}
+
+.clients-info{
+  display: flex;
 }
 
 .value-total{

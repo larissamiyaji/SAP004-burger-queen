@@ -77,10 +77,18 @@ const OrderDetails = () => {
         </p>
       </div>
       <div className="menu-list text-align">
-  <div><p>{}</p></div>
-        <div><p>Ítem 2</p></div>
-        <div><p>Ítem 3</p></div>
-        <div><p>Ítem 4</p></div>
+        <div>
+          <p>{}</p>
+        </div>
+        <div>
+          <p>Ítem 2</p>
+        </div>
+        <div>
+          <p>Ítem 3</p>
+        </div>
+        <div>
+          <p>Ítem 4</p>
+        </div>
       </div>
       <div className="order-bottom-info">
         <p className="value-total">Total: R${}</p>

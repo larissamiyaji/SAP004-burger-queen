@@ -1,17 +1,27 @@
 import React from "react";
-import Header from "./components/header";
-import Kitchen from "./components/kitchen";
-import Hall from "./components/hall";
-import InfoBox from "./components/infoBox";
-import OrderDetails from "./components/orderCard.js";
-import OrderModal from "./components/orderModal.js";
-import Button from "./components/Button.js";
-import "./App.css";
+import firebase from "./firebase";
+import Header from "./components/Header";
+import Hall from "./components/Hall.jsx";
+import Kitchen from "./components/Kitchen";
+import Login from "./components/Login";
+import OrderDetails from "./components/OrderCard";
+import OrderModal from "./components/OrderModal";
+import Register from "./components/Register";
+import ButtonLogout from "./components/LogoutButton.jsx";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import Register from "./components/register";
-import Login from "./components/login";
-import init from "./firebase"
+import "./App.css";
+// import Menu from "./components/Menu";
+// import init from "./firebase"
 
+const logout = () => {
+  firebase
+    .auth()
+    .signOut()
+    .then(() => {
+      window.location.href = "/";
+      console.log("Logging out");
+    });
+};
 
 export default function App() {
   return (
@@ -22,22 +32,21 @@ export default function App() {
           <Switch>
             {/* REGISTER */}
             <Route path="/Register">
-              <div>
-                <Register />
-                <InfoBox />
-              </div>
+              <Register />
             </Route>
             {/* KITCHEN */}
             <Route path="/Kitchen">
+              <ButtonLogout onClick={logout} name="Logout" />
               <Kitchen />
             </Route>
 
             {/* HALL */}
             <Route path="/Hall">
+              {/* <Menu /> */}
               <div className="hall-template text-align">
-                <Button name="Logout" />
+                <ButtonLogout onClick={logout} name="Logout" />
                 <div className="menu">
-                <Hall />
+                  <Hall />
                   <OrderDetails />
                   <OrderModal className="hidden" />
                 </div>
@@ -46,10 +55,7 @@ export default function App() {
 
             {/* LOGIN */}
             <Route path="/">
-              <div>
-                <Login />
-                <InfoBox />
-              </div>
+              <Login />
             </Route>
           </Switch>
         </div>
