@@ -36,7 +36,7 @@ export default function App() {
             </Route>
             {/* KITCHEN */}
             <Route path="/Kitchen">
-              <ButtonLogout onClick={logout} name="Logout"/>
+              <ButtonLogout onClick={logout} name="Logout" />
               <Kitchen />
             </Route>
 
@@ -44,7 +44,7 @@ export default function App() {
             <Route path="/Hall">
               <Menu />
               <div className="hall-template text-align">
-              <ButtonLogout onClick={logout} name="Logout" />
+                <ButtonLogout onClick={logout} name="Logout" />
                 <div className="menu">
                   <Hall />
                   <OrderDetails />

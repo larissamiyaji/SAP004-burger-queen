@@ -21,7 +21,6 @@ const ButtonLogout = (props) => {
 
 export default ButtonLogout;
 
-
 // const ButtonLogout = ({ children, onClick }) => {
 //   return (
 //     <button className="logout-position" onClick={onClick}>

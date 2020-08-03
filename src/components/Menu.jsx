@@ -2,7 +2,6 @@ import React from "react";
 import firebase from "../firebase";
 import "../App.css";
 
-
 const Menu = () => {
   const db = firebase.firestore();
   db.collection("menu")
@@ -12,11 +11,7 @@ const Menu = () => {
         console.log("Collection Menu", doc.data());
       });
     });
-  return (
-    <section>
-      
-    </section>
-  );
+  return <section></section>;
 };
 
 export default Menu;
