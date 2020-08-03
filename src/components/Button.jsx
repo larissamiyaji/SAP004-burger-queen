@@ -1,13 +1,13 @@
 import React from "react";
 import "../App.css";
 
-export const ButtonLogout = ({ children, onClick }) => {
-  return (
-    <button className="logout-position" onClick={onClick}>
-      {children}
-    </button>
-  );
-};
+// export const ButtonLogout = ({ children, onClick }) => {
+//   return (
+//     <button className="logout-position" onClick={onClick}>
+//       {children}
+//     </button>
+//   );
+// };
 
 const Button = (props) => {
   return (
