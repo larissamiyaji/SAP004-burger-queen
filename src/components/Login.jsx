@@ -1,14 +1,14 @@
 import React, { useState } from "react";
-import firebase from "../firebase";
+// import firebase from "../firebase";
 // import { database } from "firebase";
 import { firebaseAuth } from "../firebase";
 import { urls } from "../Routes";
 import { firebaseStore } from "../firebase";
 import { useHistory } from "react-router-dom"
 import "../App.css";
-import Input from "./input";
+import Input from "./Input";
 import Button from "./Button";
-import InfoBox from "../components/infoBox.js"
+import InfoBox from "./InfoBox"
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -17,15 +17,15 @@ function Login() {
   //  const [userId, setUserId] = useState("");
 
   const history = useHistory();
-  const handleAuth = () => {
-    firebaseAuth.onAuthStateChanged((user) =>{
-      if(user !== null){
-        return true;
-      }else{
-        return false;
-      }
-    });
-  };
+  // const handleAuth = () => {
+  //   firebaseAuth.onAuthStateChanged((user) =>{
+  //     if(user !== null){
+  //       return true;
+  //     }else{
+  //       return false;
+  //     }
+  //   });
+  // };
 
   function handleLogin() {
     const userId = firebaseAuth.currentUser.uid;
@@ -43,7 +43,7 @@ function Login() {
       .catch((error) => {
         alert(error.message);
       });
-      console.log(userId)
+      console.log("User uid:", userId)
   }
   function handleClick(e) {
     e.preventDefault();
@@ -55,7 +55,7 @@ function Login() {
       .signInWithEmailAndPassword(email, password)
       .then(() => {
         handleLogin();
-        console.log(firebase.auth().currentUser.uid);
+        // console.log(firebase.auth().currentUser.uid);
         console.log("LOGOU");
       })
       .catch((error) => {

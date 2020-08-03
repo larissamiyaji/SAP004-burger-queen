@@ -1,11 +1,11 @@
 import React from "react";
-// import init from "../firebase";
-import "../App.css";
-import OrderModal from "./orderModal.js";
-import ButtonItem from "./buttonItem";
-// import orderDetails from "./orderCard";
+import OrderModal from "./OrderModal";
+import ButtonItem from "./ButtonItem";
 import firebase from "../firebase";
-import InfoBox from "./infoBox.js"
+import "../App.css";
+// import init from "../firebase";
+// import orderDetails from "./orderCard";
+
 
 /* ABRE UM POP UP QUANDO CLICAR EM HAMBÚRGUER  
   const chooseBurger = (event) => {
@@ -22,7 +22,7 @@ const Hall = () => {
   };
 
   const menu = () => {
-    firebase
+    firebase // Collection Menu - Traz no console o menu
     .firestore()
     .collection("menu")
     .get()
@@ -30,7 +30,23 @@ const Hall = () => {
       snapshot.docs.forEach((doc) => {
         console.log("Collection Menu", doc.data());
       });
-    });
+    }); 
+
+    // firebase // Collection Users - Traz no console as informações dos usuários
+    // .firestore()
+    // .collection("users")
+    // .get()
+    // .then((snapshot) => {
+    //   snapshot.docs.forEach((doc) => {
+    //     const userId = doc.data().userId;
+    //     const displayName = doc.data().displayName;
+    //     const occupation = doc.data().occupation;
+    //     console.log("DisplayName:", displayName);
+    //     console.log("User ID:", userId);
+    //     console.log("Ocupação:", occupation);
+    //     console.log("----------------");
+    //   });
+    // }); 
   }
   
 
@@ -38,6 +54,11 @@ const Hall = () => {
     <div className="style" id="hall">
       {/* CARDÁPIO */}
       <section className="text-align menu-all">
+        <div onLoad={menu}>
+          <button onClick={menu}>Show Menu</button>
+        </div>
+
+
         <h2 className="menu-title">Café da Manhã</h2>
         <div className="menu-list">
           <ButtonItem Name="Café Americano" Price="5" />

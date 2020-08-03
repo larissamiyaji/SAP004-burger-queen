@@ -4,8 +4,8 @@ import { useHistory } from "react-router-dom";
 import { firebaseAuth } from "../firebase";
 import { firebaseStore } from "../firebase";
 import firebase from "../firebase";
-import Input from "./input";
-import InfoBox from "./infoBox"
+import Input from "./Input";
+import InfoBox from "./InfoBox"
 import Button from "./Button";
 import { urls } from "../Routes";
 import "../App.css";

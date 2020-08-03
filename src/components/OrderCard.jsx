@@ -1,8 +1,6 @@
 import React from "react";
 import "../App.css";
-import Input from "./input";
-
-
+import Input from "./Input";
 
 const OrderDetails = () => {
   const sendOrder = (event) => {

@@ -1,14 +1,14 @@
 import React from "react";
-import firebase from "./firebase.js";
-import Header from "./components/header";
-import Hall from "./components/hall";
-import InfoBox from "./components/infoBox";
-import Kitchen from "./components/kitchen";
-import Login from "./components/login";
-import OrderDetails from "./components/orderCard.js";
-import OrderModal from "./components/orderModal.js";
-import Register from "./components/register";
-import { ButtonLogout } from "./components/Button.js";
+import firebase from "./firebase";
+import Header from "./components/Header";
+import Hall from "./components/Hall";
+import InfoBox from "./components/InfoBox";
+import Kitchen from "./components/Kitchen";
+import Login from "./components/Login";
+import OrderDetails from "./components/OrderCard";
+import OrderModal from "./components/OrderModal";
+import Register from "./components/Register";
+import { ButtonLogout } from "./components/Button";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 import Menu from "./components/Menu"
