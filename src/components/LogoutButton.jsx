@@ -2,7 +2,7 @@ import React from "react";
 import firebase from "../firebase";
 import "../App.css";
 
-const ButtonLogout = ({ children }) => {
+const ButtonLogout = (props) => {
   const logout = () => {
     firebase
       .auth()
@@ -14,7 +14,7 @@ const ButtonLogout = ({ children }) => {
   };
   return (
     <button className="logout-position form-button" onClick={logout}>
-      {children}
+      {props.name}
     </button>
   );
 };

@@ -4,11 +4,11 @@ import React, { useState } from "react";
 import { firebaseAuth } from "../firebase";
 import { urls } from "../Routes";
 import { firebaseStore } from "../firebase";
-import { useHistory } from "react-router-dom"
+import { useHistory } from "react-router-dom";
 import "../App.css";
 import Input from "./Input";
 import Button from "./Button";
-import InfoBox from "./InfoBox"
+import InfoBox from "./InfoBox";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -30,11 +30,11 @@ function Login() {
   function handleLogin() {
     const userId = firebaseAuth.currentUser.uid;
     firebaseStore
-      .collection('users')
+      .collection("users")
       .doc(userId)
       .get()
       .then((doc) => {
-        if (doc.data().occupation === 'Salão') {
+        if (doc.data().occupation === "Salão") {
           history.push(urls.hall.path);
         } else {
           history.push(urls.kitchen.path);
@@ -43,7 +43,7 @@ function Login() {
       .catch((error) => {
         alert(error.message);
       });
-      console.log("User uid:", userId)
+    console.log("User uid:", userId);
   }
   function handleClick(e) {
     e.preventDefault();
@@ -65,7 +65,7 @@ function Login() {
         console.log(errorMessage);
       });
   }
-  
+
   return (
     <div className="login">
       <h2 className="sub-title">Login</h2>
@@ -92,7 +92,12 @@ function Login() {
           Ainda não possui conta? <a href="/Register">Cadastre-se</a>
         </p>
       </form>
-      <InfoBox />
+      <InfoBox
+        titleBurgerQueen="Sobre Burger Queen"
+        aboutBurgerQueen="Lorem Ipsum é simplesmente uma simulação de texto da
+                      indústria tipográfica e de impressos, e vem sendo
+                      utilizado desde o século XVI"
+      />
     </div>
   );
 }

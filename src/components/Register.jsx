@@ -5,7 +5,7 @@ import { firebaseAuth } from "../firebase";
 import { firebaseStore } from "../firebase";
 import firebase from "../firebase";
 import Input from "./Input";
-import InfoBox from "./InfoBox"
+import InfoBox from "./InfoBox";
 import Button from "./Button";
 import { urls } from "../Routes";
 import "../App.css";
@@ -29,7 +29,7 @@ const Register = () => {
     cadastrar(email, password, name, occupation);
   };
 
-  const cadastrar = (email, password, name, occupation,userId) => {
+  const cadastrar = (email, password, name, occupation, userId) => {
     firebaseAuth
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
@@ -43,7 +43,7 @@ const Register = () => {
             occupation: occupation,
             userUid: firebase.auth().currentUser.uid,
           });
-          console.log(firebase.auth().currentUser.uid)
+        console.log(firebase.auth().currentUser.uid);
       })
       .then(() => {
         if (occupation === "Cozinha") {
@@ -54,7 +54,7 @@ const Register = () => {
       })
       .catch((error) => {
         alert(error.message);
-      });  
+      });
   };
 
   return (
@@ -86,7 +86,8 @@ const Register = () => {
           required
         />
         <div className="occupation">
-          <label className="label">Escolha sua função:</label><br></br>
+          <label className="label">Escolha sua função:</label>
+          <br></br>
           <label className="label">Cozinha</label>
           <Input
             type="radio"
@@ -109,7 +110,14 @@ const Register = () => {
         <Button onClick={returnPage} name="Voltar" type="submit" />
         <Button onClick={prevent} name="Cadastrar" type="submit" />
       </form>
-      <InfoBox />
+      <InfoBox
+        kitchenText="Para ser direcionado para a página da Cozinha, selecione
+                  cozinha nas opções acima."
+        hallText="Para ser direcionado para a página do Salão, selecione
+                  salão nas opções acima."
+        titleKitchen="Cozinha"
+        titleHall="Salão"
+      />
     </div>
   );
 };
