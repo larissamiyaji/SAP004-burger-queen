@@ -1,5 +1,4 @@
 import React from "react";
-import init from "../firebase"
 import "../App.css";
 import ButtonItem from "./buttonItem";
 import orderDetails from "./orderCard";
@@ -32,27 +31,27 @@ const Hall = () => {
       <h2 className="menu-title">Café da Manhã</h2>
       <div className="menu-list">
       
-      <ButtonItem Name ="Café Americano" Price="5"  />
-        <ButtonItem Name ="Café com Leite" Price="7"  />
-        <ButtonItem Name ="Misto Quente" Price="10"  />
-        <ButtonItem Name ="Suco de Fruta" Price="7"  />
+      <ButtonItem name ="Café Americano" price="5"  />
+        <ButtonItem name ="Café com Leite" Price="7"  />
+        <ButtonItem name ="Misto Quente" price="10"  />
+        <ButtonItem name ="Suco de Fruta" price="7"  />
       </div>
       <h2 className="menu-title">Hambúrguer</h2>
       <div className="menu-list">
-      <ButtonItem Name ="Hambúrguer Simples" Price="10"  />
-      <ButtonItem Name ="Hamburguer Duplo" Price="15"  />
+      <ButtonItem name ="Hambúrguer Simples" price="10"  />
+      <ButtonItem name ="Hamburguer Duplo" price="15"  />
       </div>
       <h2 className="menu-title">Acompanhamentos</h2>
       <div className="menu-list">
-      <ButtonItem Name ="Batata Frita" Price="5"  />
-        <ButtonItem Name ="Anéis de Cebola" Price="5"  />
+      <ButtonItem name ="Batata Frita" price="5"  />
+        <ButtonItem name ="Anéis de Cebola" price="5"  />
       </div>
       <h2 className="menu-title">Bebidas</h2>
       <div className="menu-list">
-      <ButtonItem Name =" Água 500ml" Price="5" />
-        <ButtonItem Name =" Água 750ml" Price="7" />
-        <ButtonItem Name =" Refrigerante 500ml" Price="7"  />
-        <ButtonItem Name =" Refrigerante 750ml" Price="10"  />
+      <ButtonItem name =" Água 500ml" price="5" />
+        <ButtonItem name =" Água 750ml" price="7" />
+        <ButtonItem name =" Refrigerante 500ml" price="7"  />
+        <ButtonItem name =" Refrigerante 750ml" price="10"  />
        
         
       </div>
