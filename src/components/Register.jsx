@@ -87,25 +87,28 @@ const Register = () => {
         />
         <div className="occupation">
           <label className="label">Escolha sua função:</label>
-          <br></br>
-          <label className="label">Cozinha</label>
-          <Input
-            type="radio"
-            id="input-area-cozinha"
-            name="area"
-            value="Cozinha"
-            onChange={(e) => setoccupation(e.currentTarget.value)}
-            required
-          />
-          <label className="label">Salão</label>
-          <Input
-            type="radio"
-            id="input-area-salao"
-            name="area"
-            value="Salão"
-            onChange={(e) => setoccupation(e.currentTarget.value)}
-            required
-          />
+          <div className="radio-buttons occupation-options">
+            <label className="label">Cozinha</label>
+            <Input
+              type="radio"
+              id="input-area-cozinha"
+              name="area"
+              value="Cozinha"
+              onChange={(e) => setoccupation(e.currentTarget.value)}
+              required
+            />
+          </div>
+          <div className="radio-buttons occupation-options">
+            <label className="label">Salão</label>
+            <Input
+              type="radio"
+              id="input-area-salao"
+              name="area"
+              value="Salão"
+              onChange={(e) => setoccupation(e.currentTarget.value)}
+              required
+            />
+          </div>
         </div>
         <Button onClick={returnPage} name="Voltar" type="submit" />
         <Button onClick={prevent} name="Cadastrar" type="submit" />

@@ -247,6 +247,11 @@ margin-top: 20px;
   font-weight: 600;
 }
 
+.occupation-options{
+  display: flex;
+  justify-content: center;
+}
+
 .cheese-egg{
   text-align: left;
   margin-left: 40px;
