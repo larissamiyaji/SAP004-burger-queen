@@ -1,25 +1,29 @@
 import { firebaseStore } from "../firebase";
-import firebase from "../firebase";  
-import React, { useState, useEffect } from 'react';
+import firebase from "../firebase";
+import React, { useState, useEffect } from "react";
 import "../App.css";
-
-
 
 const OrderDetails = () => {
   const [order, setOrder] = useState("0");
   const [table, setTable] = useState("");
   const [client, setClient] = useState("");
-  
-  firebase.firestore().collection("orders").get().then((snapshot)=>{
-    snapshot.docs.forEach((doc)=>{
-      console.log(doc.data())
-    })
-   
-    
-  })
+
+  firebase
+    .firestore()
+    .collection("orders")
+    .get()
+    .then((snapshot) => {
+      snapshot.docs.forEach((doc) => {
+        console.log(doc.data());
+      });
+    });
 
   useEffect(() => {}, [order, table, client]);
 
+  const cancelOrder = (event) => {
+    event.preventDefault();
+    console.log("Cancelando pedido");
+  };
   const sendOrder = (order) => {
     const orderNumber = parseInt(order + 1);
     return setOrder(orderNumber);
@@ -31,12 +35,12 @@ const OrderDetails = () => {
     sendOrder(order);
   };
 
-
   const newOrder = (order, table, client) => {
     firebaseStore
-      .collection("orders").add({
+      .collection("orders")
+      .add({
         order: order,
-        status: 'pedido em andamento',
+        status: "pedido em andamento",
         table: table,
         client: client,
       })
@@ -72,7 +76,7 @@ const OrderDetails = () => {
             className="order-details-input input"
             placeholder="Insira o nome do cliente"
             value={client}
-          onChange={(e) => setClient(e.currentTarget.value)}
+            onChange={(e) => setClient(e.currentTarget.value)}
           ></input>
         </p>
       </div>
@@ -92,8 +96,14 @@ const OrderDetails = () => {
       </div>
       <div className="order-bottom-info">
         <p className="value-total">Total: R${}</p>
-       
-    
+
+        <button
+          type="submit"
+          className="form-button cancel-button"
+          onClick={cancelOrder}
+        >
+          Cancelar
+        </button>
         <button
           type="submit"
           className="form-button send-order-button"
