@@ -106,7 +106,9 @@ label{
   font-size: 1.1em;
   height: 30px;
   margin: 10px;
-  width: 100px;
+  width: fit-content;
+  padding-left: 12px;
+  padding-right: 12px;
 }
 
 .ButtonItem:hover,

@@ -1,7 +1,9 @@
 import React from "react";
 import OrderModal from "./OrderModal";
-import ButtonItem from "./ButtonItem";
+// import ButtonItem from "./ButtonItem";
 import firebase from "../firebase";
+import Menu from "./Menu";
+import Button from "./Button"
 import "../App.css";
 // import init from "../firebase";
 // import orderDetails from "./orderCard";
@@ -55,11 +57,126 @@ const Hall = () => {
       {/* CARDÁPIO */}
       <section className="text-align menu-all">
         <div onLoad={menu}>
-          <button onClick={menu}>Show Menu</button>
+          <button onClick={menu}>Show Menu no Console</button>
         </div>
 
+        <Menu title="Café da Manhã">
+          <Button
+            name="Café Americano"
+            price={(5).toLocaleString("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            })}
+          />
+          <Button
+            name="Café com Leite"
+            price={(7).toLocaleString("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            })}
+          />
+          <Button
+            name="Misto Quente"
+            price={(10).toLocaleString("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            })}
+          />
+          <Button
+            name="Suco de Fruta"
+            price={(7).toLocaleString("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            })}
+          />
+        </Menu>
 
-        <h2 className="menu-title">Café da Manhã</h2>
+        <Menu title="Hambúrguer">
+          <Button
+            name="Hambúrguer Simples"
+            price={(10).toLocaleString("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            })}
+          />
+          <Button
+            name="Hambúrguer Duplo"
+            price={(15).toLocaleString("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            })}
+          />
+        </Menu>
+
+        <Menu title="Acompanhamentos">
+          <Button
+            name="Batata Frita"
+            price={(5).toLocaleString("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            })}
+          />
+          <Button
+            name="Anéis de Cebola"
+            price={(5).toLocaleString("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            })}
+          />
+        </Menu>
+
+        <Menu title="Bebidas">
+          <Button
+            name="Água 500ml"
+            price={(5).toLocaleString("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            })}
+          />
+          <Button
+            name="Água 750ml"
+            price={(7).toLocaleString("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            })}
+          />
+          <Button
+            name="Refrigerante 500ml"
+            price={(7).toLocaleString("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            })}
+          />
+          <Button
+            name="Refrigerante 750ml"
+            price={(10).toLocaleString("pt-BR", {
+              style: "currency",
+              currency: "BRL",
+            })}
+          />
+        </Menu>
+
+        <button
+          type="submit"
+          className="form-button send-order-button"
+          onClick={turbinar}
+        >
+          Turbinar
+        </button>
+
+
+
+
+
+
+
+
+
+
+
+
+
+        {/* <h2 className="menu-title">Café da Manhã</h2>
         <div className="menu-list">
           <ButtonItem Name="Café Americano" Price="5" />
           <ButtonItem Name="Café com Leite" Price="7" />
@@ -89,7 +206,7 @@ const Hall = () => {
           onClick={turbinar}
         >
           Turbinar
-        </button>
+        </button> */}
       </section>
     </div>
   );

@@ -10,7 +10,7 @@ import Register from "./components/Register";
 import ButtonLogout from "./components/LogoutButton.jsx";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
-import Menu from "./components/Menu";
+// import Menu from "./components/Menu";
 // import init from "./firebase"
 
 const logout = () => {
@@ -42,7 +42,7 @@ export default function App() {
 
             {/* HALL */}
             <Route path="/Hall">
-              <Menu />
+              {/* <Menu /> */}
               <div className="hall-template text-align">
                 <ButtonLogout onClick={logout} name="Logout" />
                 <div className="menu">
