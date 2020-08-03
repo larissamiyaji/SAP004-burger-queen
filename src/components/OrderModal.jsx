@@ -11,9 +11,10 @@ const OrderModal = () => {
     event.preventDefault();
     console.log("Cancelando pedido");
     OrderModal.hidden = true;
+    window.location.href = "/hall";
   };
   return (
-    <section className="modal">
+    <section id="order-modal" className="modal">
       <h2>Turbine seu hambúrguer</h2>
       <h3 className="edit-burger">Tipo de carne</h3>
       <div className="radio-buttons">
@@ -31,8 +32,12 @@ const OrderModal = () => {
       </div>
       <h3 className="edit-burger">Adicionais</h3>
       <div className="menu-list cheese-egg">
-        <p>Queijo _____________ R$1,00</p>
-        <p>Ovo _____________ R$1,00</p>
+        <button>
+          <p>Queijo _____________ R$1,00</p>
+        </button>
+        <button>
+          <p>Ovo _____________ R$1,00</p>
+        </button>
       </div>
       <button
         type="submit"
