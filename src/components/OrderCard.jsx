@@ -1,10 +1,11 @@
 import { firebaseStore } from "../firebase";
 import firebase from "../firebase";
 import React, { useState, useEffect } from "react";
+import Input from "./Input"
 import "../App.css";
 
 const OrderDetails = () => {
-  const [order, setOrder] = useState("0");
+  const [order, setOrder] = useState(1);
   const [table, setTable] = useState("");
   const [client, setClient] = useState("");
 
@@ -57,27 +58,28 @@ const OrderDetails = () => {
       <div className="order-details">
         <p>Nº do pedido: {order}</p>
         <p>
-          Nº da mesa:{table}
-          <input
+          Nº da mesa:
+          <Input
             id="table-number"
             type="number"
             name={table}
             className="order-details-input input"
             placeholder="Insira o nº da mesa"
-            required
             onChange={(e) => setTable(e.currentTarget.value)}
-          ></input>
+            required
+          ></Input>
         </p>
         <p>
-          Cliente:{client}
-          <input
+          Cliente:
+          <Input
             id="client-name"
             type="text"
             className="order-details-input input"
             placeholder="Insira o nome do cliente"
             value={client}
             onChange={(e) => setClient(e.currentTarget.value)}
-          ></input>
+            required
+          ></Input>
         </p>
       </div>
       <div className="menu-list text-align">
