@@ -1,22 +1,26 @@
 import { firebaseStore } from "../firebase";
 import firebase from "../firebase";  
 import React, { useState, useEffect } from 'react';
+import Menu from "./Menu";
+import Button from "./Button";
 import "../App.css";
+import Hall from './Hall'
 
 
 
-const OrderDetails = () => {
-  const [order, setOrder] = useState("0");
+const OrderDetails = (props) => {
+  const [order, setOrder] = useState(1);
   const [table, setTable] = useState("");
   const [client, setClient] = useState("");
-  
+  const [allday, setAllday] = useState(false);
+  const [menuBreakfast, setMenuBreakfast] = useState([]);
+  const [menuAllday, setMenuAllday] = useState([]);
+ 
   firebase.firestore().collection("orders").get().then((snapshot)=>{
     snapshot.docs.forEach((doc)=>{
       console.log(doc.data())
-    })
-   
-    
-  })
+    }) 
+  });
 
   useEffect(() => {}, [order, table, client]);
 
@@ -25,20 +29,32 @@ const OrderDetails = () => {
     return setOrder(orderNumber);
   };
 
+ 
   const prevent = (event) => {
     event.preventDefault();
     newOrder(order, table, client);
     sendOrder(order);
   };
+  const cancelOrder = (event) => {
+    event.preventDefault();
+    console.log("Cancelando pedido");
+  };
+
+  
+   
+  
 
 
-  const newOrder = (order, table, client) => {
+  const newOrder = (order, table, client,menuAllday,menuBreakfast) => {
     firebaseStore
       .collection("orders").add({
         order: order,
         status: 'pedido em andamento',
         table: table,
         client: client,
+        menuAllday: false,
+
+
       })
       .then((docs) => {
         alert("Pedido enviado");
@@ -52,8 +68,7 @@ const OrderDetails = () => {
       <h2 className="menu-title text-align">Detalhes do Pedido</h2>
       <div className="order-details">
         <p>Nº do pedido: {order}</p>
-        <p>
-          Nº da mesa:{table}
+     
           <input
             id="table-number"
             type="number"
@@ -63,9 +78,8 @@ const OrderDetails = () => {
             required
             onChange={(e) => setTable(e.currentTarget.value)}
           ></input>
-        </p>
-        <p>
-          Cliente:{client}
+        
+        
           <input
             id="client-name"
             type="text"
@@ -74,11 +88,12 @@ const OrderDetails = () => {
             value={client}
           onChange={(e) => setClient(e.currentTarget.value)}
           ></input>
-        </p>
+        
+      
       </div>
       <div className="menu-list text-align">
         <div>
-          <p>{}</p>
+       
         </div>
         <div>
           <p>Ítem 2</p>
@@ -100,6 +115,13 @@ const OrderDetails = () => {
           onClick={prevent}
         >
           Finalizar
+        </button>
+        <button
+          type="submit"
+          className="form-button cancel-button"
+          onClick={cancelOrder}
+        >
+          Cancelar
         </button>
       </div>
     </section>

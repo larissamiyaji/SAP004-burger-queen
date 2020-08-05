@@ -4,7 +4,6 @@ import Header from "./components/Header";
 import Hall from "./components/Hall.jsx";
 import Kitchen from "./components/Kitchen";
 import Login from "./components/Login";
-import OrderDetails from "./components/OrderCard";
 import OrderModal from "./components/OrderModal";
 import Register from "./components/Register";
 import ButtonLogout from "./components/LogoutButton.jsx";
@@ -47,7 +46,7 @@ export default function App() {
                 <ButtonLogout onClick={logout} name="Logout" />
                 <div className="menu">
                   <Hall />
-                  <OrderDetails />
+                 
                   <OrderModal className="hidden" />
                 </div>
               </div>
