@@ -1,10 +1,12 @@
 import React from "react";
 import OrderModal from "./OrderModal";
+import BackgroundVideo from "./video/background-video-hall.mp4";
 // import ButtonItem from "./ButtonItem";
 import firebase from "../firebase";
 import Menu from "./Menu";
 import Button from "./Button";
 import "../App.css";
+import "./Hall.css"
 // import init from "../firebase";
 // import orderDetails from "./orderCard";
 
@@ -54,6 +56,14 @@ const Hall = () => {
 
   return (
     <div className="style" id="hall">
+      <video
+          src={BackgroundVideo}
+          type="video/mp4"
+          autoPlay
+          loop
+          muted
+          className="video-background"
+        ></video>
       {/* CARDÁPIO */}
       <section className="text-align menu-all">
         <div onLoad={menu}>

@@ -1,6 +1,7 @@
 .kitchen{
     display: block;
     background-color: rgba(255, 255, 255, 0.144);
+    text-shadow: white 1px 0px 3px;
 }
 
 .kitchen-display{
@@ -24,17 +25,27 @@
     margin-bottom: 15px;
 }
 
+.list{
+    margin-bottom: 10px;
+}
+
 .open-orders{
-    background-color: #EF5F42;
+    background-color: #ef5f42e8;
 }
 
 .closed-orders{
-    background-color: #B32D55;
+    background-color: #3b738ee0;
 }
 
 .video-background{
-    width: 100%;
-    position: absolute;
+    background-cover: cover;
+    position: fixed;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    right: 0;
+    top: 50px;
+    min-width: 100%;
+    min-height: 100%;
     z-index: -1;
-    /* object-fit: cover; */
 }
