@@ -28,10 +28,10 @@ const Kitchen = () => {
           className="video-background"
         ></video>
         <h1 className="list-title">Cozinha</h1>
+            <Button onClick={showOrders} name="Mostrar Pedidos"></Button> {/*Tirar essa função do botão*/}
         <div className="kitchen-display">
           <section className="order-list open-orders">
             <h2 className="list-title">Pedidos Abertos</h2>
-            <Button onClick={showOrders} name="Mostrar Pedidos"></Button> {/*Tirar essa função do botão*/}
             <div className="list">LISTA DE PEDIDOS EM ABERTO</div>
           </section>
           <section className="order-list closed-orders">

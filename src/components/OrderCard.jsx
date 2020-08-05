@@ -1,13 +1,18 @@
 import { firebaseStore } from "../firebase";
 import firebase from "../firebase";
 import React, { useState, useEffect } from "react";
-import Input from "./Input"
+import Menu from "./Menu";
+import Button from "./Button";
 import "../App.css";
+import Hall from "./Hall";
 
-const OrderDetails = () => {
+const OrderDetails = (props) => {
   const [order, setOrder] = useState(1);
   const [table, setTable] = useState("");
   const [client, setClient] = useState("");
+  const [allday, setAllday] = useState(false);
+  const [menuBreakfast, setMenuBreakfast] = useState([]);
+  const [menuAllday, setMenuAllday] = useState([]);
 
   firebase
     .firestore()
@@ -36,7 +41,7 @@ const OrderDetails = () => {
     sendOrder(order);
   };
 
-  const newOrder = (order, table, client) => {
+  const newOrder = (order, table, client, menuAllday, menuBreakfast) => {
     firebaseStore
       .collection("orders")
       .add({
@@ -44,6 +49,7 @@ const OrderDetails = () => {
         status: "pedido em andamento",
         table: table,
         client: client,
+        menuAllday: false,
       })
       .then((docs) => {
         alert("Pedido enviado");
@@ -57,35 +63,28 @@ const OrderDetails = () => {
       <h2 className="menu-title text-align">Detalhes do Pedido</h2>
       <div className="order-details">
         <p>Nº do pedido: {order}</p>
-        <p>
-          Nº da mesa:
-          <Input
-            id="table-number"
-            type="number"
-            name={table}
-            className="order-details-input input"
-            placeholder="Insira o nº da mesa"
-            onChange={(e) => setTable(e.currentTarget.value)}
-            required
-          ></Input>
-        </p>
-        <p>
-          Cliente:
-          <Input
-            id="client-name"
-            type="text"
-            className="order-details-input input"
-            placeholder="Insira o nome do cliente"
-            value={client}
-            onChange={(e) => setClient(e.currentTarget.value)}
-            required
-          ></Input>
-        </p>
+        <label className="label">Nº da mesa: </label>
+        <input
+          id="table-number"
+          type="number"
+          name={table}
+          className="order-details-input input"
+          placeholder="Insira o nº da mesa"
+          onChange={(e) => setTable(e.currentTarget.value)}
+        ></input>
+        <label className="label">Nome do cliente: </label>
+
+        <input
+          id="client-name"
+          type="text"
+          className="order-details-input input"
+          placeholder="Insira o nome do cliente"
+          value={client}
+          onChange={(e) => setClient(e.currentTarget.value)}
+        ></input>
       </div>
       <div className="menu-list text-align">
-        <div>
-          <p>{}</p>
-        </div>
+        <div></div>
         <div>
           <p>Ítem 2</p>
         </div>
