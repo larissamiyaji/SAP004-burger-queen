@@ -1,13 +1,12 @@
 import React from "react";
 import OrderModal from "./OrderModal";
 // import ButtonItem from "./ButtonItem";
-// import firebase from "../firebase";
+import firebase from "../firebase";
 import Menu from "./Menu";
-import Button from "./Button"
+import Button from "./Button";
 import "../App.css";
 // import init from "../firebase";
 // import orderDetails from "./orderCard";
-
 
 /* ABRE UM POP UP QUANDO CLICAR EM HAMBÚRGUER  
   const chooseBurger = (event) => {
@@ -23,42 +22,43 @@ const Hall = () => {
     window.location.href = "/hall#order-modal";
   };
 
-  // const menu = () => {
-  //   firebase // Collection Menu - Traz no console o menu
-  //   .firestore()
-  //   .collection("menu")
-  //   .get()
-  //   .then((snapshot) => {
-  //     snapshot.docs.forEach((doc) => {
-  //       console.log("Collection Menu", doc.data());
-  //     });
-  //   }); 
+  const menu = () => {
+    firebase // Collection Menu - Traz no console o menu
+      .firestore()
+      .collection("menu")
+      .get()
+      .then((snapshot) => {
+        snapshot.docs.forEach((doc) => {
+          console.log("Collection Menu", doc.data());
+          const menuArray = Object.values(doc.data()); //  Transforma o objeto em array.
+          console.log(menuArray);
+        });
+      });
 
-  //   // firebase // Collection Users - Traz no console as informações dos usuários
-  //   // .firestore()
-  //   // .collection("users")
-  //   // .get()
-  //   // .then((snapshot) => {
-  //   //   snapshot.docs.forEach((doc) => {
-  //   //     const userId = doc.data().userId;
-  //   //     const displayName = doc.data().displayName;
-  //   //     const occupation = doc.data().occupation;
-  //   //     console.log("DisplayName:", displayName);
-  //   //     console.log("User ID:", userId);
-  //   //     console.log("Ocupação:", occupation);
-  //   //     console.log("----------------");
-  //   //   });
-  //   // }); 
-  // }
-  
+    // firebase // Collection Users - Traz no console as informações dos usuários
+    // .firestore()
+    // .collection("users")
+    // .get()
+    // .then((snapshot) => {
+    //   snapshot.docs.forEach((doc) => {
+    //     const userId = doc.data().userId;
+    //     const displayName = doc.data().displayName;
+    //     const occupation = doc.data().occupation;
+    //     console.log("DisplayName:", displayName);
+    //     console.log("User ID:", userId);
+    //     console.log("Ocupação:", occupation);
+    //     console.log("----------------");
+    //   });
+    // });
+  };
 
   return (
     <div className="style" id="hall">
       {/* CARDÁPIO */}
       <section className="text-align menu-all">
-        {/* <div onLoad={menu}>
+        <div onLoad={menu}>
           <button onClick={menu}>Show Menu no Console</button>
-        </div> */}
+        </div>
 
         <Menu title="Café da Manhã">
           <Button

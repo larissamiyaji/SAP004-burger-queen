@@ -1,0 +1,40 @@
+.kitchen{
+    display: block;
+    background-color: rgba(255, 255, 255, 0.144);
+}
+
+.kitchen-display{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-evenly;
+}
+
+.order-list{
+    border-style: solid;
+    border-width: 1px;
+    border-radius: 20px;
+    width: 100vh;
+    height: fit-content;
+    text-align: center;
+    margin: 10px;
+}
+
+.list-title{
+    margin-bottom: 15px;
+}
+
+.open-orders{
+    background-color: #EF5F42;
+}
+
+.closed-orders{
+    background-color: #B32D55;
+}
+
+.video-background{
+    width: 100%;
+    position: absolute;
+    z-index: -1;
+    /* object-fit: cover; */
+}

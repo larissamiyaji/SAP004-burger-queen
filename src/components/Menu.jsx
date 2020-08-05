@@ -14,8 +14,8 @@ const Menu = (props) => {
   return (
     <section>
       <h2>{props.title}</h2>
-      <div className="menu-list">
-        {props.children}
+      <div className="menu-list" {...props}>
+        {/* {props.children} {props.name} {props.price} */}
       </div>
     </section>
   );

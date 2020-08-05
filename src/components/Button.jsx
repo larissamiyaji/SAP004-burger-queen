@@ -11,8 +11,8 @@ import "../App.css";
 
 const Button = (props) => {
   return (
-    <button className="form-button" onClick={props.onClick} id={props.id}>
-      {props.name} {props.title} {props.price}
+    <button className="form-button" {...props} /*onClick={props.onClick} id={props.id}*/>
+      {props.name} {props.title} {props.price} 
     </button>
   );
 };
