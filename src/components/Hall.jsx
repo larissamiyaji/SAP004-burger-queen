@@ -1,25 +1,33 @@
 import React, { useState, useEffect } from "react";
 import OrderCard from "./OrderCard";
-import Input from "./Input";
+// import Input from "./Input";
 import Menu from "./Menu";
-import MenuCard from "./MenuCard";
+// import MenuCard from "./MenuCard";
 import Button from "./Button";
 import { firebaseStore } from "../firebase";
 import firebase from "../firebase";
 import BackgroundVideo from "./video/background-video-hall.mp4";
 import "./Hall.css";
+import OrderModal from "./OrderModal";
+// import Input from "./Input";
 
 const Hall = () => {
   const [breakfast, setBreakfast] = useState(true);
   const [allday, setAllday] = useState(false);
-  const [menuBreakfast, setMenuBreakfast] = useState([]);
-  const [menuAllday, setMenuAllday] = useState([]);
   const [orders, setOrders] = useState([]);
   const [order, setOrder] = useState(1);
   const [table, setTable] = useState("");
   const [client, setClient] = useState("");
   const [menu, setMenu] = useState("");
-  const [total, setTotal] = useState("");
+
+  const MenuCard = () => {
+    const turbinar = (event) => {
+      event.preventDefault();
+      console.log("Abrindo modal");
+      OrderModal.hidden = false;
+      window.location.href = "/hall#order-modal";
+    };
+  };
 
   const getMenu = ({ name, state }) => {
     firebase
@@ -41,24 +49,6 @@ const Hall = () => {
   const allDay = (e) => {
     setMenu(e.target.value);
     getMenu({ name: "allday", state: setAllday });
-  };
-
-  const handleAddItem = (e) => {
-    const item = e.currentTarget.parentElement.firstChild.innerText;
-    const price = parseFloat(
-      e.currentTarget.parentElement.children[1].innerText.replace("R$ ", "")
-    );
-
-    const itemIndex = order.findIndex((el) => el.item === item);
-    if (itemIndex === -1) {
-      setOrder([...order, { item, count: 1 }]);
-    } else {
-      const newOrder = [...order];
-      newOrder[itemIndex].count += 1;
-      setOrder(newOrder);
-    }
-
-    setTotal(total + price);
   };
 
   const sendOrders = (e) => {
@@ -86,20 +76,26 @@ const Hall = () => {
       <div className="div-hall">
         <div className="tabs-container">
           <Button
+            class="ButtonItem"
             type="text"
             name="Breakfast"
             value="breakfast"
             onClick={(e) => setMenu(e.target.value)}
           />
-          <Button type="text" name="Allday" value="allday" onClick={allDay} />
-          <div className="div-conteudo">
+
+          <Button
+            class="ButtonItem"
+            type="text"
+            name="Allday"
+            value="allday"
+            onClick={allDay}
+          />
+          <div>
             <Menu
               type={menu}
-              class="button-hall"
               items={menu === "breakfast" ? breakfast : allday}
             />
           </div>
-          <div></div> {/*Essa div existe mesmo KKKK*/}
         </div>
         <OrderCard newOrder={orders} />
       </div>

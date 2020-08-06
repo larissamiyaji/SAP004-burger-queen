@@ -11,8 +11,6 @@ const OrderDetails = (props) => {
   const [table, setTable] = useState("");
   const [client, setClient] = useState("");
   const [allday, setAllday] = useState(false);
-  const [menuBreakfast, setMenuBreakfast] = useState([]);
-  const [menuAllday, setMenuAllday] = useState([]);
 
   firebase
     .firestore()
@@ -41,7 +39,7 @@ const OrderDetails = (props) => {
     sendOrder(order);
   };
 
-  const newOrder = (order, table, client, menuAllday, menuBreakfast) => {
+  const newOrder = (order, table, client) => {
     firebaseStore
       .collection("orders")
       .add({
@@ -49,7 +47,6 @@ const OrderDetails = (props) => {
         status: "pedido em andamento",
         table: table,
         client: client,
-        menuAllday: false,
       })
       .then((docs) => {
         alert("Pedido enviado");
@@ -63,16 +60,15 @@ const OrderDetails = (props) => {
       <h2 className="menu-title text-align">Detalhes do Pedido</h2>
       <div className="order-details">
         <p>Nº do pedido: {order}</p>
-        <label className="label">Nº da mesa: </label>
         <input
           id="table-number"
           type="number"
           name={table}
           className="order-details-input input"
           placeholder="Insira o nº da mesa"
+          required
           onChange={(e) => setTable(e.currentTarget.value)}
         ></input>
-        <label className="label">Nome do cliente: </label>
 
         <input
           id="client-name"
