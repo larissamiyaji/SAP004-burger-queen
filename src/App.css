@@ -316,7 +316,7 @@ p {
 
 .menu-item {
   padding: 10px 35px 0px 45px;
-  height: 15vh;
+  height: 12vh;
   margin-bottom: 5px;
   border-radius: 30px;
   background-color: rgba(64, 224, 208, 0.466);
@@ -327,6 +327,9 @@ p {
   justify-content: space-between;
 }
 
+.card{
+  margin: 0px 0px 5px 10px;
+}
 /* } */
 
 /*
