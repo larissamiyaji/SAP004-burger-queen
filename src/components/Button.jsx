@@ -17,11 +17,11 @@ const Button = (props) => {
 };
 export default Button;
 
-{/* <button
+/* <button
   id={props.id}
   className={props.class}
   type={props.type}
   onClick={props.onClick}
   value={props.value}
   handleClick={props.handleClick}
-> */}
+> */
