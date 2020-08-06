@@ -6,7 +6,7 @@ import Kitchen from "./components/Kitchen";
 import Login from "./components/Login";
 import OrderModal from "./components/OrderModal";
 import Register from "./components/Register";
-import ButtonLogout from "./components/LogoutButton.jsx";
+import ButtonLogout from "./components/LogoutButton";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 // import Menu from "./components/Menu";
@@ -24,7 +24,7 @@ const logout = () => {
 
 export default function App() {
   return (
-    <div>
+    <div className="main-background">
       <Header />
       <Router>
         <div>

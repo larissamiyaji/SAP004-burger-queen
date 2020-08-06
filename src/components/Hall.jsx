@@ -1,12 +1,15 @@
 import React, { useState, useEffect } from "react";
 import OrderCard from "./OrderCard";
-import OrderModal from "./OrderModal";
-import Input from "./Input";
+// import Input from "./Input";
 import Menu from "./Menu";
-
+// import MenuCard from "./MenuCard";
 import Button from "./Button";
 import { firebaseStore } from "../firebase";
 import firebase from "../firebase";
+import BackgroundVideo from "./video/background-video-hall.mp4";
+import "./Hall.css";
+import OrderModal from "./OrderModal";
+// import Input from "./Input";
 
 const Hall = () => {
   const [breakfast, setBreakfast] = useState(true);
@@ -16,7 +19,6 @@ const Hall = () => {
   const [table, setTable] = useState("");
   const [client, setClient] = useState("");
   const [menu, setMenu] = useState("");
- 
 
   const MenuCard = () => {
     const turbinar = (event) => {
@@ -62,30 +64,22 @@ const Hall = () => {
   };
 
   return (
-    <main>
-      <div>
-        <div>
-          <Button
-            class="ButtonItem"
-            type="text"
-            name="Breakfast"
-            value="breakfast"
-            onClick={(e) => setMenu(e.target.value)}
-          />
-
+    <main className="main-hall">
+      <video
+        src={BackgroundVideo}
+        type="video/mp4"
+        autoPlay
+        loop
+        muted
+        className="video-background"
+      ></video>
+      <div className="div-hall">
+        <div className="tabs-container">
+          <Button className="ButtonItem" type="text" name="Breakfast" value="breakfast" onClick={(e) => setMenu(e.target.value)} />
+          <Button className="ButtonItem" type="text" name="Allday" value="allday" onClick={allDay} />
           <div>
-            <Menu
-              type={menu}
-              items={menu === "breakfast" ? breakfast : allday}
-            />
+            <Menu className="menu-display"  type={menu} items={menu === "breakfast" ? breakfast : allday} />
           </div>
-          <Button
-            class="ButtonItem"
-            type="text"
-            name="allday"
-            value="allday"
-            onClick={allDay}
-          />
         </div>
         <OrderCard newOrder={orders} />
       </div>

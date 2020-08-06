@@ -4,14 +4,16 @@ import "../App.css";
 const MenuItem = (props) => {
   return (
     <div className="card">
-      <div>
-        <button>
+      <div className="menu-item">
+        <div className="menu-button">
+        <button className="input">
           {" "}
           <h5>
             <b>{props.name}</b>
           </h5>
         </button>
         <p>R$ {props.price.toFixed(2)}</p>
+        </div>
 
         <button
           onClick={(e) => {

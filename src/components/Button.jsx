@@ -10,17 +10,18 @@ import "../App.css";
 // };
 const Button = (props) => {
   return (
-    <button
-      id={props.id}
-      className={props.class}
-      type={props.type}
-      onClick={props.onClick}
-      value={props.value}
-      handleClick={props.handleClick}
-    >
-      {props.name}
-      {props.price}
+    <button className="form-button" {...props} /*onClick={props.onClick} id={props.id}*/>
+      {props.name} {props.title} {props.price} 
     </button>
   );
 };
 export default Button;
+
+/* <button
+  id={props.id}
+  className={props.class}
+  type={props.type}
+  onClick={props.onClick}
+  value={props.value}
+  handleClick={props.handleClick}
+> */

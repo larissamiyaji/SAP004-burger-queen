@@ -1,0 +1,77 @@
+/* @media (min-width: 700px) { */
+  .kitchen {
+    display: block;
+    text-shadow: white 1px 0px 3px;
+    text-align: center;
+  }
+
+  .kitchen-display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    justify-content: space-evenly;
+  }
+
+  .order-list {
+    /* border-style: solid;
+    border-width: 1px;
+    text-align: center;
+    */    
+    width: 100vh;
+    border-radius: 20px;
+    margin: 10px;
+    max-height: 390px;
+    border: 0 none;
+    outline: none;
+    padding: 15px 15px 10px;
+    line-height: 1.4em;
+    overflow-wrap: break-word;
+    overflow-y: hidden;
+    resize: none;
+    word-wrap: break-word;
+  }
+
+  .list-title {
+    margin-bottom: 15px;
+  }
+
+  .list { /* REVER QUAIS SÃO NECESSÁRIOS  */
+    max-height: 30vh;
+    width: 70vh;
+
+    /* margin-bottom: 10px; */
+    /* border-radius: 20px; */
+    /* margin: 10px; */
+    /* border: 0 none; */
+    /* outline: none; */
+    /* padding: 15px 15px 10px; */
+    /* line-height: 1.4em; */
+    /* overflow-wrap: break-word; */
+    /* overflow-y: hidden; */
+    /* resize: none; */
+    /* word-wrap: break-word; */
+  }
+
+  .open-orders {
+    background-color: #ef5f42e8;
+    font-size: 1.9em;
+  }
+
+  .closed-orders {
+    background-color: #3b738ee0;
+    font-size: 1.9em;
+  }
+
+  .video-background {
+    background-cover: cover;
+    position: fixed;
+    bottom: 0;
+    width: auto;
+    height: auto;
+    right: 0;
+    top: 50px;
+    min-width: 100%;
+    min-height: 100%;
+    z-index: -1;
+  }
+/* } */

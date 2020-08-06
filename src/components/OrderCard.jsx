@@ -24,6 +24,10 @@ const OrderDetails = (props) => {
 
   useEffect(() => {}, [order, table, client]);
 
+  const cancelOrder = (event) => {
+    event.preventDefault();
+    console.log("Cancelando pedido");
+  };
   const sendOrder = (order) => {
     const orderNumber = parseInt(order + 1);
     return setOrder(orderNumber);
@@ -33,10 +37,6 @@ const OrderDetails = (props) => {
     event.preventDefault();
     newOrder(order, table, client);
     sendOrder(order);
-  };
-  const cancelOrder = (event) => {
-    event.preventDefault();
-    console.log("Cancelando pedido");
   };
 
   const newOrder = (order, table, client) => {
@@ -60,7 +60,6 @@ const OrderDetails = (props) => {
       <h2 className="menu-title text-align">Detalhes do Pedido</h2>
       <div className="order-details">
         <p>Nº do pedido: {order}</p>
-
         <input
           id="table-number"
           type="number"
@@ -97,17 +96,17 @@ const OrderDetails = (props) => {
 
         <button
           type="submit"
-          className="form-button send-order-button"
-          onClick={prevent}
-        >
-          Finalizar
-        </button>
-        <button
-          type="submit"
           className="form-button cancel-button"
           onClick={cancelOrder}
         >
           Cancelar
+        </button>
+        <button
+          type="submit"
+          className="form-button send-order-button"
+          onClick={prevent}
+        >
+          Finalizar
         </button>
       </div>
     </section>

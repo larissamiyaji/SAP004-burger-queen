@@ -1,3 +1,4 @@
+/* @media (min-width: 700px) { */
 /* SOFT RESET */
 * {
   padding: 0;
@@ -6,69 +7,77 @@
   box-sizing: border-box;
 }
 
-body{
+body {
   background-color: #728da10e;
 }
 
 /*  HEADER E TÍTULOS */
-h1{
+h1 {
   text-align: center;
 }
 
-label{
+label {
   width: 250px;
 }
 
+p {
+  font-size: 1.5em;
+}
 /*  NAVBAR - BURGER QUEEN  */
-.main-title{
+.main-background {
+  background-color: rgba(255, 255, 255, 0.308);
+}
+
+.main-title {
   margin: 0;
-  padding-bottom: 15px  ;
-  background-color: #D56877;
+  padding-bottom: 15px;
+  background-color: #d56877;
   font-size: 3em;
 }
 
 /*  SUBTITLE - LOGIN, REGISTRO */
-.sub-title{
+.sub-title {
   font-size: 2.5em;
   margin-bottom: 30px;
 }
 
-.label{
+.label {
   font-size: 1.2em;
   color: #000000;
 }
-.ButtonItem{
+.ButtonItem {
   width: 200px;
   height: 45px;
   border-radius: 10px 10px;
   font-size: 1.1em;
   margin: 10px;
-  background-color: #D56877;
+  background-color: #d56877;
 }
 /*  INPUTS TEXTO - FORM */
-.input{
-  max-width: 300px;
-  height: 30px;
+.input {
+  max-width: 500px;
+  height: 50px;
   border-bottom-style: solid;
-  border-color: #D56877;
-  border-width: 1px;
+  border-color: #d56877;
+  border-width: 2px;
   background-color: #728da100;
   text-align: center;
+  font-size: 1.5em;
   display: block;
   margin-bottom: 30px;
 }
 
-.login{
+.login {
   text-align: center;
   display: block;
 }
 
-.form-box{
+.form-box {
   text-align: -webkit-center;
   margin-bottom: 10px;
 }
 
-.infobox{
+.infobox {
   align-items: center;
   display: flex;
   flex-direction: row;
@@ -77,57 +86,61 @@ label{
   margin-bottom: 10px;
 }
 
-.description{
-  background-color: #D56877;
+.description {
+  background-color: #d56877;
   border-radius: 40px;
   display: inline-block;
   height: fit-content;
   margin-top: 10px;
+  margin-right: 25px;
+  margin-left: 25px;
   padding: 10px;
   text-align: center;
-  width: 500px;
+  width: auto;
+  font-size: 1.6em;
 }
 
 /*  INPUTS BOTÕES */
-.logout-position{
-  background-color: #D3ADAB;
+.logout-position {
+  background-color: #d3adab;
   border-radius: 40px 10px 40px 10px;
-  font-size: 1.1em;
-  height: 30px;
+  font-size: 2em;
+  height: 40px;
   position: absolute;
   right: 10px;
   top: 25px;
-  width: 100px;
+  width: 150px;
 }
 
-.form-button{
-  background-color: #D56877;
+.form-button {
+  background-color: #d56877;
   border-radius: 40px 10px 40px 10px;
-  font-size: 1.1em;
+  font-size: 1.8em;
   height: 30px;
   margin: 10px;
   width: fit-content;
-  padding-left: 12px;
-  padding-right: 12px;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-bottom: 35px;
 }
 
 .ButtonItem:hover,
 .form-button:hover,
-.logout-position:hover{
+.logout-position:hover {
   background-color: #aa5460;
   cursor: pointer;
 }
 
-.cancel-button{
+.cancel-button {
   background-color: #dd3030;
 }
 
-.send-order-button{
-background-color: #3CF038;
-margin-top: 20px;
+.send-order-button {
+  background-color: #3cf038;
+  margin-top: 20px;
 }
 
-.send-order-button:hover{
+.send-order-button:hover {
   background-color: #36b934;
 }
 
@@ -141,22 +154,22 @@ margin-top: 20px;
   cursor: pointer;
 } */
 
-.link-style{
+.link-style {
   text-decoration: none;
   color: #000000;
   display: flex;
   padding: 10px;
 }
-.link-style:hover{
-  background-color: #D56877;
+.link-style:hover {
+  background-color: #d56877;
   font-weight: bold;
 }
 /* ORDENAR DEPOIS */
-.flex-direction{
+.flex-direction {
   display: flex;
   flex-direction: row;
   justify-content: center;
-  align-items: center
+  align-items: center;
 }
 /* .occupation{
   border-bottom-style: solid;
@@ -165,31 +178,31 @@ margin-top: 20px;
   padding: 10px;
 } */
 
-.occupation{
+.occupation {
   display: block;
 }
 
-.p-bottom{
+.p-bottom {
   margin: 10px;
   font-size: 1.1em;
 }
 
-.visibility-none{
+.visibility-none {
   visibility: none;
 }
 
-.text-align{
+.text-align {
   text-align: center;
   margin-top: 30px;
 }
 
-.menu{
+.menu {
   display: flex;
   justify-content: center;
   margin-top: -50px;
 }
 
-.menu-all{
+.menu-all {
   border-style: solid;
   border-radius: 40px;
   background-color: #8cb1db9c;
@@ -199,18 +212,18 @@ margin-top: 20px;
   padding: 20px;
 }
 
-.menu-title{
+.menu-title {
   margin-top: 10px;
 }
 
-.menu-list{
+.menu-list {
   font-weight: 600;
   font-size: 1.1em;
   margin-bottom: 10px;
   margin-top: 10px;
 }
 /*  MODAL */
-.modal{
+.modal {
   width: 400px;
   height: 320px;
   position: absolute;
@@ -223,24 +236,24 @@ margin-top: 20px;
   padding-top: 10px;
 }
 
-.modal:target{
+.modal:target {
   display: block;
   top: 250px;
   transition: all 0.3s;
   transition-delay: 0.2s;
 }
 
-.hidden{
+.hidden {
   visibility: hidden;
 }
 
-.edit-burger{
+.edit-burger {
   text-align: left;
   margin-left: 10px;
   margin-top: 10px;
 }
 
-.radio-buttons{
+.radio-buttons {
   font-size: 1.1em;
   display: grid;
   margin-top: 10px;
@@ -249,55 +262,75 @@ margin-top: 20px;
   font-weight: 600;
 }
 
-.occupation-options{
+.occupation-options {
   display: flex;
   justify-content: center;
 }
 
-.cheese-egg{
+.cheese-egg {
   text-align: left;
   margin-left: 40px;
 }
 
-.hall-template{
+.hall-template {
   display: block;
   justify-content: center;
 }
 
-.order-card{
+.order-card {
   border-style: solid;
   border-radius: 40px;
-  background-color: #9C96B8;
+  background-color: #9c96b8dc;
   width: fit-content;
   height: fit-content;
   margin-top: 30px;
   padding: 20px;
+  font-size: 1.1em;
 }
 
-.order-details{
+.order-details {
   margin-left: 10px;
   margin-top: 10px;
 }
 
-.order-details-input{
-  width: 150px;
+.order-details-input {
+  width: 350px;
   border-radius: 40px;
   background-color: #ffffff00;
   height: 20px;
   border-style: none;
+  margin-top: 5px;
 }
 
-.order-bottom-info{
+.order-bottom-info {
   text-align: center;
 }
 
-.clients-info{
+.clients-info {
   display: flex;
 }
 
-.value-total{
+.value-total {
   font-size: 1.5em;
 }
+
+.menu-item {
+  padding: 10px 35px 0px 45px;
+  height: 12vh;
+  margin-bottom: 5px;
+  border-radius: 30px;
+  background-color: rgba(64, 224, 208, 0.466);
+}
+
+.menu-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.card{
+  margin: 0px 0px 5px 10px;
+}
+/* } */
 
 /*
 @media (min-width: 900px){
