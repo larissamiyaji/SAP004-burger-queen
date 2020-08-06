@@ -1,29 +1,26 @@
 import { firebaseStore } from "../firebase";
-import firebase from "../firebase";  
-import React, { useState, useEffect } from 'react';
+import firebase from "../firebase";
+import React, { useState, useEffect } from "react";
 import Menu from "./Menu";
 import Button from "./Button";
 import "../App.css";
-import Hall from './Hall'
-
-
+import Hall from "./Hall";
 
 const OrderDetails = (props) => {
- 
-  const [menuBreakfast, setMenuBreakfast] = useState([]);
-  const [menuAllday, setMenuAllday] = useState([]);
-  const [orders, setOrders] = useState([]);
   const [order, setOrder] = useState(1);
   const [table, setTable] = useState("");
   const [client, setClient] = useState("");
-  const [menu,setMenu] = useState("");
-  const [total,setTotal] = useState("");
- 
-  firebase.firestore().collection("orders").get().then((snapshot)=>{
-    snapshot.docs.forEach((doc)=>{
-      console.log(doc.data())
-    }) 
-  });
+  const [allday, setAllday] = useState(false);
+
+  firebase
+    .firestore()
+    .collection("orders")
+    .get()
+    .then((snapshot) => {
+      snapshot.docs.forEach((doc) => {
+        console.log(doc.data());
+      });
+    });
 
   useEffect(() => {}, [order, table, client]);
 
@@ -32,7 +29,6 @@ const OrderDetails = (props) => {
     return setOrder(orderNumber);
   };
 
- 
   const prevent = (event) => {
     event.preventDefault();
     newOrder(order, table, client);
@@ -43,17 +39,15 @@ const OrderDetails = (props) => {
     console.log("Cancelando pedido");
   };
 
-  
-
-
-  const newOrder = (order, table, client,menuAllday,menuBreakfast) => {
+  const newOrder = (order, table, client) => {
     firebaseStore
-      .collection("orders").add({
+      .collection("orders")
+      .add({
         order: order,
-        status: 'pedido em andamento',
+        status: "pedido em andamento",
         table: table,
         client: client,
-         })
+      })
       .then((docs) => {
         alert("Pedido enviado");
       })
@@ -66,33 +60,28 @@ const OrderDetails = (props) => {
       <h2 className="menu-title text-align">Detalhes do Pedido</h2>
       <div className="order-details">
         <p>Nº do pedido: {order}</p>
-     
-          <input
-            id="table-number"
-            type="number"
-            name={table}
-            className="order-details-input input"
-            placeholder="Insira o nº da mesa"
-            required
-            onChange={(e) => setTable(e.currentTarget.value)}
-          ></input>
-        
-        
-          <input
-            id="client-name"
-            type="text"
-            className="order-details-input input"
-            placeholder="Insira o nome do cliente"
-            value={client}
+
+        <input
+          id="table-number"
+          type="number"
+          name={table}
+          className="order-details-input input"
+          placeholder="Insira o nº da mesa"
+          required
+          onChange={(e) => setTable(e.currentTarget.value)}
+        ></input>
+
+        <input
+          id="client-name"
+          type="text"
+          className="order-details-input input"
+          placeholder="Insira o nome do cliente"
+          value={client}
           onChange={(e) => setClient(e.currentTarget.value)}
-          ></input>
-        
-      
+        ></input>
       </div>
       <div className="menu-list text-align">
-        <div>
-       
-        </div>
+        <div></div>
         <div>
           <p>Ítem 2</p>
         </div>
@@ -105,8 +94,7 @@ const OrderDetails = (props) => {
       </div>
       <div className="order-bottom-info">
         <p className="value-total">Total: R${}</p>
-       
-    
+
         <button
           type="submit"
           className="form-button send-order-button"
@@ -122,15 +110,6 @@ const OrderDetails = (props) => {
           Cancelar
         </button>
       </div>
-      <div >
-            <Menu
-              type={menu}
-              class='button-hall'
-              items={menu === "breakfast" ? breakfast : allday}
-              addItem={handleAddItem}
-              
-            />
-          </div>
     </section>
   );
 };
