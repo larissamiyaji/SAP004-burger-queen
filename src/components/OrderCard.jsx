@@ -9,12 +9,15 @@ import Hall from './Hall'
 
 
 const OrderDetails = (props) => {
+ 
+  const [menuBreakfast, setMenuBreakfast] = useState([]);
+  const [menuAllday, setMenuAllday] = useState([]);
+  const [orders, setOrders] = useState([]);
   const [order, setOrder] = useState(1);
   const [table, setTable] = useState("");
   const [client, setClient] = useState("");
-  const [allday, setAllday] = useState(false);
-  const [menuBreakfast, setMenuBreakfast] = useState([]);
-  const [menuAllday, setMenuAllday] = useState([]);
+  const [menu,setMenu] = useState("");
+  const [total,setTotal] = useState("");
  
   firebase.firestore().collection("orders").get().then((snapshot)=>{
     snapshot.docs.forEach((doc)=>{
@@ -41,8 +44,6 @@ const OrderDetails = (props) => {
   };
 
   
-   
-  
 
 
   const newOrder = (order, table, client,menuAllday,menuBreakfast) => {
@@ -52,10 +53,7 @@ const OrderDetails = (props) => {
         status: 'pedido em andamento',
         table: table,
         client: client,
-        menuAllday: false,
-
-
-      })
+         })
       .then((docs) => {
         alert("Pedido enviado");
       })
@@ -124,6 +122,15 @@ const OrderDetails = (props) => {
           Cancelar
         </button>
       </div>
+      <div >
+            <Menu
+              type={menu}
+              class='button-hall'
+              items={menu === "breakfast" ? breakfast : allday}
+              addItem={handleAddItem}
+              
+            />
+          </div>
     </section>
   );
 };

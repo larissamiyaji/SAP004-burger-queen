@@ -5,6 +5,7 @@ import Menu from './Menu';
 import MenuCard from './MenuCard';
 import Button from './Button';
 import { firebaseStore } from '../firebase';
+import firebase from "../firebase"
 
 
 
@@ -14,124 +15,95 @@ const Hall = () => {
   const [menuBreakfast, setMenuBreakfast] = useState([]);
   const [menuAllday, setMenuAllday] = useState([]);
   const [orders, setOrders] = useState([]);
+  const [order, setOrder] = useState(1);
+  const [table, setTable] = useState("");
+  const [client, setClient] = useState("");
+  const [menu,setMenu] = useState("");
+  const [total,setTotal] = useState("");
   
 
-  const menu = () => {
-    firebaseStore().collection("menu").get().then((snapshot) => {
-  snapshot.docs.forEach((doc) => {
-        console.log("Collection breakfast", doc.data());
-        const menuArray = Object.values(doc.data())
-        console.log(menuArray)
-      });
+ 
       
-    })}; 
+   
+  
+  const getMenu = ({name,state}) =>{
+    firebase.firestore().collection("Menus").doc(name).get().then((docRef) =>{
+      const itemData = docRef.data();
+      state(() => itemData);
+      console.log(itemData)
+    }
+    )
+  };
   
    
   useEffect(() => {
-    console.log(menuBreakfast);
-    console.log(menuAllday);
-    console.log(menuArray)
-  }, [menuBreakfast, menuAllday]);
+    getMenu({ name: "breakfast", state: setBreakfast});
+  }, []);
 
-
-  const createMenuBreakfast= () => {
-    firebaseStore
-      .collection('menu')
-      .where('menu', '==', 'breakfast')
-      .get()
-      .then((querySnapshot) => {
-        const newArray = querySnapshot.docs.map((doc) => doc.data());
-        setMenuBreakfast(newArray);
-      });
+  const allDay = (e) => {
+    setMenu(e.target.value);
+    getMenu({name: "allday", state: setAllday})
   };
 
-  const createMenuAllday = () => {
-    firebaseStore
-      .collection('menu')
-      .where('menu', '==', 'allday')
-      .get()
-      .then((querySnapshot) => {
-        const newArray = querySnapshot.docs.map((doc) => doc.data());
-        setMenuAllday(newArray);
-      });
+  const handleAddItem = (e) => {
+    const item = e.currentTarget.parentElement.firstChild.innerText;
+    const price = parseFloat(
+      e.currentTarget.parentElement.children[1].innerText.replace("R$ ", "")
+    );
+
+    const itemIndex = order.findIndex((el) => el.item === item);
+    if (itemIndex === -1) {
+      setOrder([...order, { item, count: 1 }]);
+    } else {
+      const newOrder = [...order];
+      newOrder[itemIndex].count += 1;
+      setOrder(newOrder);
+    }
+
+    setTotal(total + price);
   };
 
-  const [menuArray, setMenu] = useState([menu]);
- 
-  const callBreakfast = () => {
-    setBreakfast(!breakfast);
-    setAllday(!allday);
-    createMenuBreakfast();
-  };
-
-  const callAllday = () => {
-    setAllday(!allday);
-    setBreakfast(!breakfast);
-    createMenuAllday();
-    
-  };
-
-  const setOrder = (e) => {
+  const sendOrders = (e) => {
     e.preventDefault();
-    let arrayItem = {
-      nameItem: e.currentTarget.name,
-      priceItem: e.currentTarget.value,
-    };
-    setOrder([...orders, arrayItem]);
+    const sendOrder = {
+      client:client,
+      table:table,
+      order:order, 
+      status: 'pedido em andamento',
+      ready: false 
+    }
+    firebaseStore().collection("orders").add(sendOrder);  
   }
+
 
   return (
     <main className="main-hall">
      
-      <div className="div-hall">
-        <div className="tabs-container">
+      <div >
+        <div >
           <Button
-            type="radio"
-            name="menu"
-            className="tabs"
-            id="tab1"
-            value="cafe"
-            checked={breakfast === true}
-            onClick={() => callBreakfast()}
+            type="text"
+            name="Breakfast"
+            value="breakfast"
+            onClick={(e) => setMenu(e.target.value)}
           />
-          <label>
-            Breakfast
-          </label>
+          
           <div className="div-conteudo">
-            {menuBreakfast.map((element) => (
-              <MenuCard
-                key={element.item + element.price}
-                idCard={element.item}
-                name={element.price}
-                item_name={element.item}
-                price={element.price}
-                handleclick={setOrder}
-              />
-            ))}
+          <Menu
+              type={menu}
+              class='button-hall'
+              items={menu === "breakfast" ? breakfast : allday}
+             
+            />
+
           </div>
           <Button
-            type="radio"
-            name="menu"
-            className="tabs"
-            id="tab2"
-            value="tarde"
-            checked={allday === true}
-            onClick={() => callAllday()}
-          />
-          <label>
-            All Day
-          </label>
+            type="text"
+            name="allday"
+            value="allday"
+            onClick={allDay}
+          /> 
           <div >
-            {menuAllday.map((element) => (
-              <MenuCard
-                key={element.item + element.price}
-                idCard={element.item}
-                price={element.price}
-                name={element.item}
-                price={element.price}
-                handleclick={setOrder}
-              />
-            ))}
           </div>
         </div>
         <OrderCard newOrder={orders}/>
