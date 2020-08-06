@@ -10,3 +10,12 @@
     min-height: 100%;
     z-index: -1;
 }
+
+.tabs-container{
+    display: block;
+    margin-right: 10px;
+}
+
+.div-hall{
+    display: flex;
+}

@@ -6,7 +6,8 @@ import MenuCard from "./MenuCard";
 import Button from "./Button";
 import { firebaseStore } from "../firebase";
 import firebase from "../firebase";
-import BackgroundVideo from "./video/background-video-hall.mp4"
+import BackgroundVideo from "./video/background-video-hall.mp4";
+import "./Hall.css";
 
 const Hall = () => {
   const [breakfast, setBreakfast] = useState(true);
@@ -90,7 +91,7 @@ const Hall = () => {
             value="breakfast"
             onClick={(e) => setMenu(e.target.value)}
           />
-
+          <Button type="text" name="Allday" value="allday" onClick={allDay} />
           <div className="div-conteudo">
             <Menu
               type={menu}
@@ -98,8 +99,7 @@ const Hall = () => {
               items={menu === "breakfast" ? breakfast : allday}
             />
           </div>
-          <Button type="text" name="allday" value="allday" onClick={allDay} />
-          <div></div>
+          <div></div> {/*Essa div existe mesmo KKKK*/}
         </div>
         <OrderCard newOrder={orders} />
       </div>
