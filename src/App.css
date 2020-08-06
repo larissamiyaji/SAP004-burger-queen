@@ -1,4 +1,4 @@
-@media (min-width: 700px) {
+/* @media (min-width: 700px) { */
   /* SOFT RESET */
   * {
     padding: 0;
@@ -24,6 +24,10 @@
     font-size: 1.5em;
   }
   /*  NAVBAR - BURGER QUEEN  */
+  .main-background{
+    background-color: rgba(255, 255, 255, 0.308);
+  }
+  
   .main-title {
     margin: 0;
     padding-bottom: 15px;
@@ -309,7 +313,7 @@
   .value-total {
     font-size: 1.5em;
   }
-}
+/* } */
 
 /*
 @media (min-width: 900px){

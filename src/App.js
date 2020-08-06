@@ -24,7 +24,7 @@ const logout = () => {
 
 export default function App() {
   return (
-    <div>
+    <div className="main-background">
       <Header />
       <Router>
         <div>
