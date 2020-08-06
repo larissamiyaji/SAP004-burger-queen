@@ -75,26 +75,10 @@ const Hall = () => {
       ></video>
       <div className="div-hall">
         <div className="tabs-container">
-          <Button
-            class="ButtonItem"
-            type="text"
-            name="Breakfast"
-            value="breakfast"
-            onClick={(e) => setMenu(e.target.value)}
-          />
-
-          <Button
-            class="ButtonItem"
-            type="text"
-            name="Allday"
-            value="allday"
-            onClick={allDay}
-          />
+          <Button className="ButtonItem" type="text" name="Breakfast" value="breakfast" onClick={(e) => setMenu(e.target.value)} />
+          <Button className="ButtonItem" type="text" name="Allday" value="allday" onClick={allDay} />
           <div>
-            <Menu
-              type={menu}
-              items={menu === "breakfast" ? breakfast : allday}
-            />
+            <Menu className="menu-display"  type={menu} items={menu === "breakfast" ? breakfast : allday} />
           </div>
         </div>
         <OrderCard newOrder={orders} />
