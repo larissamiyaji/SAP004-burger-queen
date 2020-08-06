@@ -6,6 +6,7 @@ import MenuCard from "./MenuCard";
 import Button from "./Button";
 import { firebaseStore } from "../firebase";
 import firebase from "../firebase";
+import BackgroundVideo from "./video/background-video-hall.mp4"
 
 const Hall = () => {
   const [breakfast, setBreakfast] = useState(true);

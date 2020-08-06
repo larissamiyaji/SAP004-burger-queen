@@ -12,8 +12,6 @@ const Button = (props) => {
   return (
     <button className="form-button" {...props} /*onClick={props.onClick} id={props.id}*/>
       {props.name} {props.title} {props.price} 
-      {props.name}
-      {props.price}
     </button>
   );
 };
