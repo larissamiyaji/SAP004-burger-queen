@@ -1,6 +1,7 @@
 import React from "react";
 // import firebase from "../firebase";
 import "../App.css";
+import LogoutImage from "./images/logout.png"
 
 const ButtonLogout = (props) => {
   // const logout = () => {
@@ -14,6 +15,7 @@ const ButtonLogout = (props) => {
   // };
   return (
     <button className="logout-position" onClick={props.onClick}>
+      <img src={LogoutImage} alt="" className="logout-image"/>
       {props.name}
     </button>
   );

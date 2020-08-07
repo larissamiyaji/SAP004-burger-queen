@@ -35,7 +35,7 @@ export default function App() {
             </Route>
             {/* KITCHEN */}
             <Route path="/Kitchen">
-              <ButtonLogout onClick={logout} name="Sair" />
+              <ButtonLogout onClick={logout} /*name="Sair"*/ />
               <Kitchen />
             </Route>
 
@@ -43,10 +43,10 @@ export default function App() {
             <Route path="/Hall">
               {/* <Menu /> */}
               <div className="hall-template text-align">
-                <ButtonLogout onClick={logout} name="Sair" />
+                <ButtonLogout onClick={logout} /*name="Sair"*/ />
                 <div className="menu">
                   <Hall />
-                 
+
                   <OrderModal className="hidden" />
                 </div>
               </div>
