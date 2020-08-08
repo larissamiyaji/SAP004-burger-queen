@@ -34,7 +34,7 @@ label {
 }
 
 p {
-  font-size: 1.5em;
+  font-size: 2em;
 }
 /*  NAVBAR - BURGER QUEEN  */
 .navbar {
@@ -65,7 +65,7 @@ p {
   background-color: #200116;
   color: white;
   font-family: "Marron";
-  font-size: 3em;
+  /* font-size: 3em; */
   /* height: 80px; */
   /* margin: 0; */
 }
@@ -77,19 +77,19 @@ p {
 }
 
 .label {
-  font-size: 1.2em;
+  font-size: 2em;
   color: #000000;
 }
 /*  INPUTS TEXTO - FORM */
 .input {
   max-width: 500px;
-  height: 50px;
+  height: 100px;
   border-bottom-style: solid;
   border-color: #d56877;
   border-width: 2px;
   background-color: #728da100;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 2em;
   display: block;
   margin-bottom: 30px;
 }
@@ -130,15 +130,10 @@ p {
 
 /*  INPUTS BOTÕES */
 .logout-position {
-  /* background-color: #d3adab; */
   background-color: transparent;
-  /* border-radius: 40px 10px 40px 10px; */
-  font-size: 2em;
-  /* height: 40px; */
   position: fixed;
   right: 10px;
   top: 5px;
-  /* width: 150px; */
 }
 
 .logout-position:hover {
@@ -154,6 +149,7 @@ p {
   background-color: #d56877;
   border-radius: 40px 10px 40px 10px;
   font-size: 1.8em;
+  font-weight: 600;
   height: 30px;
   margin: 10px;
   width: fit-content;
@@ -181,16 +177,6 @@ p {
   background-color: #36b934;
 }
 
-/* .select{
-  font-size: 1.1em;
-  margin-left: 5px;
-  background-color: #728da100;
-}
-
-.select:hover{
-  cursor: pointer;
-} */
-
 .link-style {
   text-decoration: none;
   color: #000000;
@@ -208,12 +194,6 @@ p {
   justify-content: center;
   align-items: center;
 }
-/* .occupation{
-  border-bottom-style: solid;
-  border-color: #D56877;
-  border-width: 1px;
-  padding: 10px;
-} */
 
 .occupation {
   display: block;
@@ -221,7 +201,7 @@ p {
 
 .p-bottom {
   margin: 10px;
-  font-size: 1.1em;
+  font-size: 2.5em;
 }
 
 .visibility-none {
@@ -251,6 +231,7 @@ p {
 
 .menu-title {
   margin-top: 10px;
+  font-size: 2em;
 }
 
 .menu-list {
@@ -291,7 +272,7 @@ p {
 }
 
 .radio-buttons {
-  font-size: 1.1em;
+  font-size: 1.5em;
   display: grid;
   margin-top: 10px;
   margin-left: 40px;
@@ -349,7 +330,7 @@ p {
 }
 
 .value-total {
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
 .menu-item {
