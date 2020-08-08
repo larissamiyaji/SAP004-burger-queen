@@ -316,9 +316,9 @@ p {
   width: 350px;
   border-radius: 40px;
   background-color: #ffffff00;
-  height: 20px;
+  height: 2vh;
   border-style: none;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .order-bottom-info {

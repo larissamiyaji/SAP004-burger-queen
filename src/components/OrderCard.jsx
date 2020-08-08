@@ -65,7 +65,7 @@ const OrderDetails = (props) => {
           type="number"
           name={table}
           className="order-details-input input"
-          placeholder="Insira o nº da mesa"
+          placeholder="Nº da mesa"
           required
           onChange={(e) => setTable(e.currentTarget.value)}
         ></input>
@@ -74,7 +74,7 @@ const OrderDetails = (props) => {
           id="client-name"
           type="text"
           className="order-details-input input"
-          placeholder="Insira o nome do cliente"
+          placeholder="Nome do cliente"
           value={client}
           onChange={(e) => setClient(e.currentTarget.value)}
         ></input>
