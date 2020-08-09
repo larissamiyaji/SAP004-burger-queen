@@ -94,9 +94,8 @@ function Login() {
       </form>
       <InfoBox
         titleBurgerQueen="Sobre Burger Queen"
-        aboutBurgerQueen="Lorem Ipsum é simplesmente uma simulação de texto da
-                      indústria tipográfica e de impressos, e vem sendo
-                      utilizado desde o século XVI"
+        aboutBurgerQueen="Burger Queen é um app voltado para os funcionários do restaurante Outer World
+         "
       />
     </div>
   );
