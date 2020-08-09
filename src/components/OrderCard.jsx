@@ -5,12 +5,19 @@ import Menu from "./Menu";
 import Button from "./Button";
 import "../App.css";
 import Hall from "./Hall";
+import {handleAddItem} from './Hall'
+import {allDay} from './Hall'
 
 const OrderDetails = (props) => {
+  const [breakfast, setBreakfast] = useState(true);
+  const [allDay, setAllDay] = useState(false);
+  const [orders, setOrders] = useState([]);
   const [order, setOrder] = useState(1);
   const [table, setTable] = useState("");
   const [client, setClient] = useState("");
-  const [allday, setAllday] = useState(false);
+  const [menu, setMenu] = useState("");
+  const [resume, setResume] = useState("");
+  const [total, setTotal] = useState(0);
 
   firebase
     .firestore()
@@ -18,7 +25,7 @@ const OrderDetails = (props) => {
     .get()
     .then((snapshot) => {
       snapshot.docs.forEach((doc) => {
-        console.log(doc.data());
+        
       });
     });
 
@@ -55,6 +62,27 @@ const OrderDetails = (props) => {
         alert(error.message);
       });
   };
+  const handleAddItem = (e) => {
+    const item = e.currentTarget.parentElement.firstChild.innerText;
+    const price = parseFloat(
+      e.currentTarget.parentElement.children[1].innerText.replace("R$ ", "")
+    );
+
+    const itemIndex = order.findIndex((el) => el.item === item);
+    
+    if (itemIndex === -1) {
+      setOrder([...order, { item, count: 1 }]);
+    } else {
+      const newOrder = [...order];
+      newOrder[itemIndex].count += 1;
+      setOrder(newOrder);
+    }
+
+    setTotal(total + price);
+    console.log(handleAddItem)
+  };
+  
+  
   return (
     <section id="order" className="order-card">
       <h2 className="menu-title text-align">Detalhes do Pedido</h2>
@@ -79,21 +107,43 @@ const OrderDetails = (props) => {
           onChange={(e) => setClient(e.currentTarget.value)}
         ></input>
       </div>
+     
       <div className="menu-list text-align">
-        <div></div>
-        <div>
-          <p>Ítem 2</p>
-        </div>
-        <div>
-          <p>Ítem 3</p>
-        </div>
-        <div>
-          <p>Ítem 4</p>
-        </div>
+      <Menu className="menu-display"  type={menu} items={menu === "breakfast" ? breakfast : allDay} addItem={handleAddItem} />
+      <div className='div-resume'>
+          <Button
+            name='RESUMO'
+            
+            type='text'
+            value={resume}
+            onClick={(e) => setResume(e.target.value)}
+          />
+          <div className='resume-order'>
+            {orders.map((orderItem) => (
+              <div className='itens-resume'>
+                <div className='item-order'>
+                  Item: {orderItem.item}
+                  <br></br>
+                  Qtde: {orderItem.count}
+                </div>
+              </div>
+            ))}
+          </div>
+          </div>
+      
       </div>
       <div className="order-bottom-info">
-        <p className="value-total">Total: R${}</p>
-
+      <div className='div-resume'>
+          
+        
+          <div className="value-total">
+            <span className='total-price'>TOTAL:R$ {total}</span>
+          
+          
+          </div>
+        </div>
+       
+       
         <button
           type="submit"
           className="form-button cancel-button"

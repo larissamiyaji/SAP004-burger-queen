@@ -31,7 +31,8 @@ p {
 .main-title {
   margin: 0;
   padding-bottom: 15px;
-  background-color: #d56877;
+  background-color: #200116;
+  color: white;
   font-size: 3em;
 }
 

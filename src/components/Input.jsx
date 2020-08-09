@@ -1,8 +1,17 @@
 import React from "react";
-import "../App.css";
 
 const Input = (props) => {
-  return <input {...props} className="input"></input>;
+  return (
+    <input
+      type={props.type}
+      id={props.id}
+      className={props.class}
+      placeholder={props.placeholder}
+      name={props.name}
+      value={props.value}
+      onChange={props.onChange}
+    ></input>
+  );
 };
 
 export default Input;

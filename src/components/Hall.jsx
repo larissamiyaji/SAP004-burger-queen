@@ -19,6 +19,8 @@ const Hall = () => {
   const [table, setTable] = useState("");
   const [client, setClient] = useState("");
   const [menu, setMenu] = useState("");
+  const [resume, setResume] = useState("");
+  const [total, setTotal] = useState(0);
 
   const MenuCard = () => {
     const turbinar = (event) => {
@@ -63,9 +65,11 @@ const Hall = () => {
     firebaseStore().collection("orders").add(sendOrder);
   };
 
+
+
   return (
     <main className="main-hall">
-      <video
+    <video
         src={BackgroundVideo}
         type="video/mp4"
         autoPlay
@@ -78,7 +82,19 @@ const Hall = () => {
           <Button className="ButtonItem" type="text" name="Breakfast" value="breakfast" onClick={(e) => setMenu(e.target.value)} />
           <Button className="ButtonItem" type="text" name="Allday" value="allday" onClick={allDay} />
           <div>
-            <Menu className="menu-display"  type={menu} items={menu === "breakfast" ? breakfast : allday} />
+            <Menu className="menu-display"  type={menu} items={menu === "breakfast" ? breakfast : allday}  />
+            <div >
+            {orders.map((orderItem) => (
+              <div >
+                <div>
+                <p> Item: {orderItem.item}</p>
+                  <br></br>
+                  Qtde: {orderItem.count}
+                </div>
+              </div>
+            ))}
+          </div>
+           
           </div>
         </div>
         <OrderCard newOrder={orders} />

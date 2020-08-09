@@ -23,21 +23,6 @@ const MenuItem = (props) => {
           id="add"
         ></button>
 
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            props.handleSubtractItem(e);
-          }}
-          id="sub"
-        ></button>
-
-        <button
-          onClick={(e) => {
-            e.preventDefault();
-            props.handleRemoveItem(e);
-          }}
-          id="rem"
-        ></button>
       </div>
     </div>
   );

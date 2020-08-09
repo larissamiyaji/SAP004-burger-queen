@@ -13,8 +13,6 @@ const Menu = (props) => {
             name={item[0]}        
             price={item[1]}
             handleClick={props.addItem}
-            handleRemoveItem={props.removeItem}
-            handleSubtractItem={props.subtractItem}
             order={props.order}
           />
         );
@@ -24,3 +22,4 @@ const Menu = (props) => {
 };
 
 export default Menu;
+

@@ -19,14 +19,7 @@ const Kitchen = () => {
   };
   return (
     <div className="kitchen">
-      <video
-        src={BackgroundVideo}
-        type="video/mp4"
-        autoPlay
-        loop
-        muted
-        className="video-background"
-      ></video>
+     
       <h1 className="list-title">Cozinha</h1>
       <Button onClick={showOrders} name="Mostrar Pedidos"></Button>
       {/*Tirar essa função do botão*/}
