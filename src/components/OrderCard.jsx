@@ -5,7 +5,7 @@ import Menu from "./Menu";
 import Button from "./Button";
 import "../App.css";
 import Hall from "./Hall";
-
+'
 
 const OrderDetails = (props) => {
   const [breakfast, setBreakfast] = useState(true);
@@ -117,10 +117,10 @@ const OrderDetails = (props) => {
             value={resume}
             onClick={(e) => setResume(e.target.value)}
           />
-          <div >
+          <div className='resume-order'>
             {orders.map((orderItem) => (
-              <div >
-                <div >
+              <div className='itens-resume'>
+                <div className='item-order'>
                   Item: {orderItem.item}
                   <br></br>
                   Qtde: {orderItem.count}
@@ -131,8 +131,8 @@ const OrderDetails = (props) => {
           </div>
       
       </div>
-      <div >
-      <div >
+      <div className="order-bottom-info">
+      <div className='div-resume'>
           
         
           <div className="value-total">

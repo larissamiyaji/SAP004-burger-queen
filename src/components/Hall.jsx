@@ -41,7 +41,10 @@ const Hall = () => {
         const itemData = docRef.data();
         state(() => itemData);
         console.log(itemData);
-      })
+      }).then((querySnapshot) => {
+        const newArray = querySnapshot.itemData.map((itemData) => itemData.data());
+        getMenu(newArray);
+      });
   };
 
   useEffect(() => {
@@ -53,7 +56,16 @@ const Hall = () => {
     getMenu({ name: "allday", state: setAllday });
   };
 
-
+  const OrderRequest = (e) => {
+    e.preventDefault();
+    let arrayItem = {
+      nameItem: e.currentTarget.id,
+      priceItem: parseInt(e.currentTarget.value),
+      quantidade: parseInt(1),
+    };
+    setOrders([...orders, arrayItem]);
+    
+  };
 
   const sendOrders = (e) => {
     e.preventDefault();
@@ -62,7 +74,7 @@ const Hall = () => {
       table: table,
       order: order,
       status: "pedido em andamento",
-     
+      ready: false,
     };
     firebaseStore().collection("orders").add(sendOrder);
   };
@@ -86,7 +98,17 @@ const Hall = () => {
           <div>
             <Menu className="menu-display"  type={menu} items={menu === "breakfast" ? breakfast : allday}  />
             <div className="div-conteudo">
-           
+            {orders.map((element) => (
+              <Button
+                key={element.item}
+                idCard={element.item}
+                name={element.item}
+                value={element.priceItem}
+                price={element.price}
+               
+                handleclick={OrderRequest}
+              />
+            ))}
           </div>
            
           </div>
