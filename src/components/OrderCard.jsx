@@ -109,20 +109,12 @@ const OrderDetails = (props) => {
           addItem={handleAddItem}
         />
         <div className="div-resume">
-          <Button
-            name="RESUMO"
-            type="text"
-            value={resume}
-            onClick={(e) => setResume(e.target.value)}
-          />
-          <div>
             {props.newOrder.map((orderItem) => (
               <div>
                 Item: {orderItem} <br />
                 Qtde: {orderItem} {/* Quantidade de itens */}
               </div>
             ))}
-          </div>
         </div>
       </div>
       <div>

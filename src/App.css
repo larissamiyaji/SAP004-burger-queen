@@ -99,6 +99,10 @@ p {
   display: block;
 }
 
+.testando {
+  display: inline-grid;
+}
+
 .form-box {
   text-align: -webkit-center;
 }
@@ -316,7 +320,7 @@ p {
   width: 350px;
   border-radius: 40px;
   background-color: #ffffff00;
-  height: 2vh;
+  height: 3vh;
   border-style: none;
   margin-top: 10px;
 }
@@ -334,15 +338,20 @@ p {
 }
 
 .menu-item {
-  padding: 10px 35px 0px 45px;
-  height: 12vh;
+  padding: 10px 35px 0px 10px;
+  /* height: 12vh; */
+  height: fit-content;
   margin-bottom: 5px;
   border-radius: 30px;
   background-color: rgba(64, 224, 208, 0.466);
 }
 
-.menu-item:hover{
+.menu-item:hover {
   cursor: pointer;
+  border-style: dotted;
+  border-width: 3px;
+  color: #ffffff;
+  border-color: rgb(229, 231, 79);
   background-color: rgba(177, 48, 182, 0.486);
 }
 
@@ -351,8 +360,23 @@ p {
   justify-content: space-between;
 }
 
+.menu-font {
+  font-size: 2em;
+  padding-right: 15px;
+  height: fit-content;
+}
+
+.menu-font-price {
+  font-size: 1.6em;
+}
+
 .card {
   margin: 0px 0px 5px 10px;
+}
+
+.div-resume {
+  font-size: 1.5em;
+  font-weight: 300;
 }
 
 @media (max-width: 900px) {

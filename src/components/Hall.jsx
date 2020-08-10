@@ -40,7 +40,7 @@ const Hall = () => {
       .then((docRef) => {
         const itemData = docRef.data();
         state(() => itemData);
-        console.log(itemData);
+        // console.log(itemData);
       });
   };
 
@@ -65,10 +65,10 @@ const Hall = () => {
   };
 
   const addItem = (item) => {
-    setOrders([...orders, item])
-    console.log(item)
-  }
-console.log(orders)
+    setOrders([...orders, item]);
+    console.log(item);
+  };
+  // console.log(orders);
   return (
     <main className="main-hall">
       <video
@@ -102,7 +102,7 @@ console.log(orders)
               items={menu === "breakfast" ? breakfast : allday}
               addItem={addItem}
             />
-            <div className="div-conteudo"></div>
+            {/* <div className="div-conteudo"></div> Essa DIV Serve pra que mesmo?  */}
           </div>
         </div>
         <OrderCard newOrder={orders} />

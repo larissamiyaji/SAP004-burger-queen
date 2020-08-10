@@ -12,13 +12,13 @@ const MenuItem = (props) => {
     >
       <div className="menu-item">
         <div className="menu-button">
-          <div className="input">
+          <div className="input menu-font">
             {" "}
-            <h5>
-              <b>{props.name}</b>
-            </h5>
+            <strong>{props.name}</strong>
           </div>
-          <p>R$ {props.price.toFixed(2)}</p>
+          <p className="menu-font-price">
+            <strong>R$ {props.price.toFixed(2)}</strong>
+          </p>
         </div>
       </div>
     </div>
