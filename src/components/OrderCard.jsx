@@ -5,8 +5,7 @@ import Menu from "./Menu";
 import Button from "./Button";
 import "../App.css";
 import Hall from "./Hall";
-import {handleAddItem} from './Hall'
-import {allDay} from './Hall'
+
 
 const OrderDetails = (props) => {
   const [breakfast, setBreakfast] = useState(true);
@@ -93,7 +92,7 @@ const OrderDetails = (props) => {
           type="number"
           name={table}
           className="order-details-input input"
-          placeholder="Insira o nº da mesa"
+          placeholder="Nº da mesa"
           required
           onChange={(e) => setTable(e.currentTarget.value)}
         ></input>
@@ -102,7 +101,7 @@ const OrderDetails = (props) => {
           id="client-name"
           type="text"
           className="order-details-input input"
-          placeholder="Insira o nome do cliente"
+          placeholder="Nome do cliente"
           value={client}
           onChange={(e) => setClient(e.currentTarget.value)}
         ></input>
@@ -118,10 +117,10 @@ const OrderDetails = (props) => {
             value={resume}
             onClick={(e) => setResume(e.target.value)}
           />
-          <div className='resume-order'>
+          <div >
             {orders.map((orderItem) => (
-              <div className='itens-resume'>
-                <div className='item-order'>
+              <div >
+                <div >
                   Item: {orderItem.item}
                   <br></br>
                   Qtde: {orderItem.count}
@@ -132,8 +131,8 @@ const OrderDetails = (props) => {
           </div>
       
       </div>
-      <div className="order-bottom-info">
-      <div className='div-resume'>
+      <div >
+      <div >
           
         
           <div className="value-total">

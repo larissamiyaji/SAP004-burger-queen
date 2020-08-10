@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import OrderCard from "./OrderCard";
-// import Input from "./Input";
+
 import Menu from "./Menu";
 // import MenuCard from "./MenuCard";
 import Button from "./Button";
@@ -41,7 +41,7 @@ const Hall = () => {
         const itemData = docRef.data();
         state(() => itemData);
         console.log(itemData);
-      });
+      })
   };
 
   useEffect(() => {
@@ -53,6 +53,8 @@ const Hall = () => {
     getMenu({ name: "allday", state: setAllday });
   };
 
+
+
   const sendOrders = (e) => {
     e.preventDefault();
     const sendOrder = {
@@ -60,7 +62,7 @@ const Hall = () => {
       table: table,
       order: order,
       status: "pedido em andamento",
-      ready: false,
+     
     };
     firebaseStore().collection("orders").add(sendOrder);
   };
@@ -69,7 +71,7 @@ const Hall = () => {
 
   return (
     <main className="main-hall">
-    <video
+     <video
         src={BackgroundVideo}
         type="video/mp4"
         autoPlay
@@ -83,16 +85,8 @@ const Hall = () => {
           <Button className="ButtonItem" type="text" name="Allday" value="allday" onClick={allDay} />
           <div>
             <Menu className="menu-display"  type={menu} items={menu === "breakfast" ? breakfast : allday}  />
-            <div >
-            {orders.map((orderItem) => (
-              <div >
-                <div>
-                <p> Item: {orderItem.item}</p>
-                  <br></br>
-                  Qtde: {orderItem.count}
-                </div>
-              </div>
-            ))}
+            <div className="div-conteudo">
+           
           </div>
            
           </div>

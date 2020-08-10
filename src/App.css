@@ -1,4 +1,3 @@
-/* @media (min-width: 700px) { */
 /* SOFT RESET */
 * {
   padding: 0;
@@ -9,6 +8,20 @@
 
 body {
   background-color: #728da10e;
+  margin-bottom: 10px;
+  font-family: "Marron Bold", serif;
+}
+body::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px black;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: black;
+  outline: 1px solid black;
 }
 
 /*  HEADER E TÍTULOS */
@@ -21,19 +34,40 @@ label {
 }
 
 p {
-  font-size: 1.5em;
+  font-size: 2em;
 }
 /*  NAVBAR - BURGER QUEEN  */
+.navbar {
+  display: flex;
+  position: sticky;
+  top: 0;
+  /* justify-content: center;
+  align-items: center; */
+  background-color: #200116;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 5px;
+}
+
 .main-background {
   background-color: rgba(255, 255, 255, 0.308);
 }
 
 .main-title {
-  margin: 0;
-  padding-bottom: 15px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  padding: 7.5px 7.5px;
   background-color: #200116;
   color: white;
-  font-size: 3em;
+  font-family: "Marron";
+  /* font-size: 3em; */
+  /* height: 80px; */
+  /* margin: 0; */
 }
 
 /*  SUBTITLE - LOGIN, REGISTRO */
@@ -43,27 +77,19 @@ p {
 }
 
 .label {
-  font-size: 1.2em;
+  font-size: 2em;
   color: #000000;
-}
-.ButtonItem {
-  width: 200px;
-  height: 45px;
-  border-radius: 10px 10px;
-  font-size: 1.1em;
-  margin: 10px;
-  background-color: #d56877;
 }
 /*  INPUTS TEXTO - FORM */
 .input {
   max-width: 500px;
-  height: 50px;
+  height: 100px;
   border-bottom-style: solid;
   border-color: #d56877;
   border-width: 2px;
   background-color: #728da100;
   text-align: center;
-  font-size: 1.5em;
+  font-size: 2em;
   display: block;
   margin-bottom: 30px;
 }
@@ -75,7 +101,6 @@ p {
 
 .form-box {
   text-align: -webkit-center;
-  margin-bottom: 10px;
 }
 
 .infobox {
@@ -88,8 +113,9 @@ p {
 }
 
 .description {
-  background-color: #d56877;
+  background-color: #200116;
   border-radius: 40px;
+  color: #ffffff;
   display: inline-block;
   height: fit-content;
   margin-top: 10px;
@@ -99,24 +125,31 @@ p {
   text-align: center;
   width: auto;
   font-size: 1.6em;
+  font-family: "Bree Serif", serif;
 }
 
 /*  INPUTS BOTÕES */
 .logout-position {
-  background-color: #d3adab;
-  border-radius: 40px 10px 40px 10px;
-  font-size: 2em;
-  height: 40px;
-  position: absolute;
+  background-color: transparent;
+  position: fixed;
   right: 10px;
-  top: 25px;
-  width: 150px;
+  top: 5px;
+}
+
+.logout-position:hover {
+  cursor: pointer;
+}
+
+.logout-image {
+  height: 50px;
+  width: 50px;
 }
 
 .form-button {
   background-color: #d56877;
   border-radius: 40px 10px 40px 10px;
   font-size: 1.8em;
+  font-weight: 600;
   height: 30px;
   margin: 10px;
   width: fit-content;
@@ -126,8 +159,7 @@ p {
 }
 
 .ButtonItem:hover,
-.form-button:hover,
-.logout-position:hover {
+.form-button:hover {
   background-color: #aa5460;
   cursor: pointer;
 }
@@ -144,16 +176,6 @@ p {
 .send-order-button:hover {
   background-color: #36b934;
 }
-
-/* .select{
-  font-size: 1.1em;
-  margin-left: 5px;
-  background-color: #728da100;
-}
-
-.select:hover{
-  cursor: pointer;
-} */
 
 .link-style {
   text-decoration: none;
@@ -172,12 +194,6 @@ p {
   justify-content: center;
   align-items: center;
 }
-/* .occupation{
-  border-bottom-style: solid;
-  border-color: #D56877;
-  border-width: 1px;
-  padding: 10px;
-} */
 
 .occupation {
   display: block;
@@ -185,7 +201,7 @@ p {
 
 .p-bottom {
   margin: 10px;
-  font-size: 1.1em;
+  font-size: 2.5em;
 }
 
 .visibility-none {
@@ -215,6 +231,7 @@ p {
 
 .menu-title {
   margin-top: 10px;
+  font-size: 2em;
 }
 
 .menu-list {
@@ -255,7 +272,7 @@ p {
 }
 
 .radio-buttons {
-  font-size: 1.1em;
+  font-size: 1.5em;
   display: grid;
   margin-top: 10px;
   margin-left: 40px;
@@ -285,8 +302,9 @@ p {
   width: fit-content;
   height: fit-content;
   margin-top: 30px;
-  padding: 20px;
+  padding: 10px 10px 10px 10px;
   font-size: 1.1em;
+  /* position: fixed; */
 }
 
 .order-details {
@@ -298,9 +316,9 @@ p {
   width: 350px;
   border-radius: 40px;
   background-color: #ffffff00;
-  height: 20px;
+  height: 2vh;
   border-style: none;
-  margin-top: 5px;
+  margin-top: 10px;
 }
 
 .order-bottom-info {
@@ -312,7 +330,7 @@ p {
 }
 
 .value-total {
-  font-size: 1.5em;
+  font-size: 2em;
 }
 
 .menu-item {
@@ -328,52 +346,15 @@ p {
   justify-content: space-between;
 }
 
-.card{
+.card {
   margin: 0px 0px 5px 10px;
 }
-/* } */
 
-/*
-@media (min-width: 900px){
-  .main-title{
-    margin: 0;
-    font-size: 3em;
-  }
-  .navbar{
-    font-size: 2em;
-  }
-  .sub-title{
-    font-size: 3em;
-  }
-  .label{
-    font-size: 2.2em;
-  }
-  .input{
-    width: 700px;
-    height: 40px;
-    border-width: 2px;
-    font-size: 2.5em;
-  }
-  .form-button{
-    width: 12vh;
-    height: 5vh;
-    border-radius: 40px 10px 40px 10px;
-    font-size: 2em;
-  }
-  .infobox{
-    margin-bottom: 10vh;
-  }
-  .description{
-    width: 50vh;
-    height: 21vh;
-    margin-top: 10px;
-    padding: 10px;
-    font-size: 2em;
-  }
-  .occupation{
-    border-width: 2px;
-    padding: 10px;
-    font-size: 2em;
+@media (max-width: 900px) {
+  .logout-position {
+    width: fit-content;
+    font-size: 1.5em;
+    font-weight: 600;
+    padding: 0px 10px 0px 10px;
   }
 }
-*/
