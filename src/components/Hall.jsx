@@ -22,15 +22,6 @@ const Hall = () => {
   const [resume, setResume] = useState("");
   const [total, setTotal] = useState(0);
 
-  const MenuCard = () => {
-    const turbinar = (event) => {
-      event.preventDefault();
-      console.log("Abrindo modal");
-      OrderModal.hidden = false;
-      window.location.href = "/hall#order-modal";
-    };
-  };
-
   const getMenu = ({ name, state }) => {
     firebase
       .firestore()
@@ -51,17 +42,6 @@ const Hall = () => {
   const allDay = (e) => {
     setMenu(e.target.value);
     getMenu({ name: "allday", state: setAllday });
-  };
-
-  const sendOrders = (e) => {
-    e.preventDefault();
-    const sendOrder = {
-      client: client,
-      table: table,
-      order: order,
-      status: "pedido em andamento",
-    };
-    firebaseStore().collection("orders").add(sendOrder);
   };
 
   const addItem = (item) => {
@@ -112,3 +92,25 @@ const Hall = () => {
 };
 
 export default Hall;
+
+//  FUNÇÃO DO MODAL
+// const MenuCard = () => {
+//   const turbinar = (event) => {
+//     event.preventDefault();
+//     console.log("Abrindo modal");
+//     OrderModal.hidden = false;
+//     window.location.href = "/hall#order-modal";
+//   };
+// };
+
+// PROVAVELMENTE NÃO USAREMOS MAIS ESSA
+// const sendOrders = (e) => {
+//   e.preventDefault();
+//   const sendOrder = {
+//     client: client,
+//     table: table,
+//     order: order,
+//     status: "pedido em andamento",
+//   };
+//   firebaseStore().collection("orders").add(sendOrder);
+// };

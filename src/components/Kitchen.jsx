@@ -33,11 +33,11 @@ const Kitchen = () => {
       <div className="kitchen-display">
         <section className="order-list open-orders">
           <h2 className="list-title">Pedidos Abertos</h2>
-          <textarea className="list open-orders"></textarea>
+          <div className="list open-orders"></div>
         </section>
         <section className="order-list closed-orders">
           <h2 className="list-title">Pedidos Concluidos</h2>
-          <textarea className="list closed-orders"></textarea>
+          <div className="list closed-orders"></div>
         </section>
       </div>
     </div>

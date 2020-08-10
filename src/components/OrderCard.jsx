@@ -109,12 +109,12 @@ const OrderDetails = (props) => {
           addItem={handleAddItem}
         />
         <div className="div-resume">
-            {props.newOrder.map((orderItem) => (
-              <div>
-                Item: {orderItem} <br />
-                Qtde: {orderItem} {/* Quantidade de itens */}
-              </div>
-            ))}
+          {props.newOrder.map((orderItem) => (
+            <div>
+              Item: {orderItem} <br />
+              Qtde: {orderItem} {/* Quantidade de itens */}
+            </div>
+          ))}
         </div>
       </div>
       <div>
