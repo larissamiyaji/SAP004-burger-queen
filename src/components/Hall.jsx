@@ -4,23 +4,23 @@ import OrderCard from "./OrderCard";
 import Menu from "./Menu";
 // import MenuCard from "./MenuCard";
 import Button from "./Button";
-import { firebaseStore } from "../firebase";
+// import { firebaseStore } from "../firebase";
 import firebase from "../firebase";
 import BackgroundVideo from "./video/background-video-hall.mp4";
 import "./Hall.css";
-import OrderModal from "./OrderModal";
+// import OrderModal from "./OrderModal";
 // import Input from "./Input";
 
 const Hall = () => {
   const [breakfast, setBreakfast] = useState(true);
   const [allday, setAllday] = useState(false);
   const [orders, setOrders] = useState([]);
-  const [order, setOrder] = useState(1);
-  const [table, setTable] = useState("");
-  const [client, setClient] = useState("");
+  // const [order, setOrder] = useState(1);
+  // const [table, setTable] = useState("");
+  // const [client, setClient] = useState("");
   const [menu, setMenu] = useState("");
-  const [resume, setResume] = useState("");
-  const [total, setTotal] = useState(0);
+  // const [resume, setResume] = useState("");
+  // const [total, setTotal] = useState(0);
 
   const getMenu = ({ name, state }) => {
     firebase

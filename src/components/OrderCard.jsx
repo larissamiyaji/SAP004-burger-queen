@@ -2,19 +2,19 @@ import { firebaseStore } from "../firebase";
 import firebase from "../firebase";
 import React, { useState, useEffect } from "react";
 import Menu from "./Menu";
-import Button from "./Button";
+// import Button from "./Button";
 import "../App.css";
-import Hall from "./Hall";
+// import Hall from "./Hall";
 
 const OrderDetails = (props) => {
-  const [breakfast, setBreakfast] = useState(true);
-  const [allDay, setAllDay] = useState(false);
-  const [orders, setOrders] = useState([]);
+  const [breakfast/*, setBreakfast*/] = useState(true);
+const [allDay/*, setAllDay*/] = useState(false);
+  // const [orders, setOrders] = useState([]);
   const [order, setOrder] = useState(1);
   const [table, setTable] = useState("");
   const [client, setClient] = useState("");
-  const [menu, setMenu] = useState("");
-  const [resume, setResume] = useState("");
+const [menu/*, setMenu*/] = useState("");
+  // const [resume, setResume] = useState("");
   const [total, setTotal] = useState(0);
 
   firebase
