@@ -83,7 +83,7 @@ p {
 /*  INPUTS TEXTO - FORM */
 .input {
   max-width: 500px;
-  height: 100px;
+  height: 40px;
   border-bottom-style: solid;
   border-color: #d56877;
   border-width: 2px;

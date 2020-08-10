@@ -118,12 +118,12 @@ const OrderDetails = (props) => {
             onClick={(e) => setResume(e.target.value)}
           />
           <div >
-            {orders.map((orderItem) => (
+            {props.newOrder.map((orderItem) => (
               <div >
                 <div >
-                  Item: {orderItem.item}
+                  Item: {orderItem}
                   <br></br>
-                  Qtde: {orderItem.count}
+                  Qtde: {orderItem}
                 </div>
               </div>
             ))}
