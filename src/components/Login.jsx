@@ -86,7 +86,6 @@ function Login() {
           onChange={(e) => setPassword(e.currentTarget.value)}
           required
         />
-
         <Button onClick={handleClick} name="Entrar" />
         <p className="p-bottom">
           Ainda não possui conta? <a href="/Register">Cadastre-se</a>

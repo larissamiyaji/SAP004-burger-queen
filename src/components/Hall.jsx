@@ -41,7 +41,7 @@ const Hall = () => {
         const itemData = docRef.data();
         state(() => itemData);
         console.log(itemData);
-      })
+      });
   };
 
   useEffect(() => {
@@ -53,8 +53,6 @@ const Hall = () => {
     getMenu({ name: "allday", state: setAllday });
   };
 
-
-
   const sendOrders = (e) => {
     e.preventDefault();
     const sendOrder = {
@@ -62,16 +60,18 @@ const Hall = () => {
       table: table,
       order: order,
       status: "pedido em andamento",
-     
     };
     firebaseStore().collection("orders").add(sendOrder);
   };
 
-
-
+  const addItem = (item) => {
+    setOrders([...orders, item])
+    console.log(item)
+  }
+console.log(orders)
   return (
     <main className="main-hall">
-     <video
+      <video
         src={BackgroundVideo}
         type="video/mp4"
         autoPlay
@@ -81,14 +81,28 @@ const Hall = () => {
       ></video>
       <div className="div-hall">
         <div className="tabs-container">
-          <Button className="ButtonItem" type="text" name="Breakfast" value="breakfast" onClick={(e) => setMenu(e.target.value)} />
-          <Button className="ButtonItem" type="text" name="Allday" value="allday" onClick={allDay} />
+          <Button
+            className="ButtonItem"
+            type="text"
+            name="Breakfast"
+            value="breakfast"
+            onClick={(e) => setMenu(e.target.value)}
+          />
+          <Button
+            className="ButtonItem"
+            type="text"
+            name="Allday"
+            value="allday"
+            onClick={allDay}
+          />
           <div>
-            <Menu className="menu-display"  type={menu} items={menu === "breakfast" ? breakfast : allday}  />
-            <div className="div-conteudo">
-           
-          </div>
-           
+            <Menu
+              className="menu-display"
+              type={menu}
+              items={menu === "breakfast" ? breakfast : allday}
+              addItem={addItem}
+            />
+            <div className="div-conteudo"></div>
           </div>
         </div>
         <OrderCard newOrder={orders} />
