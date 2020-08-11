@@ -6,7 +6,7 @@ import "./Kitchen.css";
 
 const Kitchen = () => {
   const [open, setOpen] = useState([]);
-  const [closed, setClosed] = useState([]);
+  // const [closed, setClosed] = useState([]);
 
   useEffect(() => {
     firebase
@@ -16,7 +16,7 @@ const Kitchen = () => {
       .then((snapshot) => {
         let arrayVazio = [];
         snapshot.forEach((doc) => {
-          console.log(doc.data());
+          // console.log(doc.data());
           arrayVazio.push(doc.data());
         });
         setOpen(arrayVazio);
@@ -36,18 +36,20 @@ const Kitchen = () => {
       <div className="kitchen-display">
         <section className="order-list open-orders">
           <h2 className="list-title">Pedidos Abertos</h2>
-          {/* <div className="list open-orders"></div> POSSIVELMENTE PODE APAGAR */}
           {open.map((element) => (
-            <div>
-              <p>{element.order}</p>
-              {element.status} {element.client} {element.table} {element.order}
+            <div className="open-card">
+              <div className="order-top">
+                <p><strong>Nº do pedido: </strong>{element.order}</p>
+                <p><strong>Nº da mesa: </strong>{element.table}</p>
+              </div>
+              <p><strong>Cliente: </strong>{element.client}</p>
+              <p><strong>Status: </strong>{element.status}</p>
             </div>
           ))}
         </section>
         <section className="order-list closed-orders">
           <h2 className="list-title">Pedidos Concluidos</h2>
-          {/* <div className="list closed-orders"></div> POSSIVELMENTE PODE APAGAR */}
-          {closed}
+          {/* {closed} */}
         </section>
       </div>
     </div>
