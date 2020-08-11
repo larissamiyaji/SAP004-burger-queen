@@ -1,43 +1,56 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import firebase from "../firebase";
 import BackgroundVideo from "./video/background-video-kitchen.mp4";
 import "../App.css";
 import "./Kitchen.css";
-import Button from "./Button";
 
 const Kitchen = () => {
-  const showOrders = () => {
+  const [open, setOpen] = useState([]);
+  // const [closed, setClosed] = useState([]);
+
+  useEffect(() => {
     firebase
       .firestore()
       .collection("orders")
       .get()
       .then((snapshot) => {
-        snapshot.docs.forEach((doc) => {
-          console.log("Lista de pedidos", doc.data());
+        let arrayVazio = [];
+        snapshot.forEach((doc) => {
+          // console.log(doc.data());
+          arrayVazio.push(doc.data());
         });
+        setOpen(arrayVazio);
       });
-  };
+  }, []);
   return (
     <div className="kitchen">
-     <video
+     {/* <video
         src={BackgroundVideo}
         type="video/mp4"
         autoPlay
         loop
         muted
         className="video-background"
-      ></video>
+     ></video>*/}
       <h1 className="list-title">Cozinha</h1>
-      <Button onClick={showOrders} name="Mostrar Pedidos"></Button>
-      {/*Tirar essa função do botão*/}
       <div className="kitchen-display">
         <section className="order-list open-orders">
           <h2 className="list-title">Pedidos Abertos</h2>
-          <textarea className="list open-orders"></textarea>
+          {open.map((element) => (
+            <div className="open-card">
+              <div className="order-top">
+                <p><strong>Nº do pedido: </strong>{element.order}</p>
+                <p><strong>Nº da mesa: </strong>{element.table}</p>
+              </div>
+              <p><strong>Cliente: </strong>{element.client}</p>
+              <p><strong>Status: </strong>{element.status}</p>
+              
+            </div>
+          ))}
         </section>
         <section className="order-list closed-orders">
-          <h2 className="list-title">Pedidos Concluidos</h2>
-          <textarea className="list closed-orders"></textarea>
+          <h2 className="list-title">Pedidos Concluídos</h2>
+          {/* {closed} */}
         </section>
       </div>
     </div>

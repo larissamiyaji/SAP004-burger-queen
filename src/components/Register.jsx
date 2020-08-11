@@ -62,14 +62,16 @@ const Register = () => {
       <h2 className="sub-title">Cadastrar</h2>
       <form className="form-box">
         <Input
+          className="input"
           type="text"
           id="input-name"
-          placeholder="Digite seu Nome"
+          placeholder="Digite seu nome"
           value={name}
           onChange={(e) => setName(e.currentTarget.value)}
           required
         />
         <Input
+          className="input"
           type="email"
           id="input-email"
           placeholder="Digite o e-mail"
@@ -78,6 +80,7 @@ const Register = () => {
           required
         />
         <Input
+          className="input"
           type="password"
           id="input-password"
           placeholder="Digite uma senha"
