@@ -14,13 +14,12 @@ const Kitchen = () => {
       .collection("orders")
       .get()
       .then((snapshot) => {
+        let arrayVazio = [];
         snapshot.forEach((doc) => {
-          const orderList = Object.entries(doc.data()); //  Array dos pedidos
-          setOpen(orderList);
-          setClosed(orderList);
-          // console.log("ID do pedido", doc.id);
-          console.log(orderList);
+          console.log(doc.data());
+          arrayVazio.push(doc.data());
         });
+        setOpen(arrayVazio);
       });
   }, []);
   return (
@@ -38,7 +37,9 @@ const Kitchen = () => {
         <section className="order-list open-orders">
           <h2 className="list-title">Pedidos Abertos</h2>
           {/* <div className="list open-orders"></div> POSSIVELMENTE PODE APAGAR */}
-          {open}
+          {open.map((element) => (
+            <p>{element.status} {element.client} {element.table} {element.order}</p>
+          ))}
         </section>
         <section className="order-list closed-orders">
           <h2 className="list-title">Pedidos Concluidos</h2>
