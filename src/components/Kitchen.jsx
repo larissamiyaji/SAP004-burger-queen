@@ -6,7 +6,7 @@ import "./Kitchen.css";
 
 const Kitchen = () => {
   const [open, setOpen] = useState([]);
-  // const [closed, setClosed] = useState([]);
+  const [closed, setClosed] = useState([]);
 
   useEffect(() => {
     firebase
@@ -16,14 +16,9 @@ const Kitchen = () => {
       .then((snapshot) => {
         snapshot.forEach((doc) => {
           const orderList = Object.entries(doc.data()); //  Array dos pedidos
-          setOpen([
-            orderList[0],
-            orderList[1],
-            orderList[2],
-            orderList[3],
-          ]);
-          // setClosed(orderList);
-          console.log("ID do pedido", doc.id);
+          setOpen(orderList);
+          setClosed(orderList);
+          // console.log("ID do pedido", doc.id);
           console.log(orderList);
         });
       });
@@ -48,7 +43,7 @@ const Kitchen = () => {
         <section className="order-list closed-orders">
           <h2 className="list-title">Pedidos Concluidos</h2>
           {/* <div className="list closed-orders"></div> POSSIVELMENTE PODE APAGAR */}
-          {/* {closed} */}
+          {closed}
         </section>
       </div>
     </div>
