@@ -48,7 +48,7 @@ const Kitchen = () => {
           ))}
         </section>
         <section className="order-list closed-orders">
-          <h2 className="list-title">Pedidos Concluidos</h2>
+          <h2 className="list-title">Pedidos Concluídos</h2>
           {/* {closed} */}
         </section>
       </div>
