@@ -2,20 +2,19 @@ import { firebaseStore } from "../firebase";
 import firebase from "../firebase";
 import React, { useState, useEffect } from "react";
 import Menu from "./Menu";
-import Button from "./Button";
+// import Button from "./Button";
 import "../App.css";
-import Hall from "./Hall";
-
+// import Hall from "./Hall";
 
 const OrderDetails = (props) => {
-  const [breakfast, setBreakfast] = useState(true);
-  const [allDay, setAllDay] = useState(false);
-  const [orders, setOrders] = useState([]);
+  const [breakfast/*, setBreakfast*/] = useState(true);
+const [allDay/*, setAllDay*/] = useState(false);
+  // const [orders, setOrders] = useState([]);
   const [order, setOrder] = useState(1);
   const [table, setTable] = useState("");
   const [client, setClient] = useState("");
-  const [menu, setMenu] = useState("");
-  const [resume, setResume] = useState("");
+const [menu/*, setMenu*/] = useState("");
+  // const [resume, setResume] = useState("");
   const [total, setTotal] = useState(0);
 
   firebase
@@ -23,9 +22,7 @@ const OrderDetails = (props) => {
     .collection("orders")
     .get()
     .then((snapshot) => {
-      snapshot.docs.forEach((doc) => {
-        
-      });
+      snapshot.docs.forEach((doc) => {});
     });
 
   useEffect(() => {}, [order, table, client]);
@@ -50,7 +47,7 @@ const OrderDetails = (props) => {
       .collection("orders")
       .add({
         order: order,
-        status: "pedido em andamento",
+        status: "Pedido em andamento",
         table: table,
         client: client,
       })
@@ -68,7 +65,7 @@ const OrderDetails = (props) => {
     );
 
     const itemIndex = order.findIndex((el) => el.item === item);
-    
+
     if (itemIndex === -1) {
       setOrder([...order, { item, count: 1 }]);
     } else {
@@ -78,10 +75,9 @@ const OrderDetails = (props) => {
     }
 
     setTotal(total + price);
-    console.log(handleAddItem)
+    console.log(handleAddItem);
   };
-  
-  
+
   return (
     <section id="order" className="order-card">
       <h2 className="menu-title text-align">Detalhes do Pedido</h2>
@@ -96,7 +92,6 @@ const OrderDetails = (props) => {
           required
           onChange={(e) => setTable(e.currentTarget.value)}
         ></input>
-
         <input
           id="client-name"
           type="text"
@@ -106,43 +101,26 @@ const OrderDetails = (props) => {
           onChange={(e) => setClient(e.currentTarget.value)}
         ></input>
       </div>
-     
       <div className="menu-list text-align">
-      <Menu className="menu-display"  type={menu} items={menu === "breakfast" ? breakfast : allDay} addItem={handleAddItem} />
-      <div className='div-resume'>
-          <Button
-            name='RESUMO'
-            
-            type='text'
-            value={resume}
-            onClick={(e) => setResume(e.target.value)}
-          />
-          <div >
-            {props.newOrder.map((orderItem) => (
-              <div >
-                <div >
-                  Item: {orderItem}
-                  <br></br>
-                  Qtde: {orderItem}
-                </div>
-              </div>
-            ))}
-          </div>
-          </div>
-      
-      </div>
-      <div >
-      <div >
-          
-        
-          <div className="value-total">
-            <span className='total-price'>TOTAL:R$ {total}</span>
-          
-          
-          </div>
+        <Menu
+          className="menu-display"
+          type={menu}
+          items={menu === "breakfast" ? breakfast : allDay}
+          addItem={handleAddItem}
+        />
+        <div className="div-resume">
+          {props.newOrder.map((orderItem) => (
+            <div>
+              Item: {orderItem} <br />
+              Qtde: {orderItem} {/* Quantidade de itens */}
+            </div>
+          ))}
         </div>
-       
-       
+      </div>
+      <div>
+        <div className="value-total">
+          <span className="total-price">TOTAL:R$ {total}</span>
+        </div>
         <button
           type="submit"
           className="form-button cancel-button"

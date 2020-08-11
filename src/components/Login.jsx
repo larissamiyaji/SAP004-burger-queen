@@ -71,6 +71,7 @@ function Login() {
       <h2 className="sub-title">Login</h2>
       <form className="form-box">
         <Input
+          className="input"
           type="text"
           id="input-email"
           placeholder="Digite seu e-mail"
@@ -79,6 +80,7 @@ function Login() {
           required
         />
         <Input
+          className="input"
           type="password"
           id="input-password"
           placeholder="Digite sua senha"
@@ -87,6 +89,7 @@ function Login() {
           required
         />
         <Button onClick={handleClick} name="Entrar" />
+
         <p className="p-bottom">
           Ainda não possui conta? <a href="/Register">Cadastre-se</a>
         </p>

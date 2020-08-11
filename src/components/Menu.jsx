@@ -12,7 +12,7 @@ const Menu = (props) => {
             key={item[0]}
             name={item[0]}        
             price={item[1]}
-            handleClick={() => props.addItem(item[0])}
+            handleClick={() => props.addItem(item[0] + " R$" + item[1] + ",00")}
             order={props.order}
           />
         );

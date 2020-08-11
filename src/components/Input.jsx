@@ -5,7 +5,7 @@ const Input = (props) => {
     <input
       type={props.type}
       id={props.id}
-      className={props.class}
+      className={props.className}
       placeholder={props.placeholder}
       name={props.name}
       value={props.value}
