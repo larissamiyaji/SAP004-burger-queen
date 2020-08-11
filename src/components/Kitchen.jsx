@@ -38,7 +38,10 @@ const Kitchen = () => {
           <h2 className="list-title">Pedidos Abertos</h2>
           {/* <div className="list open-orders"></div> POSSIVELMENTE PODE APAGAR */}
           {open.map((element) => (
-            <p>{element.status} {element.client} {element.table} {element.order}</p>
+            <div>
+              <p>{element.order}</p>
+              {element.status} {element.client} {element.table} {element.order}
+            </div>
           ))}
         </section>
         <section className="order-list closed-orders">
