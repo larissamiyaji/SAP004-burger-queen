@@ -57,32 +57,3 @@ const Kitchen = () => {
 };
 
 export default Kitchen;
-
-// const showOrders = () => {
-//     firebase
-//       .firestore()
-//       .collection("orders")
-//       .get()
-//       .then((snapshot) => {
-//           snapshot.forEach((doc) => {
-//               const orderList = Object.entries(doc.data());
-//               setOpen(orderList);
-//               setClosed(orderList);
-//               // console.log(orderList)
-//             });
-//           });
-//         // console.log(open)
-//         // console.log(closed)
-//       };
-
-//       const showOrders = () => {
-//           firebase
-//             .firestore()
-//             .collection("orders")
-//             .get()
-//           .then((snapshot) => {
-//               snapshot.docs.forEach((doc) => {
-//                   console.log("Lista de pedidos", doc.data());
-//                 });
-//               });
-//           };

@@ -47,7 +47,7 @@ const [menu/*, setMenu*/] = useState("");
       .collection("orders")
       .add({
         order: order,
-        status: "pedido em andamento",
+        status: "Pedido em andamento",
         table: table,
         client: client,
       })
