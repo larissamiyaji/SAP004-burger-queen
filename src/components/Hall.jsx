@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from "react";
 import OrderCard from "./OrderCard";
-
 import Menu from "./Menu";
-// import MenuCard from "./MenuCard";
 import Button from "./Button";
-// import { firebaseStore } from "../firebase";
 import firebase from "../firebase";
 import BackgroundVideo from "./video/background-video-hall.mp4";
 import "./Hall.css";
+
+// import MenuCard from "./MenuCard";
+// import { firebaseStore } from "../firebase";
 // import OrderModal from "./OrderModal";
 // import Input from "./Input";
 
