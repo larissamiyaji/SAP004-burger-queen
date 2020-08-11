@@ -83,7 +83,7 @@ p {
 /*  INPUTS TEXTO - FORM */
 .input {
   max-width: 500px;
-  height: 100px;
+  height: 40px;
   border-bottom-style: solid;
   border-color: #d56877;
   border-width: 2px;
@@ -305,6 +305,15 @@ p {
   padding: 10px 10px 10px 10px;
   font-size: 1.1em;
   /* position: fixed; */
+}
+
+.order-item {
+  padding: 5px 15px 0px 15px;
+  height: 5vh;
+  margin-bottom: 3px;
+  border-radius: 30px;
+  background-color: #370622;
+  color: white;
 }
 
 .order-details {

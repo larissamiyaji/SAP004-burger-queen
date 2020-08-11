@@ -5,18 +5,20 @@ import Menu from "./Menu";
 import Button from "./Button";
 import "../App.css";
 import Hall from "./Hall";
-'
+
 
 const OrderDetails = (props) => {
   const [breakfast, setBreakfast] = useState(true);
   const [allDay, setAllDay] = useState(false);
-  const [orders, setOrders] = useState([]);
+  
   const [order, setOrder] = useState(1);
   const [table, setTable] = useState("");
   const [client, setClient] = useState("");
   const [menu, setMenu] = useState("");
   const [resume, setResume] = useState("");
   const [total, setTotal] = useState(0);
+  const [pedido,setPedido]= useState("");
+  console.log(pedido)
 
   firebase
     .firestore()
@@ -28,7 +30,7 @@ const OrderDetails = (props) => {
       });
     });
 
-  useEffect(() => {}, [order, table, client]);
+  useEffect(() => {}, [order, table, client,pedido]);
 
   const cancelOrder = (event) => {
     event.preventDefault();
@@ -41,49 +43,38 @@ const OrderDetails = (props) => {
 
   const prevent = (event) => {
     event.preventDefault();
-    newOrder(order, table, client);
+    newOrder(order, table, client,pedido);
     sendOrder(order);
   };
 
-  const newOrder = (order, table, client) => {
+  
+ 
+
+  const newOrder = (order, table, client,pedido) => {
     firebaseStore
       .collection("orders")
       .add({
         order: order,
         status: "pedido em andamento",
         table: table,
-        client: client,
+        client: client, 
+        pedido:pedido
+        
       })
       .then((docs) => {
+        setPedido([]);
         alert("Pedido enviado");
       })
       .catch((error) => {
         alert(error.message);
       });
   };
-  const handleAddItem = (e) => {
-    const item = e.currentTarget.parentElement.firstChild.innerText;
-    const price = parseFloat(
-      e.currentTarget.parentElement.children[1].innerText.replace("R$ ", "")
-    );
-
-    const itemIndex = order.findIndex((el) => el.item === item);
-    
-    if (itemIndex === -1) {
-      setOrder([...order, { item, count: 1 }]);
-    } else {
-      const newOrder = [...order];
-      newOrder[itemIndex].count += 1;
-      setOrder(newOrder);
-    }
-
-    setTotal(total + price);
-    console.log(handleAddItem)
-  };
+  
+  
   
   
   return (
-    <section id="order" className="order-card">
+    <section id="orders" className="order-card">
       <h2 className="menu-title text-align">Detalhes do Pedido</h2>
       <div className="order-details">
         <p>Nº do pedido: {order}</p>
@@ -106,43 +97,52 @@ const OrderDetails = (props) => {
           onChange={(e) => setClient(e.currentTarget.value)}
         ></input>
       </div>
-     
+
       <div className="menu-list text-align">
-      <Menu className="menu-display"  type={menu} items={menu === "breakfast" ? breakfast : allDay} addItem={handleAddItem} />
-      <div className='div-resume'>
-          <Button
-            name='RESUMO'
-            
-            type='text'
-            value={resume}
-            onClick={(e) => setResume(e.target.value)}
-          />
-          <div className='resume-order'>
-            {orders.map((orderItem) => (
-              <div className='itens-resume'>
-                <div className='item-order'>
-                  Item: {orderItem.item}
-                  <br></br>
-                  Qtde: {orderItem.count}
+        <Menu
+          className="menu-display"
+          type={menu}
+          items={menu === "breakfast" ? breakfast : allDay}
+        />
+        <div className="div-resume">
+          <div>
+            {props.newOrder.map((orderItem) => (
+                <div>
+                  <div
+                     id="orders"
+                    value={orderItem}
+                    onChange={(e) => setPedido(e.currentTarget.value)}
+                  >
+                    {orderItem}
+                  </div>
                 </div>
-              </div>
-            ))}
-          </div>
-          </div>
-      
+              ))}
+              <div>
+        {pedido &&
+          pedido.map((orderItem) => (
+            <div>
+              <li>
+                {pedido}
+              </li>
+             
+            </div>
+          ))}
+
+       
       </div>
-      <div className="order-bottom-info">
-      <div className='div-resume'>
-          
-        
-          <div className="value-total">
-            <span className='total-price'>TOTAL:R$ {total}</span>
-          
-          
           </div>
         </div>
-       
-       
+      </div>
+      <div>
+        <div>
+          <div
+            onClick={(e) => setTotal(e.target.value)}
+            className="value-total"
+          >
+            <span className="total-price">TOTAL:R$ {total}</span>
+          </div>
+        </div>
+
         <button
           type="submit"
           className="form-button cancel-button"

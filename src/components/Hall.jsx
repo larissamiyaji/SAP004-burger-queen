@@ -21,6 +21,8 @@ const Hall = () => {
   const [menu, setMenu] = useState("");
   const [resume, setResume] = useState("");
   const [total, setTotal] = useState(0);
+  const [pedido,setPedido]= useState("");
+  
 
   const MenuCard = () => {
     const turbinar = (event) => {
@@ -41,9 +43,6 @@ const Hall = () => {
         const itemData = docRef.data();
         state(() => itemData);
         console.log(itemData);
-      }).then((querySnapshot) => {
-        const newArray = querySnapshot.itemData.map((itemData) => itemData.data());
-        getMenu(newArray);
       });
   };
 
@@ -56,61 +55,86 @@ const Hall = () => {
     getMenu({ name: "allday", state: setAllday });
   };
 
-  const OrderRequest = (e) => {
-    e.preventDefault();
-    let arrayItem = {
-      nameItem: e.currentTarget.id,
-      priceItem: parseInt(e.currentTarget.value),
-      quantidade: parseInt(1),
-    };
-    setOrders([...orders, arrayItem]);
-    
-  };
-
   const sendOrders = (e) => {
     e.preventDefault();
     const sendOrder = {
       client: client,
       table: table,
       order: order,
+      pedido:pedido,
       status: "pedido em andamento",
-      ready: false,
+      
     };
     firebaseStore().collection("orders").add(sendOrder);
   };
 
+  const addItem = (item) => {
+    setOrders([...orders, item])
+    const handleAddItem = (e) => {
+      const item = e.currentTarget.parentElement.firstChild;
+      const price = parseFloat(
+        e.currentTarget.parentElement.children[1]
+        
+      );
+  
+      const itemIndex = order.findIndex((el) => el.item === item);
+      if (itemIndex === -1) {
+        setOrder([...order, { item, count: 1 }]);
+      } else {
+        const RequestOrder = [...order];
+        RequestOrder[itemIndex].item += 1;
+        setOrders(RequestOrder);
+      }
+  
+      setTotal(total + price);
+      
+    }; 
+   
+  }
+  
+
+
+ 
 
 
   return (
     <main className="main-hall">
-     <video
+     {/* <video
         src={BackgroundVideo}
         type="video/mp4"
         autoPlay
         loop
         muted
         className="video-background"
-      ></video>
+     ></video>*/}
       <div className="div-hall">
         <div className="tabs-container">
-          <Button className="ButtonItem" type="text" name="Breakfast" value="breakfast" onClick={(e) => setMenu(e.target.value)} />
-          <Button className="ButtonItem" type="text" name="Allday" value="allday" onClick={allDay} />
+          <Button
+            className="ButtonItem"
+            type="text"
+            name="Breakfast"
+            value="breakfast"
+            onClick={(e) => setMenu(e.target.value)}
+          />
+          <Button
+            className="ButtonItem"
+            type="text"
+            name="Allday"
+            value="allday"
+            onClick={allDay}
+          />
           <div>
-            <Menu className="menu-display"  type={menu} items={menu === "breakfast" ? breakfast : allday}  />
-            <div className="div-conteudo">
-            {orders.map((element) => (
-              <Button
-                key={element.item}
-                idCard={element.item}
-                name={element.item}
-                value={element.priceItem}
-                price={element.price}
-               
-                handleclick={OrderRequest}
-              />
-            ))}
-          </div>
-           
+            <Menu
+              className="menu-display"
+              type={menu}
+              items={menu === "breakfast" ? breakfast : allday}
+              id='pedido'
+              addItem={addItem}
+              value={pedido}
+              onChange={(e) => setPedido(e.currentTarget.value)}
+               />
+            <div className="div-conteudo"
+             onClick={(e) => setTotal(e.target.value)}> total:{total}</div>
           </div>
         </div>
         <OrderCard newOrder={orders} />
