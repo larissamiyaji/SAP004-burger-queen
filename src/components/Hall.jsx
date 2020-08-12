@@ -20,7 +20,7 @@ const Hall = () => {
   // const [client, setClient] = useState("");
   const [menu, setMenu] = useState("");
   // const [resume, setResume] = useState("");
-  // const [total, setTotal] = useState(0);
+  const [total, setTotal] = useState(0);
 
   const getMenu = ({ name, state }) => {
     firebase
@@ -47,6 +47,23 @@ const Hall = () => {
   const addItem = (item) => {
     setOrders([...orders, item]);
     console.log(item);
+    const handleAddItem = (e) => {
+      const item = e.currentTarget.parentElement.firstChild.innerText;
+      const price = parseFloat(
+        e.currentTarget.parentElement.children[1].innerText.replace('R$ ', '')
+      );
+  
+      const itemIndex = orders.findIndex((el) => el.item === item);
+      if (itemIndex === -1) {
+        setOrders([...orders, { item, count: 1 }]);
+      } else {
+        const newOrders = [...orders];
+        newOrders[itemIndex].count += 1;
+        setOrders(newOrders);
+      }
+  
+      setTotal(total + price);
+    };
   };
   // console.log(orders);
   return (

@@ -16,8 +16,8 @@ const [allDay/*, setAllDay*/] = useState(false);
 const [menu/*, setMenu*/] = useState("");
   // const [resume, setResume] = useState("");
   const [total, setTotal] = useState(0);
-  const [pedido,setPedido]= useState("");
-  console.log(pedido)
+  
+  
 
   firebase
     .firestore()
@@ -27,7 +27,7 @@ const [menu/*, setMenu*/] = useState("");
       snapshot.docs.forEach((doc) => {});
     });
 
-  useEffect(() => {}, [order, table, client,pedido]);
+  useEffect(() => {}, [order, table, client,orders]);
 
   const cancelOrder = (event) => {
     event.preventDefault();
@@ -40,14 +40,34 @@ const [menu/*, setMenu*/] = useState("");
 
   const prevent = (event) => {
     event.preventDefault();
-    newOrder(order, table, client,pedido,orders);
-    sendOrder(order);
+    if (orders && table && client) {
+      firebase
+        .firestore()
+        .collection("orders")
+        .doc()
+        .set({
+          client: client,
+          table: table,
+          orders: orders,
+          //total,
+        })
+        .then((snapspshot) => {
+          setOrders([]);
+          //setTotal(0)
+          setClient("");
+          setTable(0);
+          alert("Pedido enviado com sucesso");
+         
+        });
+   
+  }
+  newOrder(order, table, client,orders);
+  sendOrder(order);
   };
-
   
  
 
-  const newOrder = (order, table, client,pedido,orders) => {
+  const newOrder = (order, table, client,orders) => {
     firebaseStore
       .collection("orders")
       .add({
@@ -58,16 +78,17 @@ const [menu/*, setMenu*/] = useState("");
         pedido:orders
         
       })
-      .then((docs) => {
-        setOrders("");
-        alert("Pedido enviado");
-      })
-      .catch((error) => {
-        alert(error.message);
+      .then((snapshot) => {
+        let arrayVazio = [];
+        snapshot.forEach((doc) => {
+          // console.log(doc.data());
+          arrayVazio.push(doc.data());
+        });
+        setOrders(arrayVazio);
       });
-  };
+    }
   function newRequest(orderItem) {
-    const indexOrder = orders.findIndex((order) => order.orderItem === orderItem.orderItem);
+    const indexOrder = orders.findIndex((orders) => order.orderItem === orderItem.orderItem);
     if (indexOrder === -1) {
       setOrders([...orders, { ...orderItem, count: 1 }]);
     } else {
@@ -107,7 +128,7 @@ const [menu/*, setMenu*/] = useState("");
           className="menu-display"
           type={menu}
           items={menu === "breakfast" ? breakfast : allDay}
-          addItem={newRequest}
+          
         />
         <div className="div-resume">
           {props.newOrder.map((orderItem) => (
@@ -118,6 +139,16 @@ const [menu/*, setMenu*/] = useState("");
             </div>
           ))}
         </div>
+        <div className="div-resume">
+          {orders && props.order.map((orderItem) => (
+            <div className="order-item">
+               {orderItem} <br />
+              {/* Quantidade de itens */}
+              
+            </div>
+          ))}
+        </div>
+        
       
       </div>
       <div>

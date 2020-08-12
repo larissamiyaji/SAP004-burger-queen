@@ -44,6 +44,7 @@ const Kitchen = () => {
               </div>
               <p><strong>Cliente: </strong>{element.client}</p>
               <p><strong>Status: </strong>{element.status}</p>
+             
               
             </div>
           ))}
