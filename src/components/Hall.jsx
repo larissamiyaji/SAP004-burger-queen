@@ -3,7 +3,7 @@ import OrderCard from "./OrderCard";
 import Menu from "./Menu";
 import Button from "./Button";
 import firebase from "../firebase";
-import BackgroundVideo from "./video/background-video-hall.mp4";
+// import BackgroundVideo from "./video/background-video-hall.mp4";
 import "./Hall.css";
 
 // import MenuCard from "./MenuCard";

@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
 import firebase from "../firebase";
-import BackgroundVideo from "./video/background-video-kitchen.mp4";
+// import BackgroundVideo from "./video/background-video-kitchen.mp4";
 import "../App.css";
 import "./Kitchen.css";
 
@@ -16,7 +16,7 @@ const Kitchen = () => {
       .then((snapshot) => {
         let arrayVazio = [];
         snapshot.forEach((doc) => {
-          // console.log(doc.data());
+          // console.log(doc.data()); // Lista de pedidos
           arrayVazio.push(doc.data());
         });
         setOpen(arrayVazio);
@@ -48,10 +48,10 @@ const Kitchen = () => {
             </div>
           ))}
         </section>
-        <section className="order-list closed-orders">
+        {/* <section className="order-list closed-orders">
           <h2 className="list-title">Pedidos Concluídos</h2>
-          {/* {closed} */}
-        </section>
+          {closed}
+        </section>  PEDIDOS CONCLUÍDOS */}
       </div>
     </div>
   );

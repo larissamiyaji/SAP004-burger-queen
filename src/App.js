@@ -11,6 +11,8 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 // import Menu from "./components/Menu";
 // import init from "./firebase"
+import OrderNumber from "./components/Teste";
+
 
 const logout = () => {
   firebase
@@ -46,8 +48,8 @@ export default function App() {
                 <ButtonLogout onClick={logout} /*name="Sair"*/ />
                 <div className="menu">
                   <Hall />
-
                   <OrderModal className="hidden" />
+                  {/* <OrderNumber/> */}
                 </div>
               </div>
             </Route>
