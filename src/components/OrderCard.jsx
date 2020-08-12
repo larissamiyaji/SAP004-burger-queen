@@ -47,7 +47,7 @@ const [menu/*, setMenu*/] = useState("");
   
  
 
-  const newOrder = (order, table, client,pedido,orders) => {
+  const newOrder = (order, table, client, pedido, orders) => {
     firebaseStore
       .collection("orders")
       .add({

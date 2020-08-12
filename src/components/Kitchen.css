@@ -60,18 +60,17 @@ margin-bottom: 10px;
 margin-left: -10px;
 padding-top: 10px 0px 10px 0px;
 background-color: rgb(192, 255, 65);
-font-size: 0.7em;
 border-radius: 0px 0px 100px 0px;
 }
 
 .open-card {
   display: block;
-  background-color: #9C96B8;
+  background-color: #9a92bb;
   border-radius: 0px 200px 30px 20px;
   padding: 20px 0px 20px 10px;
   margin-bottom: 15px;
   text-align: left;
-  font-size: 0.8em;
+  font-size: 1.3em;
 }
 
 .closed-orders {
