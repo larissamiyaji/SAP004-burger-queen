@@ -9,7 +9,7 @@ import "../App.css";
 const OrderDetails = (props) => {
   const [breakfast /*, setBreakfast*/] = useState(true);
   const [allDay /*, setAllDay*/] = useState(false);
-  const [orders, setOrders] = useState("");
+  const [orders, setOrders] = useState([]);
   const [order, setOrder] = useState("");
   const [table, setTable] = useState("");
   const [client, setClient] = useState("");
@@ -32,7 +32,7 @@ const OrderDetails = (props) => {
       });
   }, []);
 
-  useEffect(() => {}, [order, table, client, pedido]);
+  useEffect(() => {}, [order, table, client, orders]);
 
   const cancelOrder = (event) => {
     event.preventDefault();
@@ -59,9 +59,11 @@ const OrderDetails = (props) => {
         client: client,
         orders: orders,
       })
-      .then((docs) => {
-        let orders = [];
-        setOrders(orders);
+      .then((snapshot) => {
+        setOrders([]);
+        snapshot.forEach((doc) => {
+          // console.log(doc.data()); // Lista de pedidos
+          setOrders.push(doc.data())})
         console.log("Pedido enviado");
       })
       .catch((error) => {
@@ -101,7 +103,7 @@ const OrderDetails = (props) => {
           
         />
         <div className="div-resume">
-          {props.newOrder.map((orderItem) => (
+          { orders && props.newOrder.map((orderItem) => (
             <div className="order-item">
               {orderItem} <br />
               {/* Quantidade de itens */}
