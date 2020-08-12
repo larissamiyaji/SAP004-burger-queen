@@ -1,5 +1,6 @@
-import { firebaseStore } from "../firebase";
-import firebase from "../firebase";
+// import { firebaseStore } from "../firebase";
+import firebase from "firebase";
+import "../firebase";
 import React, { useState, useEffect } from "react";
 import Menu from "./Menu";
 // import Button from "./Button";
@@ -9,7 +10,7 @@ import "../App.css";
 const OrderDetails = (props) => {
   const [breakfast /*, setBreakfast*/] = useState(true);
   const [allDay /*, setAllDay*/] = useState(false);
-  const [orders, setOrders] = useState("");
+  const [orders, setOrders] = useState([]);
   const [order, setOrder] = useState("");
   const [table, setTable] = useState("");
   const [client, setClient] = useState("");
@@ -26,7 +27,7 @@ const OrderDetails = (props) => {
       .get()
       .then((querySnapshot) => {
         const orderNumber = querySnapshot.size;
-        // console.log(orderNumber); // Mostra o número do pedido no card
+        // console.log(orderNumber);
         setOrder(orderNumber);
         return orderNumber;
       });
@@ -45,30 +46,43 @@ const OrderDetails = (props) => {
 
   const prevent = (event) => {
     event.preventDefault();
-    newOrder(order, table, client, pedido, orders);
-    sendOrder(order);
+    // newOrder(order, table, client, pedido);
+    // sendOrder(order);
+    console.log(props.newOrder)
   };
 
-  const newOrder = (order, table, client, pedido, orders) => {
-    firebaseStore
+  const newOrder = (order, table, client, pedido, arrayOrders) => {
+    firebase
+      .firestore()
       .collection("orders")
-      .add({
+      .doc()
+      .set({
         order: order,
         status: "Pedido em andamento",
         table: table,
         client: client,
-        orders: orders,
+        pedido: arrayOrders,
       })
       .then((docs) => {
-        let orders = [];
-        setOrders(orders);
         console.log("Pedido enviado");
       })
       .catch((error) => {
         alert(error.message);
       });
-    }
+  };
 
+  function newRequest(orderItem) {
+    const indexOrder = orders.findIndex(
+      (order) => order.orderItem === orderItem.orderItem
+    );
+    if (indexOrder === -1) {
+      setOrders([...orders, { ...orderItem, count: 1 }]);
+    } else {
+      orders[indexOrder].count++;
+      setOrders([...orders]);
+      console.log(orders);
+    }
+  }
 
   return (
     <section id="orders" className="order-card">
@@ -98,7 +112,7 @@ const OrderDetails = (props) => {
           className="menu-display"
           type={menu}
           items={menu === "breakfast" ? breakfast : allDay}
-          
+          addItem={newRequest}
         />
         <div className="div-resume">
           {props.newOrder.map((orderItem) => (
