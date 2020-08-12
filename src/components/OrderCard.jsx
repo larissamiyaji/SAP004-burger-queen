@@ -7,27 +7,32 @@ import "../App.css";
 // import Hall from "./Hall";
 
 const OrderDetails = (props) => {
-  const [breakfast/*, setBreakfast*/] = useState(true);
-const [allDay/*, setAllDay*/] = useState(false);
+  const [breakfast /*, setBreakfast*/] = useState(true);
+  const [allDay /*, setAllDay*/] = useState(false);
   const [orders, setOrders] = useState("");
-  const [order, setOrder] = useState(1);
+  const [order, setOrder] = useState("");
   const [table, setTable] = useState("");
   const [client, setClient] = useState("");
-const [menu/*, setMenu*/] = useState("");
+  const [menu /*, setMenu*/] = useState("");
   // const [resume, setResume] = useState("");
   const [total, setTotal] = useState(0);
-  
-  
+  const [pedido, setPedido] = useState("");
+  // console.log(pedido);
 
-  firebase
-    .firestore()
-    .collection("orders")
-    .get()
-    .then((snapshot) => {
-      snapshot.docs.forEach((doc) => {});
-    });
+  useEffect(() => {
+    firebase
+      .firestore()
+      .collection("orders")
+      .get()
+      .then((querySnapshot) => {
+        const orderNumber = querySnapshot.size;
+        // console.log(orderNumber); // Mostra o número do pedido no card
+        setOrder(orderNumber);
+        return orderNumber;
+      });
+  }, []);
 
-  useEffect(() => {}, [order, table, client,orders]);
+  useEffect(() => {}, [order, table, client, pedido]);
 
   const cancelOrder = (event) => {
     event.preventDefault();
@@ -40,65 +45,30 @@ const [menu/*, setMenu*/] = useState("");
 
   const prevent = (event) => {
     event.preventDefault();
-    if (orders && table && client) {
-      firebase
-        .firestore()
-        .collection("orders")
-        .doc()
-        .set({
-          client: client,
-          table: table,
-          orders: orders,
-          //total,
-        })
-        .then((snapspshot) => {
-          setOrders([]);
-          //setTotal(0)
-          setClient("");
-          setTable(0);
-          alert("Pedido enviado com sucesso");
-         
-        });
-   
-  }
-  newOrder(order, table, client,orders);
-  sendOrder(order);
+    newOrder(order, table, client, pedido, orders);
+    sendOrder(order);
   };
-  
- 
 
-  const newOrder = (order, table, client,orders) => {
+  const newOrder = (order, table, client, pedido, orders) => {
     firebaseStore
       .collection("orders")
       .add({
         order: order,
         status: "Pedido em andamento",
         table: table,
-        client: client, 
-        pedido:orders
-        
+        client: client,
+        orders: orders,
       })
-      .then((snapshot) => {
-        let arrayVazio = [];
-        snapshot.forEach((doc) => {
-          // console.log(doc.data());
-          arrayVazio.push(doc.data());
-        });
-        setOrders(arrayVazio);
+      .then((docs) => {
+        let orders = [];
+        setOrders(orders);
+        console.log("Pedido enviado");
+      })
+      .catch((error) => {
+        alert(error.message);
       });
     }
-  function newRequest(orderItem) {
-    const indexOrder = orders.findIndex((orders) => order.orderItem === orderItem.orderItem);
-    if (indexOrder === -1) {
-      setOrders([...orders, { ...orderItem, count: 1 }]);
-    } else {
-      orders[indexOrder].count++;
-      setOrders([...orders]);
-      console.log(orders);
-    }
-  }
 
- 
 
   return (
     <section id="orders" className="order-card">
@@ -133,23 +103,11 @@ const [menu/*, setMenu*/] = useState("");
         <div className="div-resume">
           {props.newOrder.map((orderItem) => (
             <div className="order-item">
-               {orderItem} <br />
+              {orderItem} <br />
               {/* Quantidade de itens */}
-              
             </div>
           ))}
         </div>
-        <div className="div-resume">
-          {orders && props.order.map((orderItem) => (
-            <div className="order-item">
-               {orderItem} <br />
-              {/* Quantidade de itens */}
-              
-            </div>
-          ))}
-        </div>
-        
-      
       </div>
       <div>
         <div className="value-total">
