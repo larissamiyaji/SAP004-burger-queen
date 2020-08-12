@@ -6,11 +6,6 @@ import firebase from "../firebase";
 import BackgroundVideo from "./video/background-video-hall.mp4";
 import "./Hall.css";
 
-// import MenuCard from "./MenuCard";
-// import { firebaseStore } from "../firebase";
-// import OrderModal from "./OrderModal";
-// import Input from "./Input";
-
 const Hall = () => {
   const [breakfast, setBreakfast] = useState(true);
   const [allday, setAllday] = useState(false);
@@ -51,14 +46,14 @@ const Hall = () => {
   // console.log(orders);
   return (
     <main className="main-hall">
-     {/* <video
+     <video
         src={BackgroundVideo}
         type="video/mp4"
         autoPlay
         loop
         muted
         className="video-background"
-     ></video>*/}
+     ></video>
       <div className="div-hall">
         <div className="tabs-container">
           <Button

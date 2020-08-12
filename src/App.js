@@ -12,6 +12,7 @@ import "./App.css";
 // import Menu from "./components/Menu";
 // import init from "./firebase"
 
+
 const logout = () => {
   firebase
     .auth()
@@ -46,7 +47,6 @@ export default function App() {
                 <ButtonLogout onClick={logout} /*name="Sair"*/ />
                 <div className="menu">
                   <Hall />
-
                   <OrderModal className="hidden" />
                 </div>
               </div>

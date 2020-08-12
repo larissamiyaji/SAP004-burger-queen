@@ -32,10 +32,10 @@ h1 {
 label {
   width: 250px;
 }
-
+/* 
 p {
   font-size: 2em;
-}
+} */
 /*  NAVBAR - BURGER QUEEN  */
 .navbar {
   display: flex;
@@ -122,6 +122,10 @@ p {
   width: auto;
   font-size: 1.6em;
   font-family: "Bree Serif", serif;
+}
+
+.description p{
+  font-size: 1em;
 }
 
 /*  INPUTS BOTÕES */

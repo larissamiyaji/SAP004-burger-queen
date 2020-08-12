@@ -7,27 +7,32 @@ import "../App.css";
 // import Hall from "./Hall";
 
 const OrderDetails = (props) => {
-  const [breakfast/*, setBreakfast*/] = useState(true);
-const [allDay/*, setAllDay*/] = useState(false);
+  const [breakfast /*, setBreakfast*/] = useState(true);
+  const [allDay /*, setAllDay*/] = useState(false);
   const [orders, setOrders] = useState("");
-  const [order, setOrder] = useState(1);
+  const [order, setOrder] = useState("");
   const [table, setTable] = useState("");
   const [client, setClient] = useState("");
-const [menu/*, setMenu*/] = useState("");
+  const [menu /*, setMenu*/] = useState("");
   // const [resume, setResume] = useState("");
   const [total, setTotal] = useState(0);
-  const [pedido,setPedido]= useState("");
-  console.log(pedido)
+  const [pedido, setPedido] = useState("");
+  // console.log(pedido);
 
-  firebase
-    .firestore()
-    .collection("orders")
-    .get()
-    .then((snapshot) => {
-      snapshot.docs.forEach((doc) => {});
-    });
+  useEffect(() => {
+    firebase
+      .firestore()
+      .collection("orders")
+      .get()
+      .then((querySnapshot) => {
+        const orderNumber = querySnapshot.size;
+        // console.log(orderNumber); // Mostra o número do pedido no card
+        setOrder(orderNumber);
+        return orderNumber;
+      });
+  }, []);
 
-  useEffect(() => {}, [order, table, client,pedido]);
+  useEffect(() => {}, [order, table, client, pedido]);
 
   const cancelOrder = (event) => {
     event.preventDefault();
@@ -40,34 +45,32 @@ const [menu/*, setMenu*/] = useState("");
 
   const prevent = (event) => {
     event.preventDefault();
-    newOrder(order, table, client,pedido,orders);
+    newOrder(order, table, client, pedido, orders);
     sendOrder(order);
   };
 
-  
- 
-
-  const newOrder = (order, table, client,pedido,orders) => {
+  const newOrder = (order, table, client, pedido, orders) => {
     firebaseStore
       .collection("orders")
       .add({
         order: order,
         status: "Pedido em andamento",
         table: table,
-        client: client, 
-        pedido:orders
-        
+        client: client,
+        pedido: orders,
       })
       .then((docs) => {
         setOrders("");
-        alert("Pedido enviado");
+        console.log("Pedido enviado");
       })
       .catch((error) => {
         alert(error.message);
       });
   };
   function newRequest(orderItem) {
-    const indexOrder = orders.findIndex((order) => order.orderItem === orderItem.orderItem);
+    const indexOrder = orders.findIndex(
+      (order) => order.orderItem === orderItem.orderItem
+    );
     if (indexOrder === -1) {
       setOrders([...orders, { ...orderItem, count: 1 }]);
     } else {
@@ -76,8 +79,6 @@ const [menu/*, setMenu*/] = useState("");
       console.log(orders);
     }
   }
-
- 
 
   return (
     <section id="orders" className="order-card">
@@ -112,13 +113,11 @@ const [menu/*, setMenu*/] = useState("");
         <div className="div-resume">
           {props.newOrder.map((orderItem) => (
             <div className="order-item">
-               {orderItem} <br />
+              {orderItem} <br />
               {/* Quantidade de itens */}
-              
             </div>
           ))}
         </div>
-      
       </div>
       <div>
         <div className="value-total">
