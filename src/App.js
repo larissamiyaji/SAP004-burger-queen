@@ -11,7 +11,6 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import "./App.css";
 // import Menu from "./components/Menu";
 // import init from "./firebase"
-import OrderNumber from "./components/Teste";
 
 
 const logout = () => {
@@ -49,7 +48,6 @@ export default function App() {
                 <div className="menu">
                   <Hall />
                   <OrderModal className="hidden" />
-                  {/* <OrderNumber/> */}
                 </div>
               </div>
             </Route>

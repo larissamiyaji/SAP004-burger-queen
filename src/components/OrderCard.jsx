@@ -25,11 +25,13 @@ const OrderDetails = (props) => {
       .collection("orders")
       .get()
       .then((querySnapshot) => {
-        console.log(querySnapshot.size);
-        setOrder(querySnapshot.size);
-        return querySnapshot.size;
+        const orderNumber = querySnapshot.size;
+        // console.log(orderNumber); // Mostra o número do pedido no card
+        setOrder(orderNumber);
+        return orderNumber;
       });
   }, []);
+
   useEffect(() => {}, [order, table, client, pedido]);
 
   const cancelOrder = (event) => {
