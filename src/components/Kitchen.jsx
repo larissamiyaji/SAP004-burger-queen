@@ -24,14 +24,14 @@ const Kitchen = () => {
   }, []);
   return (
     <div className="kitchen">
-     <video
+      <video
         src={BackgroundVideo}
         type="video/mp4"
         autoPlay
         loop
         muted
         className="video-background"
-     ></video>
+      ></video>
       <h1 className="list-title">Cozinha</h1>
       <div className="kitchen-display">
         <section className="order-list open-orders">
@@ -39,13 +39,27 @@ const Kitchen = () => {
           {open.map((element) => (
             <div className="open-card">
               <div className="order-top">
-                <p><strong>Nº do pedido: </strong>{element.order}</p>
-                <p><strong>Nº da mesa: </strong>{element.table}</p>
+                <p>
+                  <strong>Nº do pedido: </strong>
+                  {element.order}
+                </p>
+                <p>
+                  <strong>Nº da mesa: </strong>
+                  {element.table}
+                </p>
               </div>
-              <p><strong>Cliente: </strong>{element.client}</p>
-              <p><strong>Status: </strong>{element.status}</p>
-             
-              
+              <p>
+                <strong>Cliente: </strong>
+                {element.client}
+              </p>
+              <p>
+                <strong>Status: </strong>
+                {element.status}
+              </p>
+              <p>
+                <strong>Itens: </strong>
+                {element.pedidos}
+              </p>
             </div>
           ))}
         </section>

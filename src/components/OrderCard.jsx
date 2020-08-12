@@ -46,12 +46,13 @@ const OrderDetails = (props) => {
 
   const prevent = (event) => {
     event.preventDefault();
-    // newOrder(order, table, client, pedido);
-    // sendOrder(order);
-    console.log(props.newOrder)
+    //newOrder(order,table,client)
+    newOrder(order, table, client);
+    sendOrder(order);
+    console.log(props.newOrder);
   };
 
-  const newOrder = (order, table, client, pedido, arrayOrders) => {
+  const newOrder = (order, table, client, pedido) => {
     firebase
       .firestore()
       .collection("orders")
@@ -61,7 +62,7 @@ const OrderDetails = (props) => {
         status: "Pedido em andamento",
         table: table,
         client: client,
-        pedido: arrayOrders,
+        pedidos: props.newOrder,
       })
       .then((docs) => {
         console.log("Pedido enviado");
@@ -70,12 +71,11 @@ const OrderDetails = (props) => {
         alert(error.message);
       });
   };
-
   function newRequest(orderItem) {
     const indexOrder = orders.findIndex(
       (order) => order.orderItem === orderItem.orderItem
-    );
-    if (indexOrder === -1) {
+      );
+      if (indexOrder === -1) {
       setOrders([...orders, { ...orderItem, count: 1 }]);
     } else {
       orders[indexOrder].count++;
