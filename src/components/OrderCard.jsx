@@ -3,11 +3,9 @@ import firebase from "firebase";
 import "../firebase";
 import React, { useState, useEffect } from "react";
 import Menu from "./Menu";
-import TrashCan from "./images/trash-can.png";
+import TrashCan from "./images/1.png";
 import "../App.css";
 import "./OrderCard.css";
-
-// import Hall from "./Hall";
 
 const OrderDetails = (props) => {
   const [breakfast, setBreakfast] = useState(true);

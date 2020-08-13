@@ -124,7 +124,7 @@ p {
   font-family: "Bree Serif", serif;
 }
 
-.description p{
+.description p {
   font-size: 1em;
 }
 
@@ -164,17 +164,17 @@ p {
 
 .cancel-button {
   background-color: #d34d4d;
-  border: solid 1px #741a1a
+  border: solid 1px #741a1a;
 }
 
 .send-order-button {
-  background-color: #73D398;
+  background-color: #73d398;
   border: solid 1px #4c9668;
   margin-top: 20px;
 }
 
 .send-order-button:hover {
-  background-color: #329F5B;
+  background-color: #329f5b;
 }
 
 .link-style {
@@ -278,15 +278,13 @@ p {
 .order-card {
   border-style: solid;
   border-radius: 40px;
-  background-color: #F4E167;
+  background-color: #f4e167;
   width: fit-content;
   height: fit-content;
   margin-top: 30px;
   padding: 10px 0px 10px 0px;
-  font-size: 1.0em;
+  font-size: 1em;
 }
-
-
 
 .order-item {
   padding: 5px;
@@ -296,16 +294,16 @@ p {
   background-color: rgba(131, 34, 133, 0.5);
   border: solid 2px black;
   color: white;
-  text-indent:5% ;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
 }
 
 .order-details {
   margin-left: 60px;
   margin-top: 10px;
-
 }
-
-
 
 .order-details-input {
   width: 250px;
@@ -316,7 +314,6 @@ p {
   margin-top: 10px;
   font-size: 5vh;
 }
-
 
 .order-bottom-info {
   text-align: center;
