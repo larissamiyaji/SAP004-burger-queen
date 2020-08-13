@@ -22,6 +22,7 @@ const Kitchen = () => {
         setOpen(arrayVazio);
       });
   }, []);
+
   return (
     <div className="kitchen">
       <video
