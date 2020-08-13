@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import firebase from "../firebase";
-import BackgroundVideo from "./video/background-video-kitchen.mp4";
-import "../App.css";
+import firebase from "../../firebase";
+import BackgroundVideo from "../video/background-video-kitchen.mp4";
+import "../../App.css";
 import "./Kitchen.css";
 
 const Kitchen = () => {

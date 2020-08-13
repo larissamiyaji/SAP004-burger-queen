@@ -117,10 +117,8 @@ const Register = () => {
         <Button onClick={prevent} name="Cadastrar" type="submit" />
       </form>
       <InfoBox
-        kitchenText="Para ser direcionado para a página da Cozinha, selecione
-                  cozinha nas opções acima."
-        hallText="Para ser direcionado para a página do Salão, selecione
-                  salão nas opções acima."
+        kitchenText="Selecione a função Cozinha caso você faça parte da equipe de cozinheiros e ajudantes de cozinha."
+        hallText="Selecione a função Salão caso você faça parte da equipe de garçons."
         titleKitchen="Cozinha"
         titleHall="Salão"
       />

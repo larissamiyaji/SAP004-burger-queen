@@ -5,6 +5,8 @@ import React, { useState, useEffect } from "react";
 import Menu from "./Menu";
 // import Button from "./Button";
 import "../App.css";
+
+
 // import Hall from "./Hall";
 
 const OrderDetails = (props) => {
@@ -67,18 +69,20 @@ const OrderDetails = (props) => {
       });
   };
 
-  function newRequest(orderItem) {
-    const indexOrder = props.newOrder.findIndex(
-      (order) => props.newOrder.orderItem === orderItem.orderItem
-    );
-    if (indexOrder === -1) {
-      setOrders([...orders, { ...orderItem, count: 1 }]);
-    } else {
-      orders[indexOrder].count++;
-      setOrders([...orders]);
-      console.log(orders);
-    }
-  }
+ 
+  const deleteFunction = () => {
+    const newOrder = props.newOrder;
+    let itensPedido = newOrder.splice(newOrder.indexOf(newOrder.pedido), 1); 
+    setOrders(itensPedido)//  Ver como pegar o item certo
+    console.log("Itens sobrando", newOrder);
+    console.log("Item removido", itensPedido);
+  };
+
+  const conta = props.newOrder.reduce((orders, orderItem)=>{
+	return orders + (orderItem.price * orderItem.count)
+  },0)
+  console.log(conta)
+  
   
   const prevent = (event) => {
     event.preventDefault();
@@ -86,19 +90,15 @@ const OrderDetails = (props) => {
     sendOrder(order)
    // console.log(props.newOrder)
   };
-  const deleteItem = (orderItem) => {
-    const remove = props.newOrder.filter((el) => el.item !== orderItem.item);
-
-    setOrders([remove]);
-    console.log(remove);
-  };
+ 
 
   return (
     <section id="orders" className="order-card">
       <h2 className="menu-title text-align">Detalhes do Pedido</h2>
       <div className="order-details">
         <p>Nº do pedido: {order}</p>
-        <input
+     
+       <input
           id="table-number"
           type="number"
           name={table}
@@ -106,7 +106,8 @@ const OrderDetails = (props) => {
           placeholder="Nº da mesa"
           required
           onChange={(e) => setTable(e.currentTarget.value)}
-        ></input>
+        
+  ></input>
         <input
           id="client-name"
           type="text"
@@ -121,13 +122,14 @@ const OrderDetails = (props) => {
           className="menu-display"
           type={menu}
           items={menu === "breakfast" ? breakfast : allDay}
+          items={conta}
           
         />
-        <div className="div-resume">
-          {props.newOrder.map((orderItem) => (
+        <div classname='deleteItem' className="div-resume">
+          {conta && props.newOrder.map((orderItem) => (
             <div className="order-item">
               {orderItem}
-              <button onClick={(remove) => deleteItem(orderItem)}>X</button>
+              <button onClick={deleteFunction}> X</button>
               {/* Quantidade de itens */}
             </div>
           ))}
@@ -135,7 +137,7 @@ const OrderDetails = (props) => {
       </div>
       <div>
         <div className="value-total">
-          <span className="total-price">TOTAL:R$ {total}</span>
+          <span className="total-price">TOTAL:R$ {conta}</span>
         </div>
         <button
           type="submit"
