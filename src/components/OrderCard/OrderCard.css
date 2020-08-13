@@ -1,0 +1,8 @@
+.trash-can{
+    height: 4vh;
+    width: 4vh;
+}
+
+.trash-can:hover{
+    cursor: pointer;
+}

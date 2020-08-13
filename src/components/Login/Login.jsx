@@ -1,14 +1,14 @@
 import React, { useState } from "react";
 // import firebase from "../firebase";
 // import { database } from "firebase";
-import { firebaseAuth } from "../firebase";
-import { urls } from "../Routes";
-import { firebaseStore } from "../firebase";
+import { firebaseAuth } from "../../firebase";
+import { urls } from "../../Routes";
+import { firebaseStore } from "../../firebase";
 import { useHistory } from "react-router-dom";
-import "../App.css";
-import Input from "./Input";
-import Button from "./Button";
-import InfoBox from "./InfoBox";
+
+import Input from "../Imput/Input";
+import Button from "../Button/Button";
+import InfoBox from "../InfoBox/InfoBox";
 
 function Login() {
   const [email, setEmail] = useState("");

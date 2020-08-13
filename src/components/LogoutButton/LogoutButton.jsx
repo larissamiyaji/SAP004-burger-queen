@@ -1,7 +1,7 @@
 import React from "react";
 // import firebase from "../firebase";
-import "../App.css";
-import LogoutImage from "./images/logout.png"
+
+import LogoutImage from "../images/logout.png"
 
 const ButtonLogout = (props) => {
   // const logout = () => {
