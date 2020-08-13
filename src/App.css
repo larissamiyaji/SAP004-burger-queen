@@ -163,16 +163,18 @@ p {
 }
 
 .cancel-button {
-  background-color: #dd3030;
+  background-color: #d34d4d;
+  border: solid 1px #741a1a
 }
 
 .send-order-button {
-  background-color: #3cf038;
+  background-color: #73D398;
+  border: solid 1px #4c9668;
   margin-top: 20px;
 }
 
 .send-order-button:hover {
-  background-color: #36b934;
+  background-color: #329F5B;
 }
 
 .link-style {
@@ -276,36 +278,45 @@ p {
 .order-card {
   border-style: solid;
   border-radius: 40px;
-  background-color: #9c96b8dc;
+  background-color: #F4E167;
   width: fit-content;
   height: fit-content;
   margin-top: 30px;
   padding: 10px 0px 10px 0px;
-  font-size: 1.1em;
+  font-size: 1.0em;
 }
 
+
+
 .order-item {
-  padding: 5px 15px 0px 15px;
-  height: 5vh;
-  margin-bottom: 3px;
-  border-radius: 30px;
-  background-color: #370622;
+  padding: 5px;
+  height: fit-content;
+  margin: 5px;
+  border-radius: 15px;
+  background-color: rgba(131, 34, 133, 0.5);
+  border: solid 2px black;
   color: white;
+  text-indent:5% ;
 }
 
 .order-details {
-  margin-left: 10px;
+  margin-left: 60px;
   margin-top: 10px;
+
 }
 
+
+
 .order-details-input {
-  width: 350px;
+  width: 250px;
   border-radius: 40px;
   background-color: #ffffff00;
-  height: 3vh;
+  height: 4vh;
   border-style: none;
   margin-top: 10px;
+  font-size: 5vh;
 }
+
 
 .order-bottom-info {
   text-align: center;
