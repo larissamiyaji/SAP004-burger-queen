@@ -47,35 +47,20 @@ const Hall = () => {
   const addItem = (item) => {
     setOrders([...orders, item]);
     console.log(item);
-    const handleAddItem = (e) => {
-      const item = e.currentTarget.parentElement.firstChild.innerText;
-      const price = parseFloat(
-        e.currentTarget.parentElement.children[1].innerText.replace('R$ ', '')
-      );
-  
-      const itemIndex = orders.findIndex((el) => el.item === item);
-      if (itemIndex === -1) {
-        setOrders([...orders, { item, count: 1 }]);
-      } else {
-        const newOrders = [...orders];
-        newOrders[itemIndex].count += 1;
-        setOrders(newOrders);
-      }
-  
-      setTotal(total + price);
-    };
   };
-  // console.log(orders);
+ 
+
+   // console.log(orders);
   return (
     <main className="main-hall">
-     {/* <video
+      {/*<video
         src={BackgroundVideo}
         type="video/mp4"
         autoPlay
         loop
         muted
         className="video-background"
-     ></video>*/}
+      ></video>*/}
       <div className="div-hall">
         <div className="tabs-container">
           <Button
@@ -97,10 +82,10 @@ const Hall = () => {
               className="menu-display"
               type={menu}
               items={menu === "breakfast" ? breakfast : allday}
-              id='pedido'
+              id="pedido"
               addItem={addItem}
+              
             />
-            {/* <div className="div-conteudo"></div> Essa DIV Serve pra que mesmo?  */}
           </div>
         </div>
         <OrderCard newOrder={orders} />

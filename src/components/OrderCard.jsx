@@ -1,5 +1,6 @@
-import { firebaseStore } from "../firebase";
-import firebase from "../firebase";
+// import { firebaseStore } from "../firebase";
+import firebase from "firebase";
+import "../firebase";
 import React, { useState, useEffect } from "react";
 import Menu from "./Menu";
 // import Button from "./Button";
@@ -16,7 +17,9 @@ const OrderDetails = (props) => {
   const [menu /*, setMenu*/] = useState("");
   // const [resume, setResume] = useState("");
   const [total, setTotal] = useState(0);
-  const [pedido, setPedido] = useState("");
+  const [pedido, setPedido] = useState([]);
+  
+  
   // console.log(pedido);
 
   useEffect(() => {
@@ -26,13 +29,13 @@ const OrderDetails = (props) => {
       .get()
       .then((querySnapshot) => {
         const orderNumber = querySnapshot.size;
-        // console.log(orderNumber); // Mostra o número do pedido no card
+        // console.log(orderNumber);
         setOrder(orderNumber);
         return orderNumber;
       });
   }, []);
 
-  useEffect(() => {}, [order, table, client, orders]);
+  useEffect(() => {}, [order, table, client, orders,pedido]);
 
   const cancelOrder = (event) => {
     event.preventDefault();
@@ -43,34 +46,52 @@ const OrderDetails = (props) => {
     return setOrder(orderNumber);
   };
 
-  const prevent = (event) => {
-    event.preventDefault();
-    newOrder(order, table, client, pedido, orders);
-    sendOrder(order);
-  };
 
-  const newOrder = (order, table, client, pedido, orders) => {
-    firebaseStore
+  const newOrder = (order, table, client,pedido) => {
+    firebase
+      .firestore()
       .collection("orders")
-      .add({
+      .doc()
+      .set({
         order: order,
         status: "Pedido em andamento",
         table: table,
         client: client,
-        orders: orders,
+        pedido:props.newOrder
       })
-      .then((snapshot) => {
-        setOrders([]);
-        snapshot.forEach((doc) => {
-          // console.log(doc.data()); // Lista de pedidos
-          setOrders.push(doc.data())})
-        console.log("Pedido enviado");
+      .then((docs) => {
+        alert("Pedido enviado");
       })
       .catch((error) => {
         alert(error.message);
       });
-    }
+  };
 
+  function newRequest(orderItem) {
+    const indexOrder = props.newOrder.findIndex(
+      (order) => props.newOrder.orderItem === orderItem.orderItem
+    );
+    if (indexOrder === -1) {
+      setOrders([...orders, { ...orderItem, count: 1 }]);
+    } else {
+      orders[indexOrder].count++;
+      setOrders([...orders]);
+      console.log(orders);
+    }
+  }
+  
+  const prevent = (event) => {
+    event.preventDefault();
+     newOrder(order,table,client) 
+    sendOrder(order)
+   // console.log(props.newOrder)
+  };
+  const deleteItem = (orderItem) => {
+    const remove = props.newOrder.filter((el) => el.item !== orderItem.item);
+
+    setOrders([remove]);
+    console.log(remove);
+  };
 
   return (
     <section id="orders" className="order-card">
@@ -103,9 +124,10 @@ const OrderDetails = (props) => {
           
         />
         <div className="div-resume">
-          { orders && props.newOrder.map((orderItem) => (
+          {props.newOrder.map((orderItem) => (
             <div className="order-item">
-              {orderItem} <br />
+              {orderItem}
+              <button onClick={(remove) => deleteItem(orderItem)}>X</button>
               {/* Quantidade de itens */}
             </div>
           ))}
