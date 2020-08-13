@@ -1,17 +1,16 @@
-// import { firebaseStore } from "../firebase";
 import firebase from "firebase";
 import "../firebase";
 import React, { useState, useEffect } from "react";
 import Menu from "./Menu";
-// import Button from "./Button";
+import TrashCan from "./images/trash-can.png";
 import "../App.css";
-// import Hall from "./Hall";
+import "./OrderCard.css";
 
 const OrderDetails = (props) => {
   const [breakfast /*, setBreakfast*/] = useState(true);
   const [allDay /*, setAllDay*/] = useState(false);
   const [orders, setOrders] = useState([]);
-  const [order, setOrder] = useState("");
+  const [order, setOrder] = useState(1);
   const [table, setTable] = useState("");
   const [client, setClient] = useState("");
   const [menu /*, setMenu*/] = useState("");
@@ -46,7 +45,6 @@ const OrderDetails = (props) => {
 
   const prevent = (event) => {
     event.preventDefault();
-    //newOrder(order,table,client)
     newOrder(order, table, client);
     sendOrder(order);
     console.log(props.newOrder);
@@ -71,11 +69,12 @@ const OrderDetails = (props) => {
         alert(error.message);
       });
   };
+
   function newRequest(orderItem) {
     const indexOrder = orders.findIndex(
       (order) => order.orderItem === orderItem.orderItem
-      );
-      if (indexOrder === -1) {
+    );
+    if (indexOrder === -1) {
       setOrders([...orders, { ...orderItem, count: 1 }]);
     } else {
       orders[indexOrder].count++;
@@ -83,6 +82,19 @@ const OrderDetails = (props) => {
       console.log(orders);
     }
   }
+
+  const deleteFunction = () => {
+    const newOrder = props.newOrder;
+    let itensPedido = newOrder.splice(newOrder.indexOf(newOrder.pedido), 1);
+    setOrders(itensPedido);
+    console.log("Itens sobrando", newOrder);
+    console.log("Item removido", itensPedido);
+  };
+
+  const conta = props.newOrder.reduce((acumulador, itemAtual) => {
+    return acumulador + itemAtual.price * Number(itemAtual.count);
+  }, 0);
+  console.log(conta);
 
   return (
     <section id="orders" className="order-card">
@@ -117,7 +129,14 @@ const OrderDetails = (props) => {
         <div className="div-resume">
           {props.newOrder.map((orderItem) => (
             <div className="order-item">
-              {orderItem} <br />
+              {orderItem}
+              <button onClick={deleteFunction}>
+                <img
+                  src={TrashCan}
+                  alt="Botão de deletar"
+                  className="trash-can"
+                ></img>
+              </button>
               {/* Quantidade de itens */}
             </div>
           ))}
@@ -125,7 +144,7 @@ const OrderDetails = (props) => {
       </div>
       <div>
         <div className="value-total">
-          <span className="total-price">TOTAL:R$ {total}</span>
+          <span className="total-price">TOTAL:R$ {conta}</span>
         </div>
         <button
           type="submit"

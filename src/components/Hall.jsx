@@ -6,6 +6,11 @@ import firebase from "../firebase";
 import BackgroundVideo from "./video/background-video-hall.mp4";
 import "./Hall.css";
 
+// import MenuCard from "./MenuCard";
+// import { firebaseStore } from "../firebase";
+// import OrderModal from "./OrderModal";
+// import Input from "./Input";
+
 const Hall = () => {
   const [breakfast, setBreakfast] = useState(true);
   const [allday, setAllday] = useState(false);
@@ -43,8 +48,9 @@ const Hall = () => {
     setOrders([...orders, item]);
     console.log(item);
   };
+ 
 
-  //  console.log(orders);
+   // console.log(orders);
   return (
     <main className="main-hall">
       <video
@@ -78,6 +84,7 @@ const Hall = () => {
               items={menu === "breakfast" ? breakfast : allday}
               id="pedido"
               addItem={addItem}
+              
             />
           </div>
         </div>
