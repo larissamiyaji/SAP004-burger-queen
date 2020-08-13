@@ -46,21 +46,21 @@ const Hall = () => {
 
   const addItem = (item) => {
     setOrders([...orders, item]);
-    console.log(item);
+    console.log(orders);
   };
 
   
    // console.log(orders);
   return (
     <main className="main-hall">
-      {/*<video
+      <video
         src={BackgroundVideo}
         type="video/mp4"
         autoPlay
         loop
         muted
         className="video-background"
-      ></video>*/}
+      ></video>
       <div className="div-hall">
         <div className="tabs-container">
           <Button
@@ -84,7 +84,6 @@ const Hall = () => {
               items={menu === "breakfast" ? breakfast : allday}
               id="pedido"
               addItem={addItem}
-              
             />
           </div>
         </div>
