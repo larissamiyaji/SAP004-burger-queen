@@ -78,10 +78,10 @@ const OrderDetails = (props) => {
     console.log("Item removido", itensPedido);
   };
 
-  const conta = props.newOrder.reduce((orders, orderItem)=>{
-	return orders + (orderItem.price * orderItem.count)
-  },0)
-  console.log(conta)
+ // const conta = props.newOrder.reduce((orders, orderItem)=>{
+	//return orders + (orderItem.price * orderItem.count)
+  //}//,0)
+  //console.log(conta)
   
   
   const prevent = (event) => {
@@ -122,11 +122,11 @@ const OrderDetails = (props) => {
           className="menu-display"
           type={menu}
           items={menu === "breakfast" ? breakfast : allDay}
-          items={conta}
+          
           
         />
         <div classname='deleteItem' className="div-resume">
-          {conta && props.newOrder.map((orderItem) => (
+          {props.newOrder.map((orderItem) => (
             <div className="order-item">
               {orderItem}
               <button onClick={deleteFunction}> X</button>
@@ -137,7 +137,7 @@ const OrderDetails = (props) => {
       </div>
       <div>
         <div className="value-total">
-          <span className="total-price">TOTAL:R$ {conta}</span>
+          <span className="total-price">TOTAL:R$ {total}</span>
         </div>
         <button
           type="submit"
