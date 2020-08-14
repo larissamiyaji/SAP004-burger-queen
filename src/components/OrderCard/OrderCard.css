@@ -1,4 +1,3 @@
-/* SOFT RESET */
 * {
   padding: 0;
   margin: 0;
@@ -29,7 +28,7 @@
   font-size: 2em;
 }
 
-.order-details{
+.order-details {
   display: inline-block;
 }
 

@@ -10,12 +10,7 @@ const Hall = () => {
   const [breakfast, setBreakfast] = useState(true);
   const [allday, setAllday] = useState(false);
   const [orders, setOrders] = useState([]);
-  // const [order, setOrder] = useState(1);
-  // const [table, setTable] = useState("");
-  // const [client, setClient] = useState("");
   const [menu, setMenu] = useState("");
-  // const [resume, setResume] = useState("");
-  const [total, setTotal] = useState(0);
 
   const getMenu = ({ name, state }) => {
     firebase
@@ -26,7 +21,6 @@ const Hall = () => {
       .then((docRef) => {
         const itemData = docRef.data();
         state(() => itemData);
-        // console.log(itemData);
       });
   };
 
@@ -44,18 +38,16 @@ const Hall = () => {
     console.log(orders);
   };
 
-  
-   // console.log(orders);
   return (
     <main className="main-hall">
-     <video
+      <video
         src={BackgroundVideo}
         type="video/mp4"
         autoPlay
         loop
         muted
         className="video-background"
-  ></video>
+      ></video>
       <div className="div-hall">
         <div className="tabs-container">
           <Button

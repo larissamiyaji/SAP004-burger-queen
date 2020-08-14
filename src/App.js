@@ -14,7 +14,6 @@ const logout = () => {
     .signOut()
     .then(() => {
       window.location.href = "/";
-      // console.log("Logging out");
     });
 };
 
@@ -31,14 +30,14 @@ export default function App() {
             </Route>
             {/* KITCHEN */}
             <Route path="/Kitchen">
-              <ButtonLogout onClick={logout}/>
+              <ButtonLogout onClick={logout} />
               <Kitchen />
             </Route>
 
             {/* HALL */}
             <Route path="/Hall">
               <div className="hall-template text-align">
-                <ButtonLogout onClick={logout}/>
+                <ButtonLogout onClick={logout} />
                 <div className="menu">
                   <Hall />
                 </div>

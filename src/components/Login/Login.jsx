@@ -1,33 +1,18 @@
 import React, { useState } from "react";
-// import firebase from "../firebase";
-// import { database } from "firebase";
 import { firebaseAuth } from "../../firebase";
 import { urls } from "../../Routes";
 import { firebaseStore } from "../../firebase";
 import { useHistory } from "react-router-dom";
-
 import Input from "../Imput/Input";
 import Button from "../Button/Button";
 import InfoBox from "../InfoBox/InfoBox";
-import "./Login.css"
-import background from "../images/background.jpg"
+import "./Login.css";
+import background from "../images/background.jpg";
 
 function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  //  const [userName, setUserName] = useState("");
-  //  const [userId, setUserId] = useState("");
-
   const history = useHistory();
-  // const handleAuth = () => {
-  //   firebaseAuth.onAuthStateChanged((user) =>{
-  //     if(user !== null){
-  //       return true;
-  //     }else{
-  //       return false;
-  //     }
-  //   });
-  // };
 
   function handleLogin() {
     const userId = firebaseAuth.currentUser.uid;
@@ -57,7 +42,6 @@ function Login() {
       .signInWithEmailAndPassword(email, password)
       .then(() => {
         handleLogin();
-        // console.log(firebase.auth().currentUser.uid);
         console.log("LOGOU");
       })
       .catch((error) => {

@@ -1,24 +1,21 @@
-body{
+body {
   background-image: url("../images/background.jpg");
-  
-  
 }
 
 .p-bottom {
-    margin: 10px;
-    font-size: 2.5em;
-  }
+  margin: 10px;
+  font-size: 2.5em;
+}
 
- .p-bottom,
-  h2
-  {
-    color:white;
-    text-shadow: black 2px 2px;
-    font-family: "Bree Serif", serif;
-  }
+.p-bottom,
+h2 {
+  color: white;
+  text-shadow: black 2px 2px;
+  font-family: "Bree Serif", serif;
+}
 
-  a{
-    text-decoration: none;
-    color: yellow;
-    font-family: "Bree Serif", serif;
-  }
+a {
+  text-decoration: none;
+  color: yellow;
+  font-family: "Bree Serif", serif;
+}

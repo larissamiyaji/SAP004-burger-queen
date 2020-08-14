@@ -8,8 +8,7 @@ import Input from "../Imput/Input";
 import InfoBox from "../InfoBox/InfoBox";
 import Button from "../Button/Button";
 import { urls } from "../../Routes";
-import "./Register.css"
-
+import "./Register.css";
 
 const Register = () => {
   const [email, setEmail] = useState("");
@@ -30,7 +29,7 @@ const Register = () => {
     cadastrar(email, password, name, occupation);
   };
 
-  const cadastrar = (email, password, name, occupation, userId) => {
+  const cadastrar = (email, password, name, occupation) => {
     firebaseAuth
       .createUserWithEmailAndPassword(email, password)
       .then(() => {
@@ -44,7 +43,6 @@ const Register = () => {
             occupation: occupation,
             userUid: firebase.auth().currentUser.uid,
           });
-        // console.log(firebase.auth().currentUser.uid);
       })
       .then(() => {
         if (occupation === "Cozinha") {

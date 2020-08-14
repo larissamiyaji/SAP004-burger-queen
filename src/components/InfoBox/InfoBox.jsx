@@ -1,6 +1,5 @@
 import React from "react";
-import "./InfoBox.css"
-
+import "./InfoBox.css";
 
 const InfoBox = (props) => {
   return (

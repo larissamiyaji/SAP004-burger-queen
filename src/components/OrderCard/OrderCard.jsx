@@ -1,10 +1,8 @@
-// import { firebaseStore } from "../firebase";
 import firebase from "firebase";
 import "../../firebase";
 import React, { useState, useEffect } from "react";
 import Menu from "../Menu/Menu";
 import TrashCan from "../images/trash-can.png";
-
 import "./OrderCard.css";
 
 const OrderDetails = (props) => {
@@ -15,11 +13,7 @@ const OrderDetails = (props) => {
   const [table, setTable] = useState("");
   const [client, setClient] = useState("");
   const [menu, setMenu] = useState("");
-  // const [resume, setResume] = useState("");
-  // const [total, setTotal] = useState(0);
   const [pedido, setPedido] = useState([]);
-
-  // console.log(pedido);
 
   useEffect(() => {
     firebase
@@ -28,7 +22,6 @@ const OrderDetails = (props) => {
       .get()
       .then((querySnapshot) => {
         const orderNumber = querySnapshot.size;
-        // console.log(orderNumber);
         setOrder(orderNumber);
         return orderNumber;
       });
@@ -38,7 +31,6 @@ const OrderDetails = (props) => {
 
   const cancelOrder = (event) => {
     event.preventDefault();
-    // console.log("Cancelando pedido");
   };
   const sendOrder = (order) => {
     const orderNumber = parseInt(order + 1);
@@ -57,9 +49,7 @@ const OrderDetails = (props) => {
         client: client,
         pedido: props.newOrder,
       })
-      .then((docs) => {
-        // alert("Pedido enviado");
-      })
+      .then((docs) => {})
       .catch((error) => {
         alert(error.message);
       });
@@ -68,24 +58,18 @@ const OrderDetails = (props) => {
   const deleteFunction = () => {
     const newOrder = props.newOrder;
     let itensPedido = newOrder.splice(newOrder.indexOf(newOrder.pedido), 1);
-    setOrders(itensPedido); //  Ver como pegar o item certo
-    // console.log("Itens sobrando", newOrder);
-    // console.log("Item removido", itensPedido);
+    setOrders(itensPedido);
   };
 
   const conta = props.newOrder.reduce((orders, orderItem) => {
-    // console.log(orderItem);
     const deusmeajuda = Number(orderItem.split("R$")[1]);
-    // console.log(deusmeajuda);
     return orders + deusmeajuda;
   }, 0);
-  // console.log(conta);
 
   const prevent = (event) => {
     event.preventDefault();
     newOrder(order, table, client);
     sendOrder(order);
-    // console.log(props.newOrder);
   };
 
   return (
