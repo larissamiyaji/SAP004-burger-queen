@@ -181,7 +181,7 @@ Todos os protótipos, ideias e paletas de cores, utilizados no projeto, podem se
 
 ## 5. Tecnologias Utilizadas
 
-Para a criação deste projeto utilizamos HTML5, JavaScript, React, CSS3, Node.js e Firebase.
+Para a criação deste projeto utilizamos HTML5, JavaScript, ReactJs, Reacst Hooks, React Router, CSS3, Node.js e Firebase.
 
 ## 6. Desenvolvedoras
 

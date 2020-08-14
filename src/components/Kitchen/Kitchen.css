@@ -86,3 +86,11 @@ border-radius: 0px 0px 100px 0px;
 
   
 }
+
+.done-button{
+  background-color:#72D577;
+  border: solid 1px black;
+  border-radius: 10px;
+  width: 180px;
+  height: 7vh;
+}
