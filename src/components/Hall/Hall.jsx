@@ -6,11 +6,6 @@ import firebase from "../../firebase";
 import BackgroundVideo from ".././video/background-video-hall.mp4";
 import "./Hall.css";
 
-// import MenuCard from "./MenuCard";
-// import { firebaseStore } from "../firebase";
-// import OrderModal from "./OrderModal";
-// import Input from "./Input";
-
 const Hall = () => {
   const [breakfast, setBreakfast] = useState(true);
   const [allday, setAllday] = useState(false);
@@ -94,25 +89,3 @@ const Hall = () => {
 };
 
 export default Hall;
-
-//  FUNÇÃO DO MODAL
-// const MenuCard = () => {
-//   const turbinar = (event) => {
-//     event.preventDefault();
-//     console.log("Abrindo modal");
-//     OrderModal.hidden = false;
-//     window.location.href = "/hall#order-modal";
-//   };
-// };
-
-// PROVAVELMENTE NÃO USAREMOS MAIS ESSA
-// const sendOrders = (e) => {
-//   e.preventDefault();
-//   const sendOrder = {
-//     client: client,
-//     table: table,
-//     order: order,
-//     status: "pedido em andamento",
-//   };
-//   firebaseStore().collection("orders").add(sendOrder);
-// };

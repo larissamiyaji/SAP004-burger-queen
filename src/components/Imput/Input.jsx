@@ -15,10 +15,3 @@ const Input = (props) => {
 };
 
 export default Input;
-
-// type={props.type}
-// onChange={props.onChange}
-// value={props.value}
-// id={props.id}
-// name={props.name}
-// placeholder={props.placeholder}

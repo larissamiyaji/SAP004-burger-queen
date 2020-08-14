@@ -4,14 +4,9 @@ import Header from "./components/Header/Header";
 import Hall from "./components/Hall/Hall";
 import Kitchen from "./components/Kitchen/Kitchen";
 import Login from "./components/Login/Login";
-import OrderModal from "./components/OrderModal";
 import Register from "./components/Register/Register";
 import ButtonLogout from "./components/LogoutButton/LogoutButton";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-
-// import Menu from "./components/Menu";
-// import init from "./firebase"
-
 
 const logout = () => {
   firebase
@@ -36,18 +31,16 @@ export default function App() {
             </Route>
             {/* KITCHEN */}
             <Route path="/Kitchen">
-              <ButtonLogout onClick={logout} /*name="Sair"*/ />
+              <ButtonLogout onClick={logout}/>
               <Kitchen />
             </Route>
 
             {/* HALL */}
             <Route path="/Hall">
-              {/* <Menu /> */}
               <div className="hall-template text-align">
-                <ButtonLogout onClick={logout} /*name="Sair"*/ />
+                <ButtonLogout onClick={logout}/>
                 <div className="menu">
                   <Hall />
-                  <OrderModal className="hidden" />
                 </div>
               </div>
             </Route>

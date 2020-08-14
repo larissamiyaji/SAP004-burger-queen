@@ -32,10 +32,7 @@ h1 {
 label {
   width: 250px;
 }
-/* 
-p {
-  font-size: 2em;
-} */
+
 /*  NAVBAR - BURGER QUEEN  */
 .navbar {
   display: flex;
@@ -79,7 +76,7 @@ p {
 /*  INPUTS TEXTO - FORM */
 .input {
   max-width: 500px;
-  height: 40px;
+  height: fit-content;
   border-bottom: solid 2px #d56877;
   background-color: #728da100;
   text-align: center;
@@ -93,39 +90,8 @@ p {
   display: block;
 }
 
-.testando {
-  display: inline-grid;
-}
-
 .form-box {
   text-align: -webkit-center;
-}
-
-.infobox {
-  align-items: center;
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  justify-content: center;
-  margin-bottom: 10px;
-}
-
-.description {
-  background-color: #200116;
-  border-radius: 40px;
-  color: #ffffff;
-  display: inline-block;
-  height: fit-content;
-  margin: 10px 25px 0px 25px;
-  padding: 10px;
-  text-align: center;
-  width: auto;
-  font-size: 1.6em;
-  font-family: "Bree Serif", serif;
-}
-
-.description p{
-  font-size: 1em;
 }
 
 /*  INPUTS BOTÕES */
@@ -162,42 +128,6 @@ p {
   cursor: pointer;
 }
 
-.cancel-button {
-  background-color: #d34d4d;
-  border: solid 1px #741a1a
-}
-
-.send-order-button {
-  background-color: #73D398;
-  border: solid 1px #4c9668;
-  margin-top: 20px;
-}
-
-.send-order-button:hover {
-  background-color: #329F5B;
-}
-
-.link-style {
-  text-decoration: none;
-  color: #000000;
-  display: flex;
-  padding: 10px;
-}
-.link-style:hover {
-  background-color: #d56877;
-  font-weight: bold;
-}
-
-/* ORDENAR DEPOIS */
-.occupation {
-  display: block;
-}
-
-.p-bottom {
-  margin: 10px;
-  font-size: 2.5em;
-}
-
 .text-align {
   text-align: center;
   margin-top: 30px;
@@ -209,164 +139,9 @@ p {
   margin-top: -50px;
 }
 
-.menu-title {
-  margin-top: 10px;
-  font-size: 2em;
-}
-
-/* .menu-list {
-  font-weight: 600;
-  font-size: 1.1em;
-  margin-bottom: 10px;
-  margin-top: 10px;
-} */
-/*  MODAL */
-.modal {
-  width: 400px;
-  height: 320px;
-  position: absolute;
-  margin-left: auto;
-  display: none;
-  background-color: #b9a8ba;
-  border-radius: 40px;
-  text-align: center;
-  box-shadow: black 5px 5px 100px 0px;
-  padding-top: 10px;
-}
-
-.modal:target {
-  display: block;
-  top: 250px;
-  transition: all 0.3s;
-  transition-delay: 0.2s;
-}
-
-.hidden {
-  visibility: hidden;
-}
-
-.edit-burger {
-  text-align: left;
-  margin-left: 10px;
-  margin-top: 10px;
-}
-
-.radio-buttons {
-  font-size: 1.5em;
-  display: grid;
-  margin-top: 10px;
-  margin-left: 40px;
-  text-align: left;
-  font-weight: 600;
-}
-
-.occupation-options {
-  display: flex;
-  justify-content: center;
-}
-
-.cheese-egg {
-  text-align: left;
-  margin-left: 40px;
-}
-
 .hall-template {
   display: block;
   justify-content: center;
-}
-
-.order-card {
-  border-style: solid;
-  border-radius: 40px;
-  background-color: #F4E167;
-  width: fit-content;
-  height: fit-content;
-  margin-top: 30px;
-  padding: 10px 0px 10px 0px;
-  font-size: 1.0em;
-}
-
-
-
-.order-item {
-  padding: 5px;
-  height: fit-content;
-  margin: 5px;
-  border-radius: 15px;
-  background-color: rgba(131, 34, 133, 0.5);
-  border: solid 2px black;
-  color: white;
-  text-indent:5% ;
-}
-
-.order-details {
-  margin-left: 60px;
-  margin-top: 10px;
-
-}
-
-
-
-.order-details-input {
-  width: 250px;
-  border-radius: 40px;
-  background-color: #ffffff00;
-  height: 4vh;
-  border-style: none;
-  margin-top: 10px;
-  font-size: 5vh;
-}
-
-
-.order-bottom-info {
-  text-align: center;
-}
-
-.clients-info {
-  display: flex;
-}
-
-.value-total {
-  font-size: 2em;
-}
-
-.menu-item {
-  padding: 10px 35px 0px 10px;
-  height: fit-content;
-  margin-bottom: 5px;
-  border-radius: 30px;
-  background-color: rgba(64, 224, 208, 0.466);
-}
-
-.menu-item:hover {
-  cursor: pointer;
-  border: dotted 3px rgb(229, 231, 79);
-  color: #ffffff;
-  background-color: rgba(177, 48, 182, 0.486);
-}
-
-.menu-button {
-  display: flex;
-  justify-content: space-between;
-}
-
-.menu-font {
-  font-size: 2em;
-  padding-right: 15px;
-  height: fit-content;
-}
-
-.menu-font-price {
-  font-size: 1.6em;
-}
-
-.card {
-  margin: 0px 0px 5px 10px;
-}
-
-.div-resume {
-  font-size: 1.5em;
-  font-weight: 300;
 }
 
 @media (max-width: 900px) {

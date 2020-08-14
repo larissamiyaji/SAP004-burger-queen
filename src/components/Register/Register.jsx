@@ -8,6 +8,7 @@ import Input from "../Imput/Input";
 import InfoBox from "../InfoBox/InfoBox";
 import Button from "../Button/Button";
 import { urls } from "../../Routes";
+import "./Register.css"
 
 
 const Register = () => {
