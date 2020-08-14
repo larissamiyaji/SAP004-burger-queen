@@ -31,7 +31,7 @@
 }
  
 .open-orders {
-  background-color: #ef5f42e8;
+  background-color: #632B30;
   font-size: 1.9em;
 }
 
@@ -47,7 +47,7 @@ border-radius: 0px 0px 100px 0px;
 
 .open-card {
   display: block;
-  background-color: #9a92bb;
+  background-color: #948392;
   border-radius: 0px 200px 30px 20px;
   padding: 20px 0px 20px 10px;
   margin-bottom: 15px;
@@ -71,4 +71,18 @@ border-radius: 0px 0px 100px 0px;
   min-width: 100%;
   min-height: 100%;
   z-index: -1;
+}
+
+.itens{
+  color:#E6AF2E;
+  text-shadow: black 1px 1px;
+}
+
+.itens-box{
+  background-color: #f3c0ec;
+  border-radius: 10px 50px 30px 10px;
+  border-radius: 10px 50px 30px 10px;
+  display: block;
+
+  
 }

@@ -2,18 +2,16 @@
 
 ## Índice
 
-- [1. Preâmbulo](#1-preâmbulo)
-- [2. Resumo do projeto](#2-resumo-do-projeto)
-- [3. Objetivos de aprendizagem](#3-objetivos-de-aprendizagem)
-- [4. Considerações gerais](#4-considerações-gerais)
-- [5. Critérios de aceitação mínimos do
-  projeto](#5-critérios-de-aceitação-mínimos-do-projeto)
-- [6. Hacker Edition](#6-hacker-edition)
+- [1. Sobre Burger Queen](#1-sobre-burger-queen)
+- [2. Preâmbulo](#2-preâmbulo)
+- [3. Resumo do projeto](#3-resumo-do-projeto)
+- [4. Objetivos de aprendizagem](#4-objetivos-de-aprendizagem)
+- [5. Considerações gerais](#5-considerações-gerais)
+- [6. Histórias de Usuário](#6-histórias-de-usuário)
 - [7. Dicas e leituras complementares](#7-dicas-e-leituras-complementares)
 
 ---
-
-## 1. Preâmbulo
+## 2. Preâmbulo
 
 [React](https://reactjs.org/), [Angular](https://angular.io/) e
 [Vue](https://vuejs.org/) são alguns dos _frameworks_ e _bibliotecas_ de
@@ -36,17 +34,11 @@ Como desenvolvedora Front-end, estes kits de desenvolvimento podem resultar em
 uma grande ajuda para implementar rapidamente _features_ dos projetos em que
 você for trabalhar.
 
-## 2. Resumo do projeto
+---
 
-Desta vez temos um projeto 100% por demanda. Você sempre pode (e deve) fazer
-sugestões de melhora e mudança, mas muitas vezes trabalhará em um projeto em que
-primeiro deve se assegurar de cumprir os requisitos.
+## 1. Sobre Burger Queen
 
-Um pequeno restaurante de hambúrgueres, que está crescendo, necessita uma
-interface em que se possa realizar pedidos utilizando um _tablet_, e enviá-los
-para a cozinha para que sejam preparados de forma ordenada e eficiente.
-
-![burger-queen](https://user-images.githubusercontent.com/110297/42118136-996b4a52-7bc6-11e8-8a03-ada078754715.jpg)
+Com a atual crescente onda de restaurantes temáticos que andam surgindo por todo o país, uma nova hamburgueria criada com base no jogo Outer Worlds necessita de uma interface pela qual seja possível que o garçom realize todos os pedidos utilizando um _tablet_, e consiga envia-los para os funcionários da cozinha, para que os pedidos possam ser preparados de maneira ordenada e eficiente. 
 
 Estas são as informações que temos do cliente:
 
@@ -92,31 +84,9 @@ A interface deve mostrar os dois menus (café da manhã e restante do dia), cada
 um com todos os seus _produtos_. O usuário deve poder escolher que _produtos_
 adicionar e a interface deve mostrar o _resumo do pedido_ com o custo total.
 
-![out](https://user-images.githubusercontent.com/110297/45984241-b8b51c00-c025-11e8-8fa4-a390016bee9d.gif)
+![out](https://i.imgur.com/eeyEt2C.mp4)
 
-## 3. Objetivos de aprendizagem
-
-O objetivo principal é aprender a construir uma interface web usando React. Esse framework front-end ataca o seguinte problema: **como manter a interface e estado sincronizados**. Portanto, esta experiência espera familiarizá-la com o conceito de estado da tela, e como cada mudança no estado vai refletir na interface (por exemplo, toda vez que adicionamos um _produto_ para um _pedido_, a interface deve atualizar a lista de pedidos e o total).
-
-Finalmente, a interface deve ser pensada específicamente para rodar em **tablets**.
-
-## 4. Considerações gerais
-
-Trabalhe integralmente uma história de usuário antes de passar para a próxima. Cumpra todas as histórias possíveis dentro do tempo especificado.
-
-A lógica do projeto deve ser totalmente implementada em JavaScript (ES6 +). Neste projeto você deve usar [React](https://reactjs.org/).
-
-O aplicativo deve ser um _Single Page App_. Os pedidos serão enviados por meio de um _tablet_,mas **não queremos um aplicativo nativo**, mas sim um aplicativo Web que seja **responsivo**.
-
-Precisamos pensar bem sobre o UX para aqueles que vão receber os pedidos, o tamanho e a aparência dos botões, a visibilidade do estado atual do pedido, etc.
-
-O aplicativo deve usar scripts `npm-scripts` e ter `start`, `build` e `deploy`, que são responsáveis por iniciar, empacotar e implantar o aplicativo, respectivamente.
-
-Você deve definir a estrutura das pastas e arquivos que considera necessários. Você pode estruturá-los de acordo com as convenções do React.
-
-Para iniciar este projeto você terá que fazer um _fork_ e _clone_ deste repositório.
-
-## 5. Critérios mínimos de aceitação do projeto
+## 5. Histórias de Usuário
 
 ### Definição do produto
 
@@ -203,13 +173,9 @@ Eu como garçom/garçonete quero ver os pedidos que estão prontos para entregá
 
 ---
 
-## 6. Hacker Edition
+## 6. Prótotipo
 
-As seções chamadas Hacker Edition são opcionais. Se você terminou tudo e ainda sobrou tempo, faça essa parte. Assim você poderá aprofundar e exercitar mais sobre os objetivos de aprendizagem do projeto.
-
-- Faça testes que cubram 100% de statements, functions, lines e branches.
-
----
+Todos os protótipos, ideias e paletas de cores, utilizados no projeto, podem ser encontradas em nossa pasta no [Figma](https://www.figma.com/file/3DFyARtnvreMQxvSGt0gsN/Burger-Queen?node-id=0%3A1)
 
 ## 7. Dicas e leituras complementares
 
@@ -222,76 +188,3 @@ As seções chamadas Hacker Edition são opcionais. Se você terminou tudo e ain
 - Converta o menu descrito pelo cliente em uma coleção no Firebase.
 
 ---
-
-### Outros recursos
-
-#### Framework / biblioteca
-
-- [React Hooks](https://reactjs.org/docs/hooks-intro.html)
-
-#### React Hooks
-
-- [Entendendo React Hooks](https://medium.com/@higornevesmarques/entendendo-react-hooks-2c0efae276a3)
-- [React Hooks - Rocketseat](https://blog.rocketseat.com.br/react-hooks/)
-- [Habemus React Hooks](https://willianjusten.com.br/habemus-react-hooks/)
-
-#### Ferramentas
-
-- [npm-scripts](https://docs.npmjs.com/misc/scripts)
-- [Babel](https://babeljs.io/)
-- [webpack](https://webpack.js.org/)
-- [Aphrodite](https://github.com/Khan/aphrodite)
-- [React Router](https://reactrouter.com/web/guides/quick-start)
-- [Firebase Firestore - Vídeo Dani](https://www.youtube.com/watch?v=y-p8G3hPrMI)
-- [Firebase Hosting - Vídeo Dani](https://www.youtube.com/watch?v=0R2Ur0xKNz4)
-- [Firebase Auth - Vídeo Moni](https://www.loom.com/share/3e2cafa9b3ed4bd68bda6e8f7d2b0395)
-
-## Checklist
-
-### `README.md`
-
-- [ ] Documentação do processo de design.
-- [ ] Inclui informações para desenvolvedores (dependências, instalação, uso, testes...)
-
-#### HU
-
-#### HU 1: Criar perfil
-
-- [ ] Poder realizar cadastro com e-mail, senha e função.
-- [ ] Poder realizar login com e-mail e senha.
-- [ ] Redirecionar para a tela correta.
-
-#### HU 2: Anotar pedidos
-
-- [ ] Digitar o nome do cliente e mesa.
-- [ ] Filtrar _menu_ para _café da manhã_ e _almoço/jantar_.
-- [ ] Adicionar item ao pedido.
-- [ ] Excluir item do pedido.
-- [ ] Mostrar _resumo_ do pedido com todos os itens e o total.
-- [ ] Enviar para a cozinha (isso deve salvar o pedido).
-
-#### HU 3: Ver pedidos na cozinha
-
-- [ ] Visualizar pedidos pendentes para produção.
-- [ ] Marcar pedido como pronto para entrega.
-- [ ] Ver histórico dos pedidos.
-
-#### HU 4: Entrega de pedidos
-
-- [ ] Visualizar pedidos pendentes para entrega.
-- [ ] Marcar pedido como entregue ao cliente.
-
-### UX
-
-- [ ] Funciona bem em tablets.
-- [ ] Fácil utilização em telas sensíveis ao toque.
-- [ ] Status atual do pedido sempre visível enquanto fazemos um pedido.
-
-### Hacker Edition
-
-#### Testes
-
-- [ ] 100% de cobertura de _statements_.
-- [ ] 100% de cobertura de _functions_.
-- [ ] 100% de cobertura de _lines_.
-- [ ] 100% de cobertura de _branches_.

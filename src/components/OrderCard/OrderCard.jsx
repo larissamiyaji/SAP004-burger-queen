@@ -6,14 +6,14 @@ import TrashCan from "../images/trash-can.png";
 import "./OrderCard.css";
 
 const OrderDetails = (props) => {
-  const [breakfast, setBreakfast] = useState(true);
-  const [allDay, setAllDay] = useState(false);
+  const [breakfast] = useState(true);
+  const [allDay] = useState(false);
   const [orders, setOrders] = useState([]);
   const [order, setOrder] = useState("");
   const [table, setTable] = useState("");
   const [client, setClient] = useState("");
-  const [menu, setMenu] = useState("");
-  const [pedido, setPedido] = useState([]);
+  const [menu] = useState("");
+  const [pedido] = useState([]);
 
   useEffect(() => {
     firebase

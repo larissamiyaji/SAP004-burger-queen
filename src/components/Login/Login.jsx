@@ -1,13 +1,11 @@
 import React, { useState } from "react";
-import { firebaseAuth } from "../../firebase";
+import { firebaseAuth, firebaseStore } from "../../firebase";
 import { urls } from "../../Routes";
-import { firebaseStore } from "../../firebase";
 import { useHistory } from "react-router-dom";
-import Input from "../Imput/Input";
+import Input from "../Input/Input";
 import Button from "../Button/Button";
 import InfoBox from "../InfoBox/InfoBox";
 import "./Login.css";
-import background from "../images/background.jpg";
 
 function Login() {
   const [email, setEmail] = useState("");
@@ -32,6 +30,7 @@ function Login() {
       });
     console.log("User uid:", userId);
   }
+
   function handleClick(e) {
     e.preventDefault();
     signIn(email, password);
