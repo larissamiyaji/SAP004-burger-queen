@@ -11,6 +11,7 @@
 - [7. Dicas e leituras complementares](#7-dicas-e-leituras-complementares)
 
 ---
+
 ## 2. Preâmbulo
 
 [React](https://reactjs.org/), [Angular](https://angular.io/) e
@@ -38,7 +39,7 @@ você for trabalhar.
 
 ## 1. Sobre Burger Queen
 
-Com a atual crescente onda de restaurantes temáticos que andam surgindo por todo o país, uma nova hamburgueria criada com base no jogo Outer Worlds necessita de uma interface pela qual seja possível que o garçom realize todos os pedidos utilizando um _tablet_, e consiga envia-los para os funcionários da cozinha, para que os pedidos possam ser preparados de maneira ordenada e eficiente. 
+Com a atual crescente onda de restaurantes temáticos que andam surgindo por todo o país, uma nova hamburgueria criada com base no jogo Outer Worlds necessita de uma interface pela qual seja possível que o garçom realize todos os pedidos utilizando um _tablet_, e consiga envia-los para os funcionários da cozinha, para que os pedidos possam ser preparados de maneira ordenada e eficiente.
 
 Estas são as informações que temos do cliente:
 
@@ -85,7 +86,17 @@ um com todos os seus _produtos_. O usuário deve poder escolher que _produtos_
 adicionar e a interface deve mostrar o _resumo do pedido_ com o custo total.
 
 <!-- ![out](https://i.imgur.com/eeyEt2C.mp4) -->
-<img src="https://i.imgur.com/eeyEt2C.mp4" width="40" height="40" />
+<!-- <img src="https://i.imgur.com/eeyEt2C.mp4" width="40" height="40" /> -->
+
+<video
+src="https://i.imgur.com/eeyEt2C.mp4"
+type="video/mp4"
+autoPlay
+loop
+muted
+className="video-background"
+
+> Vídeo </video>
 
 ## 5. Histórias de Usuário
 
