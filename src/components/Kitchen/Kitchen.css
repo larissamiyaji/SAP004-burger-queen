@@ -94,3 +94,7 @@ border-radius: 0px 0px 100px 0px;
   width: 180px;
   height: 7vh;
 }
+
+.done-button:hover{
+  background-color:#537A5A;
+}
