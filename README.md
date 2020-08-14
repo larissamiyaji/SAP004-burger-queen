@@ -6,8 +6,9 @@
 - [2. Sobre Burger Queen](#2-sobre-burger-queen)
 - [3. Histórias de Usuário](#3-histórias-de-usuário)
 - [4. Protótipo](#4-protótipo)
-- [5. Tecnologias Utilizadas](#7-tecnologias-utilizadas)
-- [6. Desenvolvedoras](#6-desenvolvedoras)
+- [5. Tecnologias Utilizadas](#5-tecnologias-utilizadas)
+- [6. Instalação](#6-instalação)
+- [7. Desenvolvedoras](#7-desenvolvedoras)
 
 ---
 
@@ -183,7 +184,15 @@ Todos os protótipos, ideias e paletas de cores, utilizados no projeto, podem se
 
 Para a criação deste projeto utilizamos HTML5, JavaScript, ReactJs, React Hooks, React Router, CSS3, Node.js e Firebase.
 
-## 6. Desenvolvedoras
+## 6. Instalação
+
+Para instalar o projeto em sua máquina, basta seguir os passos a seguir:
+
+1) Faça um fork deste repositório e em seguida faça um clone para sua máquina digitando o comando `git clone <link do seu fork>`
+
+2) Abra a pasta do projeto navegando pelo terminal e rode `npm install` para realizar a instalação de todas as dependências necessárias para o projeto.
+
+## 7. Desenvolvedoras
 
 [Larissa Natsumi Miyaji](https://github.com/larissamiyaji) <br>
 [Luana Andrade](https://github.com/Lualuliz)
