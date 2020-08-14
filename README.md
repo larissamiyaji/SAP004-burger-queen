@@ -7,8 +7,7 @@
 - [3. Histórias de Usuário](#3-histórias-de-usuário)
 - [4. Protótipo](#4-protótipo)
 - [5. Tecnologias Utilizadas](#7-tecnologias-utilizadas)
-- [6. Dicas e leituras complementares](#7-dicas-e-leituras-complementares)
-- [7. Desenvolvedoras](#7-desenvolvedoras)
+- [6. Desenvolvedoras](#6-desenvolvedoras)
 
 ---
 
@@ -184,19 +183,7 @@ Todos os protótipos, ideias e paletas de cores, utilizados no projeto, podem se
 
 Para a criação deste projeto utilizamos HTML5, JavaScript, React, CSS3, Node.js e Firebase.
 
-## 6. Dicas e leituras complementares
-
-### Primeros passos
-
-- Crie um projeto usando `create-react-app`
-
-- Crie um projeto no [Firebase](https://firebase.google.com/)
-
-- Converta o menu descrito pelo cliente em uma coleção no Firebase.
-
----
-
-## 7. Desenvolvedoras
+## 6. Desenvolvedoras
 
 [Larissa Natsumi Miyaji](https://github.com/larissamiyaji) <br>
 [Luana Andrade](https://github.com/Lualuliz)
