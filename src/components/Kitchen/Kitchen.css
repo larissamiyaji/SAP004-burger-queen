@@ -24,30 +24,13 @@
   overflow-y: hidden;
   resize: none;
   word-wrap: break-word;
+  font-family: "Bree Serif", serif;
 }
 
 .list-title {
   margin-bottom: 15px;
 }
-
-.list {
-  /* REVER QUAIS SÃO NECESSÁRIOS  */
-  max-height: 30vh;
-  width: 70vh;
-
-  /* margin-bottom: 10px; */
-  /* border-radius: 20px; */
-  /* margin: 10px; */
-  /* border: 0 none; */
-  /* outline: none; */
-  /* padding: 15px 15px 10px; */
-  /* line-height: 1.4em; */
-  /* overflow-wrap: break-word; */
-  /* overflow-y: hidden; */
-  /* resize: none; */
-  /* word-wrap: break-word; */
-}
-
+ 
 .open-orders {
   background-color: #ef5f42e8;
   font-size: 1.9em;

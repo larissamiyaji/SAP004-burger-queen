@@ -38,7 +38,7 @@ const OrderDetails = (props) => {
 
   const cancelOrder = (event) => {
     event.preventDefault();
-    console.log("Cancelando pedido");
+    // console.log("Cancelando pedido");
   };
   const sendOrder = (order) => {
     const orderNumber = parseInt(order + 1);
@@ -58,7 +58,7 @@ const OrderDetails = (props) => {
         pedido: props.newOrder,
       })
       .then((docs) => {
-        alert("Pedido enviado");
+        // alert("Pedido enviado");
       })
       .catch((error) => {
         alert(error.message);
@@ -69,23 +69,23 @@ const OrderDetails = (props) => {
     const newOrder = props.newOrder;
     let itensPedido = newOrder.splice(newOrder.indexOf(newOrder.pedido), 1);
     setOrders(itensPedido); //  Ver como pegar o item certo
-    console.log("Itens sobrando", newOrder);
-    console.log("Item removido", itensPedido);
+    // console.log("Itens sobrando", newOrder);
+    // console.log("Item removido", itensPedido);
   };
 
   const conta = props.newOrder.reduce((orders, orderItem) => {
-    console.log(orderItem);
+    // console.log(orderItem);
     const deusmeajuda = Number(orderItem.split("R$")[1]);
-    console.log(deusmeajuda);
+    // console.log(deusmeajuda);
     return orders + deusmeajuda;
   }, 0);
-  console.log(conta);
+  // console.log(conta);
 
   const prevent = (event) => {
     event.preventDefault();
     newOrder(order, table, client);
     sendOrder(order);
-    console.log(props.newOrder);
+    // console.log(props.newOrder);
   };
 
   return (

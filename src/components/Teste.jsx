@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 
 const OrderNumber = () => {
   const [number, setNumber] = useState(1);
-  console.log("Contador", typeof(number), number);
+  // console.log("Contador", typeof(number), number);
 
   useEffect(() => {
 		

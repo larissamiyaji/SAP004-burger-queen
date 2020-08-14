@@ -48,14 +48,14 @@ const Hall = () => {
    // console.log(orders);
   return (
     <main className="main-hall">
-     {/* <video
+     <video
         src={BackgroundVideo}
         type="video/mp4"
         autoPlay
         loop
         muted
         className="video-background"
-  ></video>*/}
+  ></video>
       <div className="div-hall">
         <div className="tabs-container">
           <Button

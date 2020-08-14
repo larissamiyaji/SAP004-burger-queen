@@ -33,7 +33,7 @@ const Kitchen = () => {
         muted
         className="video-background"
       ></video>
-      <h1 className="list-title">Cozinha</h1>
+      {/* <h1 className="list-title">Cozinha</h1> */}
       <div className="kitchen-display">
         <section className="order-list open-orders">
           <h2 className="list-title">Pedidos Abertos</h2>
@@ -59,7 +59,7 @@ const Kitchen = () => {
               </p>
               <p>
                 <strong>Itens: </strong>
-                {element.pedidos}
+                {element.pedido}
               </p>
             </div>
           ))}

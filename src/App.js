@@ -14,13 +14,13 @@ const logout = () => {
     .signOut()
     .then(() => {
       window.location.href = "/";
-      console.log("Logging out");
+      // console.log("Logging out");
     });
 };
 
 export default function App() {
   return (
-    <div className="main-background">
+    <div>
       <Header />
       <Router>
         <div>

@@ -44,7 +44,7 @@ const Register = () => {
             occupation: occupation,
             userUid: firebase.auth().currentUser.uid,
           });
-        console.log(firebase.auth().currentUser.uid);
+        // console.log(firebase.auth().currentUser.uid);
       })
       .then(() => {
         if (occupation === "Cozinha") {
