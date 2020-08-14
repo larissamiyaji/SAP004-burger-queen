@@ -60,14 +60,8 @@ const Kitchen = () => {
               <p className='itens-box'>
                 <strong className='itens' >Itens: </strong>
                 {element.pedido}
-              </p>
-              <button
-          type="submit"
-          className="done-button"
-          
-        >
-          Pedido Pronto!
-        </button>
+              </p><br></br>
+              <button type="submit" className="done-button" >Pedido Pronto  </button>
             </div>
           ))}
           
