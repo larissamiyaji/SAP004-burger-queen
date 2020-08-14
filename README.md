@@ -2,17 +2,17 @@
 
 ## Índice
 
-- [1. Sobre Burger Queen](#1-sobre-burger-queen)
-- [2. Preâmbulo](#2-preâmbulo)
-- [3. Resumo do projeto](#3-resumo-do-projeto)
-- [4. Objetivos de aprendizagem](#4-objetivos-de-aprendizagem)
-- [5. Considerações gerais](#5-considerações-gerais)
-- [6. Histórias de Usuário](#6-histórias-de-usuário)
-- [7. Dicas e leituras complementares](#7-dicas-e-leituras-complementares)
+- [1. Preâmbulo](#1-preâmbulo)
+- [2. Sobre Burger Queen](#2-sobre-burger-queen)
+- [3. Histórias de Usuário](#3-histórias-de-usuário)
+- [4. Protótipo](#4-protótipo)
+- [5. Tecnologias Utilizadas](#7-tecnologias-utilizadas)
+- [6. Dicas e leituras complementares](#7-dicas-e-leituras-complementares)
+- [7. Desenvolvedoras](#7-desenvolvedoras)
 
 ---
 
-## 2. Preâmbulo
+## 1. Preâmbulo
 
 [React](https://reactjs.org/), [Angular](https://angular.io/) e
 [Vue](https://vuejs.org/) são alguns dos _frameworks_ e _bibliotecas_ de
@@ -37,7 +37,7 @@ você for trabalhar.
 
 ---
 
-## 1. Sobre Burger Queen
+## 2. Sobre Burger Queen
 
 Com a atual crescente onda de restaurantes temáticos que andam surgindo por todo o país, uma nova hamburgueria criada com base no jogo Outer Worlds necessita de uma interface pela qual seja possível que o garçom realize todos os pedidos utilizando um _tablet_, e consiga envia-los para os funcionários da cozinha, para que os pedidos possam ser preparados de maneira ordenada e eficiente.
 
@@ -86,9 +86,8 @@ um com todos os seus _produtos_. O usuário deve poder escolher que _produtos_
 adicionar e a interface deve mostrar o _resumo do pedido_ com o custo total.
 
 ![out](https://media.giphy.com/media/ft4WiO0XavfxYwZkbm/giphy.gif)
-<!-- <img src="https://i.imgur.com/eeyEt2C.mp4" width="40" height="40" /> -->
 
-## 5. Histórias de Usuário
+## 3. Histórias de Usuário
 
 ### Definição do produto
 
@@ -175,11 +174,15 @@ Eu como garçom/garçonete quero ver os pedidos que estão prontos para entregá
 
 ---
 
-## 6. Prótotipo
+## 4. Prótotipo
 
 Todos os protótipos, ideias e paletas de cores, utilizados no projeto, podem ser encontradas em nossa pasta no [Figma](https://www.figma.com/file/3DFyARtnvreMQxvSGt0gsN/Burger-Queen?node-id=0%3A1)
 
-## 7. Dicas e leituras complementares
+## 5. Tecnologias Utilizadas
+
+Para a criação deste projeto utilizamos HTML5, JavaScript, React, CSS3, Node.js e Firebase.
+
+## 6. Dicas e leituras complementares
 
 ### Primeros passos
 
@@ -190,3 +193,8 @@ Todos os protótipos, ideias e paletas de cores, utilizados no projeto, podem se
 - Converta o menu descrito pelo cliente em uma coleção no Firebase.
 
 ---
+
+## 7. Desenvolvedoras
+
+[Larissa Natsumi Miyaji](https://github.com/larissamiyaji)
+[Luana Andrade](https://github.com/Lualuliz)

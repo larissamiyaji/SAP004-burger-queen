@@ -22,6 +22,8 @@ const Kitchen = () => {
       });
   }, []);
 
+  
+
   return (
     <div className="kitchen">
      {/*} <video
