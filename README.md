@@ -39,6 +39,8 @@ você for trabalhar.
 
 ## 2. Sobre Burger Queen
 
+Você pode conferir o resultado final [aqui](https://burger-queen04.web.app/)
+
 Com a atual crescente onda de restaurantes temáticos que andam surgindo por todo o país, uma nova hamburgueria criada com base no jogo Outer Worlds necessita de uma interface pela qual seja possível que o garçom realize todos os pedidos utilizando um _tablet_, e consiga envia-los para os funcionários da cozinha, para que os pedidos possam ser preparados de maneira ordenada e eficiente.
 
 Estas são as informações que temos do cliente:
@@ -198,3 +200,5 @@ Para a criação deste projeto utilizamos HTML5, JavaScript, React, CSS3, Node.j
 
 [Larissa Natsumi Miyaji](https://github.com/larissamiyaji) <br>
 [Luana Andrade](https://github.com/Lualuliz)
+
+_Projeto realizado durante o bootcamp da Laboratória_
