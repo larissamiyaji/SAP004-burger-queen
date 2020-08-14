@@ -17,6 +17,23 @@
   margin-top: 20px;
 }
 
+.card-position{
+  display: block;
+}
+
+.done-card { 
+  border-style: solid;
+  border-radius: 40px;
+  background-color: #7C274B;
+  width: 300px;
+  height: fit-content;
+  margin-top: 30px;
+  padding: 10px 10px 10px 10px;
+  font-size: 0.7em;
+  font-family: "Bree Serif", serif;
+  
+}
+
 .div-hall {
   display: flex;
 }
@@ -25,10 +42,23 @@
   width: fit-content;
   height: 45px;
   border-radius: 40px 10px;
-  font-size: 2em;
+  font-size: 1.8em;
   font-weight: 600;
   text-align: center;
   margin: 10px;
   background-color: #d56877;
   padding: 0px 20px 0px 20px;
+}
+
+.done-button-hall{
+  background-color:#72D577;
+  border: solid 1px black;
+  border-radius: 40px 10px 40px 10px;
+  font-size: 1.2em;
+  font-weight: 600;
+  height: 30px;
+  margin: 10px;
+  width: fit-content;
+  padding: 0px 15px 0px 15px;
+  margin-left:55px ;
 }

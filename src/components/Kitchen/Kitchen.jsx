@@ -22,11 +22,9 @@ const Kitchen = () => {
       });
   }, []);
 
-  
-
   return (
     <div className="kitchen">
-     {/*} <video
+      {/*} <video
         src={BackgroundVideo}
         type="video/mp4"
         autoPlay
@@ -41,7 +39,7 @@ const Kitchen = () => {
             <div className="open-card">
               <div className="order-top">
                 <p>
-                  <strong >Nº do pedido: </strong>
+                  <strong>Nº do pedido: </strong>
                   {element.order}
                 </p>
                 <p>
@@ -56,15 +54,20 @@ const Kitchen = () => {
               <p>
                 <strong>Status: </strong>
                 {element.status}
-              </p><br></br>
-              <p className='itens-box'>
-                <strong className='itens' >Itens: </strong>
+              </p>
+              <br></br>
+              <p className="itens-box">
+                <strong className="itens">Itens: </strong>
                 {element.pedido}
-              </p><br></br>
-              <button type="submit" className="done-button" >Pedido Pronto  </button>
+              </p>
+              <br></br>
+              <button
+                type="submit"
+                className="done-button"
+              > Pronto
+              </button>
             </div>
           ))}
-          
         </section>
       </div>
     </div>

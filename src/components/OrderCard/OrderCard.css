@@ -13,7 +13,7 @@
   height: fit-content;
   margin-top: 30px;
   padding: 10px 10px 10px 10px;
-  font-size: 1em;
+  font-size: 0.7em;
   font-family: "Bree Serif", serif;
 }
 
@@ -67,7 +67,7 @@
   height: 30px;
   margin: 10px;
   width: fit-content;
-  padding: 0px 15px 35px 15px;
+  padding: 0px 15px 0px 15px;
 }
 .cancel-button {
   background-color: #d34d4d;
