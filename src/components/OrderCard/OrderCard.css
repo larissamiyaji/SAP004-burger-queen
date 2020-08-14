@@ -66,6 +66,11 @@
   background-color: #d34d4d;
   border: solid 1px #741a1a;
 }
+
+.cancel-button:hover {
+  background-color: #b13939;
+}
+
 .send-order-button {
   background-color: #73d398;
   border: solid 1px #4c9668;

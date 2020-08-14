@@ -76,7 +76,7 @@ label {
 /*  INPUTS TEXTO - FORM */
 .input {
   max-width: 500px;
-  height: 40px;
+  height: fit-content;
   border-bottom: solid 2px #d56877;
   background-color: #728da100;
   text-align: center;
