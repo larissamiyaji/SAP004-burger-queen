@@ -85,18 +85,8 @@ A interface deve mostrar os dois menus (café da manhã e restante do dia), cada
 um com todos os seus _produtos_. O usuário deve poder escolher que _produtos_
 adicionar e a interface deve mostrar o _resumo do pedido_ com o custo total.
 
-<!-- ![out](https://i.imgur.com/eeyEt2C.mp4) -->
+![out](https://media.giphy.com/media/ft4WiO0XavfxYwZkbm/giphy.gif)
 <!-- <img src="https://i.imgur.com/eeyEt2C.mp4" width="40" height="40" /> -->
-
-<video
-src="https://i.imgur.com/eeyEt2C.mp4"
-type="video/mp4"
-autoPlay
-loop
-muted
-className="video-background"
-
-> Vídeo </video>
 
 ## 5. Histórias de Usuário
 
