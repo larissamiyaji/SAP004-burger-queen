@@ -1,10 +1,10 @@
 // import { firebaseStore } from "../firebase";
 import firebase from "firebase";
-import "../firebase";
+import "../../firebase";
 import React, { useState, useEffect } from "react";
-import Menu from "./Menu";
-import TrashCan from "./images/1.png";
-import "../App.css";
+import Menu from "../Menu/Menu";
+import TrashCan from "../images/trash-can.png";
+
 import "./OrderCard.css";
 
 const OrderDetails = (props) => {
@@ -92,13 +92,12 @@ const OrderDetails = (props) => {
     <section id="orders" className="order-card">
       <h2 className="menu-title text-align">Detalhes do Pedido</h2>
       <div className="order-details">
-        <p>Nº do pedido: {order}</p>
-
+        <p className="order-number">Nº do pedido: {order}</p>
         <input
           id="table-number"
           type="number"
           name={table}
-          className="order-details-input input"
+          className="order-details-input"
           placeholder="Nº da mesa"
           required
           onChange={(e) => setTable(e.currentTarget.value)}
@@ -106,7 +105,7 @@ const OrderDetails = (props) => {
         <input
           id="client-name"
           type="text"
-          className="order-details-input input"
+          className="order-details-input"
           placeholder="Nome do cliente"
           value={client}
           onChange={(e) => setClient(e.currentTarget.value)}
@@ -129,25 +128,24 @@ const OrderDetails = (props) => {
                   className="trash-can"
                 ></img>
               </button>
-              {/* Quantidade de itens */}
             </div>
           ))}
         </div>
       </div>
       <div>
         <div className="value-total">
-          <span className="total-price">TOTAL:R$ {conta}</span>
+          <span className="total-price">TOTAL:R$ {conta},00</span>
         </div>
         <button
           type="submit"
-          className="form-button cancel-button"
+          className="button-end cancel-button"
           onClick={cancelOrder}
         >
           Cancelar
         </button>
         <button
           type="submit"
-          className="form-button send-order-button"
+          className="button-end send-order-button"
           onClick={prevent}
         >
           Finalizar

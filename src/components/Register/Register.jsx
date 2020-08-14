@@ -1,14 +1,15 @@
 import React, { useState, useEffect } from "react";
 // import init from "../firebase"
 import { useHistory } from "react-router-dom";
-import { firebaseAuth } from "../firebase";
-import { firebaseStore } from "../firebase";
-import firebase from "../firebase";
-import Input from "./Input";
-import InfoBox from "./InfoBox";
-import Button from "./Button";
-import { urls } from "../Routes";
-import "../App.css";
+import { firebaseAuth } from "../../firebase";
+import { firebaseStore } from "../../firebase";
+import firebase from "../../firebase";
+import Input from "../Imput/Input";
+import InfoBox from "../InfoBox/InfoBox";
+import Button from "../Button/Button";
+import { urls } from "../../Routes";
+import "./Register.css"
+
 
 const Register = () => {
   const [email, setEmail] = useState("");

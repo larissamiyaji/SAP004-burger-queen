@@ -1,0 +1,17 @@
+.description {
+  background-color: #200116;
+  border-radius: 40px;
+  color: #ffffff;
+  display: inline-block;
+  height: fit-content;
+  margin: 10px 25px 0px 25px;
+  padding: 10px;
+  text-align: center;
+  width: auto;
+  font-size: 1.6em;
+  font-family: "Bree Serif", serif;
+}
+
+/* .description p {
+  font-size: 1em;
+} */

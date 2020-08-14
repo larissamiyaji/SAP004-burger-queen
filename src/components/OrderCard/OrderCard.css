@@ -1,0 +1,101 @@
+/* SOFT RESET */
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+.order-card {
+  border-style: solid;
+  border-radius: 40px;
+  background-color: #f4e167;
+  width: fit-content;
+  height: fit-content;
+  margin-top: 30px;
+  padding: 10px 0px 10px 0px;
+  font-size: 1em;
+}
+
+.menu-title {
+  margin-top: 10px;
+  font-size: 2em;
+}
+
+.order-number {
+  font-size: 2em;
+}
+
+.order-details-input {
+  margin-top: 10px;
+  width: 250px;
+  background-color: #ffffff00;
+  height: 4vh;
+  border-style: none;
+  margin-top: 10px;
+  text-align: center;
+  font-size: 2em;
+  display: block;
+}
+
+.order-item {
+  padding: 5px;
+  height: fit-content;
+  margin: 5px;
+  border-radius: 15px;
+  background-color: rgba(131, 34, 133, 0.5);
+  border: solid 2px black;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-align: left;
+  font-size: 1.5em;
+}
+
+.button-end {
+  border-radius: 40px 10px 40px 10px;
+  font-size: 1.8em;
+  font-weight: 600;
+  height: 30px;
+  margin: 10px;
+  width: fit-content;
+  padding: 0px 15px 35px 15px;
+}
+.cancel-button {
+  background-color: #d34d4d;
+  border: solid 1px #741a1a;
+}
+.send-order-button {
+  background-color: #73d398;
+  border: solid 1px #4c9668;
+  margin-top: 20px;
+}
+
+.send-order-button:hover {
+  background-color: #329f5b;
+}
+
+.trash-can {
+  height: 4vh;
+  width: 4vh;
+  background-color: #bc8176;
+}
+
+.trash-can:hover {
+  cursor: pointer;
+}
+
+.value-total {
+  font-size: 2em;
+  font-weight: 600;
+}
+
+.div-resume {
+  font-size: 1.5em;
+  font-weight: 300;
+}
+
+button {
+  background-color: #bc8176;
+}

@@ -1,15 +1,10 @@
 import React, { useState, useEffect } from "react";
-import OrderCard from "../OrderCard";
-import Menu from "../Menu";
-import Button from "../Button";
+import OrderCard from "../OrderCard/OrderCard";
+import Menu from "../Menu/Menu";
+import Button from "../Button/Button";
 import firebase from "../../firebase";
 import BackgroundVideo from ".././video/background-video-hall.mp4";
 import "./Hall.css";
-
-// import MenuCard from "./MenuCard";
-// import { firebaseStore } from "../firebase";
-// import OrderModal from "./OrderModal";
-// import Input from "./Input";
 
 const Hall = () => {
   const [breakfast, setBreakfast] = useState(true);
@@ -53,14 +48,14 @@ const Hall = () => {
    // console.log(orders);
   return (
     <main className="main-hall">
-      <video
+     {/* <video
         src={BackgroundVideo}
         type="video/mp4"
         autoPlay
         loop
         muted
         className="video-background"
-      ></video>
+  ></video>*/}
       <div className="div-hall">
         <div className="tabs-container">
           <Button
@@ -94,25 +89,3 @@ const Hall = () => {
 };
 
 export default Hall;
-
-//  FUNÇÃO DO MODAL
-// const MenuCard = () => {
-//   const turbinar = (event) => {
-//     event.preventDefault();
-//     console.log("Abrindo modal");
-//     OrderModal.hidden = false;
-//     window.location.href = "/hall#order-modal";
-//   };
-// };
-
-// PROVAVELMENTE NÃO USAREMOS MAIS ESSA
-// const sendOrders = (e) => {
-//   e.preventDefault();
-//   const sendOrder = {
-//     client: client,
-//     table: table,
-//     order: order,
-//     status: "pedido em andamento",
-//   };
-//   firebaseStore().collection("orders").add(sendOrder);
-// };
