@@ -187,4 +187,5 @@ Para a criação deste projeto utilizamos HTML5, JavaScript, ReactJs, React Hook
 
 [Larissa Natsumi Miyaji](https://github.com/larissamiyaji) <br>
 [Luana Andrade](https://github.com/Lualuliz)
+
 _Projeto realizado durante o bootcamp da Laboratória_
