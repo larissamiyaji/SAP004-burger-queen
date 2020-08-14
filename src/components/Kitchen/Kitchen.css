@@ -90,11 +90,15 @@ border-radius: 0px 0px 100px 0px;
 .done-button{
   background-color:#72D577;
   border: solid 1px black;
-  border-radius: 10px;
+  border-radius: 40px 10px 40px 10px;
   width: 180px;
   height: 7vh;
+  font-size: 0.5em;
+  font-weight: 600;
+  margin-left:185px ;
 }
 
 .done-button:hover{
   background-color:#537A5A;
+  cursor: pointer;
 }
