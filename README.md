@@ -196,5 +196,5 @@ Para a criação deste projeto utilizamos HTML5, JavaScript, React, CSS3, Node.j
 
 ## 7. Desenvolvedoras
 
-[Larissa Natsumi Miyaji](https://github.com/larissamiyaji)
+[Larissa Natsumi Miyaji](https://github.com/larissamiyaji) <br>
 [Luana Andrade](https://github.com/Lualuliz)
