@@ -188,9 +188,9 @@ Para a criação deste projeto utilizamos HTML5, JavaScript, ReactJs, React Hook
 
 Para instalar o projeto em sua máquina, basta seguir os passos a seguir:
 
-1) Faça um fork deste repositório e em seguida faça um clone para sua máquina digitando o comando `git clone <link do seu fork>`
+1) Faça um fork deste repositório e em seguida faça um clone para sua máquina digitando o comando `git clone <link do seu fork>` na sua linha de comando.
 
-2) Abra a pasta do projeto navegando pelo terminal e rode `npm install` para realizar a instalação de todas as dependências necessárias para o projeto.
+2) Abra a pasta do projeto navegando pela CLI e rode `npm install` para realizar a instalação de todas as dependências necessárias para o projeto.
 
 ## 7. Desenvolvedoras
 
