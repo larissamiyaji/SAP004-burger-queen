@@ -21,6 +21,8 @@
 .menu-title {
   margin-top: 10px;
   font-size: 2em;
+  color: black;
+  text-shadow: none;
 }
 
 .order-number {

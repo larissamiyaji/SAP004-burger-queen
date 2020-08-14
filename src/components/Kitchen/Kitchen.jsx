@@ -25,14 +25,14 @@ const Kitchen = () => {
 
   return (
     <div className="kitchen">
-      <video
+     <video
         src={BackgroundVideo}
         type="video/mp4"
         autoPlay
         loop
         muted
         className="video-background"
-      ></video>
+  ></video>
       {/* <h1 className="list-title">Cozinha</h1> */}
       <div className="kitchen-display">
         <section className="order-list open-orders">

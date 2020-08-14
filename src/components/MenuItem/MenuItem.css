@@ -24,8 +24,11 @@
 
 .menu-font {
   font-size: 2em;
-  padding-right: 15px;
   height: fit-content;
+  border-bottom: solid 2px #d56877;
+  text-align: start;
+  margin-bottom: 30px;
+  padding-right: 15px;
 }
 
 .menu-font-price {

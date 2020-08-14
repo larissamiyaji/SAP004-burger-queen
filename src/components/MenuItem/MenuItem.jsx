@@ -12,7 +12,7 @@ const MenuItem = (props) => {
     >
       <div className="menu-item">
         <div className="menu-button">
-          <div className="input menu-font">
+          <div className="menu-font">
             {/* {" "} */}
             <strong>{props.name}</strong>
           </div>

@@ -65,8 +65,9 @@ label {
 }
 
 .label {
-  font-size: 2em;
-  color: #000000;
+  font-size: 1.8em;
+  color: white;
+  text-shadow: black 2px 2px;
 }
 
 /*  INPUTS TEXTO - FORM */
@@ -74,8 +75,9 @@ label {
   max-width: 500px;
   height: fit-content;
   border-bottom: solid 2px #d56877;
-  background-color: #728da100;
-  text-align: start;
+  border-radius: 50px;
+  background-color: #ffc8fb;
+  text-align: center;
   font-size: 2em;
   display: block;
   margin-bottom: 30px;
@@ -112,7 +114,8 @@ input:focus {
 }
 
 .form-button {
-  background-color: #d56877;
+  background-color: #948392;
+  color: white;
   border-radius: 40px 10px 40px 10px;
   font-size: 1.8em;
   font-weight: 600;
