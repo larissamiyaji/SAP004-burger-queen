@@ -1,38 +1,157 @@
-.App {
+/* SOFT RESET */
+* {
+  padding: 0;
+  margin: 0;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #728da10e;
+  margin-bottom: 10px;
+  font-family: "Marron Bold", serif;
+}
+body::-webkit-scrollbar {
+  width: 0.5em;
+}
+
+body::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 6px black;
+}
+
+body::-webkit-scrollbar-thumb {
+  background-color: black;
+  outline: 1px solid black;
+}
+
+/*  HEADER E TÍTULOS */
+h1 {
   text-align: center;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+label {
+  width: 250px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*  NAVBAR - BURGER QUEEN  */
+.navbar {
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  position: sticky;
+  top: 0;
+  background-color: #200116;
+}
+
+.logo {
+  width: 50px;
+  height: 50px;
+  margin-right: 5px;
+}
+
+.main-title {
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  align-items: center;
+  width: 100%;
+  padding: 7.5px 7.5px;
+  background-color: #200116;
   color: white;
+  font-family: "Marron";
 }
 
-.App-link {
-  color: #61dafb;
+/*  SUBTITLE - LOGIN, REGISTRO */
+.sub-title {
+  font-size: 2.5em;
+  margin-bottom: 30px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+.label {
+  font-size: 1.8em;
+  color: white;
+  text-shadow: black 2px 2px;
+}
+
+/*  INPUTS TEXTO - FORM */
+.input {
+  max-width: 500px;
+  height: fit-content;
+  border-bottom: solid 2px #d56877;
+  border-radius: 50px;
+  background-color: #ffc8fb;
+  text-align: center;
+  font-size: 2em;
+  display: block;
+  margin-bottom: 30px;
+}
+
+input:focus {
+  background-color: rgba(151, 14, 163, 0.24);
+}
+
+.login {
+  text-align: center;
+  display: block;
+}
+
+.form-box {
+  text-align: -webkit-center;
+}
+
+/*  INPUTS BOTÕES */
+.logout-position {
+  background-color: transparent;
+  position: fixed;
+  right: 10px;
+  top: 5px;
+}
+
+.logout-position:hover {
+  cursor: pointer;
+}
+
+.logout-image {
+  height: 50px;
+  width: 50px;
+}
+
+.form-button {
+  background-color: #948392;
+  color: white;
+  border-radius: 40px 10px 40px 10px;
+  font-size: 1.8em;
+  font-weight: 600;
+  height: 30px;
+  margin: 10px;
+  width: fit-content;
+  padding: 0px 15px 35px 15px;
+}
+
+.ButtonItem:hover,
+.form-button:hover {
+  background-color: #aa5460;
+  cursor: pointer;
+}
+
+.text-align {
+  text-align: center;
+  margin-top: 30px;
+}
+
+.menu {
+  display: flex;
+  justify-content: center;
+  margin-top: -50px;
+}
+
+.hall-template {
+  display: block;
+  justify-content: center;
+}
+
+@media (max-width: 900px) {
+  .logout-position {
+    width: fit-content;
+    font-size: 1.5em;
+    font-weight: 600;
+    padding: 0px 10px 0px 10px;
   }
 }

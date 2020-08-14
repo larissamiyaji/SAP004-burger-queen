@@ -1,0 +1,36 @@
+.card {
+  margin: 0px 0px 5px 10px;
+}
+
+.menu-item {
+  padding: 10px 35px 0px 10px;
+  height: fit-content;
+  margin-bottom: 5px;
+  border-radius: 30px;
+  background-color: rgba(64, 224, 208, 0.466);
+  font-family: "Bree Serif", serif;
+}
+
+.menu-item:hover {
+  cursor: pointer;
+  border: dotted 3px rgb(229, 231, 79);
+  color: #ffffff;
+  background-color: rgba(177, 48, 182, 0.486);
+}
+.menu-button {
+  display: flex;
+  justify-content: space-between;
+}
+
+.menu-font {
+  font-size: 2em;
+  height: fit-content;
+  border-bottom: solid 2px #d56877;
+  text-align: start;
+  margin-bottom: 30px;
+  padding-right: 15px;
+}
+
+.menu-font-price {
+  font-size: 1.6em;
+}

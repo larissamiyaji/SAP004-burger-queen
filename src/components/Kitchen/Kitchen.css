@@ -1,0 +1,104 @@
+.kitchen {
+  display: block;
+  text-shadow: white 1px 0px 3px;
+  text-align: center;
+}
+
+.kitchen-display {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  justify-content: space-evenly;
+}
+
+.order-list {
+  width: 100vh;
+  border-radius: 20px;
+  margin: 10px;
+  border: 0 none;
+  outline: none;
+  padding: 15px 15px 10px;
+  line-height: 1.4em;
+  overflow-wrap: break-word;
+  overflow-y: hidden;
+  resize: none;
+  word-wrap: break-word;
+  font-family: "Bree Serif", serif;
+}
+
+.list-title {
+  margin-bottom: 15px;
+}
+ 
+.open-orders {
+  background-color: #632B30;
+  font-size: 1.9em;
+}
+
+.order-top{
+display: flex;
+justify-content: space-around;
+margin-bottom: 10px;
+margin-left: -10px;
+padding-top: 10px 0px 10px 0px;
+background-color: rgb(192, 255, 65);
+border-radius: 0px 0px 100px 0px;
+}
+
+.open-card {
+  display: block;
+  background-color: #948392;
+  border-radius: 0px 200px 30px 20px;
+  padding: 20px 0px 20px 10px;
+  margin-bottom: 15px;
+  text-align: left;
+  font-size: 1.3em;
+}
+
+.closed-orders {
+  background-color: #3b738ee0;
+  font-size: 1.9em;
+}
+
+.video-background {
+  background-cover: cover;
+  position: fixed;
+  bottom: 0;
+  width: auto;
+  height: auto;
+  right: 0;
+  top: 50px;
+  min-width: 100%;
+  min-height: 100%;
+  z-index: -1;
+}
+
+.itens{
+  color:#E6AF2E;
+  text-shadow: black 1px 1px;
+}
+
+.itens-box{
+  background-color: #f3c0ec;
+  border-radius: 10px 50px 30px 10px;
+  margin-left: -10px;
+  display: block;
+
+  
+}
+
+.done-button{
+  background-color:#72D577;
+  border: solid 1px black;
+  border-radius: 40px 10px 40px 10px;
+  width: 180px;
+  height: 7vh;
+  font-size: 0.5em;
+  font-weight: 600;
+  margin-left:185px ;
+}
+
+.done-button:hover{
+  background-color:#537A5A;
+  cursor: pointer;
+}

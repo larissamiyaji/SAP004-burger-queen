@@ -1,0 +1,25 @@
+.occupation-options {
+  display: flex;
+  justify-content: center;
+}
+
+.radio-buttons {
+  font-size: 1.2em;
+  display: flex;
+
+  margin-left: 40px;
+  text-align: left;
+  font-weight: 600;
+}
+
+.register {
+  color: white;
+}
+
+.radio {
+  margin-top: 15px;
+  margin-left: -90px;
+  text-align: left;
+  font-weight: 600;
+  font-size: 400px;
+}
