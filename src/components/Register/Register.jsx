@@ -98,6 +98,7 @@ const Register = () => {
               id="input-area-cozinha"
               name="area"
               value="Cozinha"
+              className="radio"
               onChange={(e) => setoccupation(e.currentTarget.value)}
               required
             />
@@ -109,6 +110,7 @@ const Register = () => {
               id="input-area-salao"
               name="area"
               value="Salão"
+              className="radio"
               onChange={(e) => setoccupation(e.currentTarget.value)}
               required
             />

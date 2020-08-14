@@ -10,6 +10,7 @@ import Input from "../Imput/Input";
 import Button from "../Button/Button";
 import InfoBox from "../InfoBox/InfoBox";
 import "./Login.css"
+import background from "../images/background.jpg"
 
 function Login() {
   const [email, setEmail] = useState("");
