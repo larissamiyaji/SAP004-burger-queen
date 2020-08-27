@@ -39,7 +39,11 @@ você for trabalhar.
 
 ## 2. Sobre Burger Queen
 
-Você pode conferir o resultado final [aqui](https://burger-queen04.web.app/)
+Você pode conferir o resultado final [aqui](https://burger-queen04.web.app/) utilizando as seguintes credenciais caso não queira criar uma conta nova:
+Hall -> email: hall@gmail.com
+senha: salao123456
+Cozinha -> email: kitchen@gmail.com
+senha: cozinha123456
 
 Com a atual crescente onda de restaurantes temáticos que andam surgindo por todo o país, uma nova hamburgueria criada com base no jogo Outer Worlds necessita de uma interface pela qual seja possível que o garçom realize todos os pedidos utilizando um _tablet_, e consiga envia-los para os funcionários da cozinha, para que os pedidos possam ser preparados de maneira ordenada e eficiente.
 
